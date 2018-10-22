@@ -13,9 +13,17 @@ class CrearTablaDatosTalonario extends Migration
      */
     public function up()
     {
-        Schema::create('datos_talonario', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('talonario', function (Blueprint $table) {
+            $table->increments('id_talonarios');
+            $table->integer(id_empresa)->unsigned();
+            $table->integer(dosificacion);
+            $table->sting(leyenda, 250);
+            $table->date(fecha_limite_emision);
+            $table->timestamp(tx_fecha);
+            $table->integer(tx_id);
+            $table->string(tx_host,100);
+            $table->foreign('id_empresa')->references('id_empresa')->on('empresas');
+
         });
     }
 
