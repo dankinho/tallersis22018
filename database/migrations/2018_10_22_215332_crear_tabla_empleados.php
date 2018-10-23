@@ -15,15 +15,15 @@ class CrearTablaEmpleados extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->increments('id_empleado');
-            $table->integer('id_usuario')->unsigned();
+            $table->integer('id_usuarios')->unsigned();
             $table->string('nombre_empleado',100);
             $table->string('apellido_empleado',100);
             $table->string('doc_identificacion',100);
             $table->string('rol_empleado',100);
-            $table->timestamps('tx_fecha');
+            $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
-            $table->foreign('id_usuario')->references('id_usuario')->on('usuario');
+            $table->foreign('id_usuarios')->references('id_usuarios')->on('usuarios');
         });
     }
 

@@ -14,7 +14,7 @@ class CrearTablaComisiones extends Migration
     public function up()
     {
         Schema::create('comisiones', function (Blueprint $table) {
-            $table->increments('id_comisiones');
+            $table->increments('id_comision');
             $table->decimal('porcentaje_precio_paseo', 5, 2);
             $table->decimal('porcentaje_precio_alojamiento', 5, 2);
             $table->timestamp('tx_fecha');

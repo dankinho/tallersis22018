@@ -16,7 +16,7 @@ class CrearTablaEstadoServicioMascota extends Migration
         Schema::create('estado_servicio_mascota', function (Blueprint $table) {
             $table->increments('id_estado');
             $table->string('estado',100);
-            $table->timestamps('tx_fecha');
+            $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
         });

@@ -13,8 +13,8 @@ class CrearTablaServicio extends Migration
      */
     public function up()
     {
-        Schema::create('servicio', function (Blueprint $table) {
-            $table->increments('id_servicio');
+        Schema::create('servicios', function (Blueprint $table) {
+            $table->increments('id_servicios');
             $table->integer('id_comision')->unsigned();
             $table->integer('id_datos_servicio')->unsigned();
             $table->integer('cat_id_tipo_servicio');
@@ -23,11 +23,11 @@ class CrearTablaServicio extends Migration
             $table->string('descripcion',250);
             $table->decimal('precio_paseo',5,2);
             $table->decimal('precio_alojamiento',5,2);
-            $table->timestamps('tx_fecha');
+            $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
-            $table->foreign('id_comision')->references('id_comision')->on('comision');
-            $table->foreign('id_datos_servicio')->references('id_datos_servicio')->on('datos_servicio');
+            $table->foreign('id_comision')->references('id_comision')->on('comisiones');
+            $table->foreign('id_datos_servicio')->references('id_datos_servicio')->on('datos_servicios');
         });
     }
 
