@@ -19,5 +19,8 @@
             Editar
         </a>
     </div>
+    <div class="col-xs-12 col-sm-4">
+        @include('talonarios.fragment.aside')
+    </div>
 @endsection
 

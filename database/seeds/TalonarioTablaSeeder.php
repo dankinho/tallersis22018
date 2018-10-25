@@ -18,6 +18,7 @@ class TalonarioTablaSeeder extends Seeder
             'dosificacion' =>120034567,
             'n_autorizacion'=>0057423,
             'leyenda' =>'Servicios relacionados con el cuidado de la mascota',
+            'estado' =>true,
             'fecha_limite_emision' =>'2018-12-05',
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',

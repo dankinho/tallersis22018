@@ -23,6 +23,7 @@ class EmpresasTablaSeeder extends Seeder
         'tipo_agencia' =>'Matriz',
         'direccion' =>'Calacoto Calle 6',
         'ciudad' =>'La Paz',
+            'estado' =>true,
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'

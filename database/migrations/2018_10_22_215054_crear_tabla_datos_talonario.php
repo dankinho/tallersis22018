@@ -20,10 +20,12 @@ class CrearTablaDatosTalonario extends Migration
             $table->integer('n_autorizacion');
             $table->string('leyenda', 250);
             $table->date('fecha_limite_emision');
+            $table->boolean('estado');
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
             $table->foreign('id_empresa')->references('id')->on('empresas');
+            $table->timestamp('created_at')->nullable();
 
         });
     }

@@ -22,6 +22,7 @@ class CrearTablaEmpresas extends Migration
             $table->string('tipo_agencia', 100);
             $table->string('direccion', 100);
             $table->string('ciudad', 100);
+            $table->boolean('estado');
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host', 100);
