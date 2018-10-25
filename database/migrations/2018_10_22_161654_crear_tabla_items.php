@@ -14,6 +14,7 @@ class CrearTablaItems extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
+
             $table->increments('id_items');
             $table->integer('id_catalogos')->unsigned();//foering key de catalogos
             $table->string('codigo', 100);

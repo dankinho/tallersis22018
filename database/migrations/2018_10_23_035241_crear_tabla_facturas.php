@@ -30,7 +30,7 @@ class CrearTablaFacturas extends Migration
             $table->integer('tx_id');
             $table->string('tx_host',100);
             $table->foreign('id_clientes')->references('id_clientes')->on('clientes');
-            $table->foreign('id_talonarios')->references('id_talonarios')->on('talonarios');
+            $table->foreign('id_talonarios')->references('id')->on('talonarios');
             $table->foreign('id_empleado')->references('id_empleado')->on('empleados');
         });
     }

@@ -14,6 +14,7 @@ class CrearTablaServicio extends Migration
     public function up()
     {
         Schema::create('servicios', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id_servicios');
             $table->integer('id_comision')->unsigned();
             $table->integer('id_datos_servicio')->unsigned();
@@ -38,6 +39,15 @@ class CrearTablaServicio extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servicio');
+        Schema::table('servicios', function (Blueprint $table) {
+            $table->dropForeign('id_comision');
+            $table->dropForeign('id_datos_servicio');
+            $table->foreign('id_comision')
+                ->references('d_comision')->on('comisiones')
+                ->onDelete('cascade');
+        });
+
+
+        Schema::dropIfExists('servicios');
     }
 }
