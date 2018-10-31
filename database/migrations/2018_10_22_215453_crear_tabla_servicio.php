@@ -29,6 +29,8 @@ class CrearTablaServicio extends Migration
             $table->string('tx_host',100);
             $table->foreign('id_comision')->references('id_comision')->on('comisiones');
             $table->foreign('id_datos_servicio')->references('id_datos_servicio')->on('datos_servicios');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

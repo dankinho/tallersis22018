@@ -29,6 +29,9 @@ class CrearTablaClientes extends Migration
             $table->integer('tx_id');
             $table->string('tx_host',100);
             $table->foreign('id_usuarios')->references('id_usuarios')->on('usuarios');
+
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

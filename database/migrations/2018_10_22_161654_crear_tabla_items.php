@@ -25,6 +25,9 @@ class CrearTablaItems extends Migration
             $table->string('tx_host', 100);
 
             $table->foreign('id_catalogos')->references('id_catalogos')->on('catalogos');
+
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

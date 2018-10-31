@@ -27,6 +27,9 @@ class CrearTablaMascotas extends Migration
             $table->integer('tx_id');
             $table->string('tx_host',100);
             $table->foreign('id_clientes')->references('id_clientes')->on('clientes');
+
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

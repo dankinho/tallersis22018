@@ -34,7 +34,7 @@ class TalonariosController extends Controller
         $talonario->fecha_limite_emision = 2018-12-05;
         $talonario->estado = true;
         $talonario-> tx_fecha  ='2018-10-05 17:55:08';
-        $talonario->  tx_id  ='1';
+        $talonario-> tx_id  ='1';
         $talonario->  tx_host   ='0.0.0.0';
         // $talonario->tx_fecha = $now;
         // $talonario->tx_id    = 1;

@@ -32,6 +32,9 @@ class CrearTablaFacturas extends Migration
             $table->foreign('id_clientes')->references('id_clientes')->on('clientes');
             $table->foreign('id_talonarios')->references('id')->on('talonarios');
             $table->foreign('id_empleado')->references('id_empleado')->on('empleados');
+
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

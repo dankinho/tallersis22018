@@ -12,8 +12,10 @@
 </div>
 <div class="form-group">
     {!! Form::label('fecha_limite_emision', 'Fecha Limite Emision') !!}
-    {!! Form::textarea('fecha_limite_emision', null, ['class' => 'form-control']) !!}
+    {!! Form::date('fecha_limite_emision', null, ['class' => 'form-control']) !!}
 </div>
+
+
 <div class="form-group">
     {!! Form::submit('ENVIAR', ['class' => 'btn btn-primary']) !!}
 </div>

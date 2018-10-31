@@ -13,17 +13,40 @@
             <thead>
             <tr>
                 <th width="20px">ID</th>
-                <th>Nombre del producto</th>
+                <th>Nombre </th>
+                <th>Nit </th>
+                <th>Telefono </th>
+                <th>Celular </th>
+                <th>Tipo de Agencia </th>
+                <th>Direccion </th>
+                <th>Ciudad </th>
                 <th colspan="3">&nbsp;</th>
+
             </tr>
             </thead>
             <tbody>
             @foreach($empresas as $empresa)
                 <tr>
+                    <td>{{ $empresa->id }}</td>
+
                     <td>{{ $empresa->nombre }}</td>
                     <td>
                         <strong>{{ $empresa->nit }}</strong>
+                     </td>
+                    <td>
                         {{ $empresa->telefono }}
+                    </td>
+                    <td>
+                        {{ $empresa->celular }}
+                    </td>
+                    <td>
+                        {{ $empresa->tipo_agencia }}
+                    </td>
+                    <td>
+                        {{ $empresa->direccion}}
+                    </td>
+                    <td>
+                        {{ $empresa->ciudad }}
                     </td>
                     <td width="20px">
                         <a  href="{{ route('empresas.show', $empresa->id ) }}" class="btn btn-link">
@@ -31,7 +54,7 @@
                         </a>
                     </td>
                     <td width="20px">
-                        <a >
+                        <a  class="btn btn-link" >
                             Editar
                         </a>
                     </td>
