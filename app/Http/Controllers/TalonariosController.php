@@ -31,7 +31,7 @@ class TalonariosController extends Controller
         $talonario->dosificacion = $request->dosificacion;
         $talonario->n_autorizacion = $request->n_autorizacion;
         $talonario->leyenda = $request->leyenda;
-        $talonario->fecha_limite_emision = 2018-12-05;
+        $talonario->fecha_limite_emision = $request->fecha_limite_emision;
         $talonario->estado = true;
         $talonario-> tx_fecha  ='2018-10-05 17:55:08';
         $talonario-> tx_id  ='1';
@@ -77,5 +77,10 @@ class TalonariosController extends Controller
     {
         return view('talonarios.create');
     }
-
+    public function destroy($id)
+    {
+        $talonario = Talonario::find($id);
+        $talonario->delete();
+        return back()->with('info','El talonario fue eliminado logicamente');
+    }
 }

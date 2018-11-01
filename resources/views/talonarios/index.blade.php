@@ -47,10 +47,12 @@
                         </a>
                     </td>
                     <td width="20px">
-
-                        <button class="btn btn-link">
-                            Borrar
-                        </button>
+ 
+                        <form action="{{ route('talonarios.destroy', $talonario->id ) }}" method="POST">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-link">Borrar</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

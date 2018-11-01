@@ -15,7 +15,8 @@
         <p>LEYENDA:                {{ $talonario->leyenda }}</p>
         <p>FECHA LIMITE DE EMISION:{{ $talonario->fecha_limite_emision}}</p>
 
-        <a   class="btn btn-primary">
+
+        <a href="{{ route('talonarios.edit', $talonario->id ) }}" class="btn btn-primary">
             Editar
         </a>
     </div>
