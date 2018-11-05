@@ -15,7 +15,7 @@ class CrearTablaItems extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
 
-            $table->increments('id_items');
+            $table->increments('id');
             $table->integer('id_catalogos')->unsigned();//foering key de catalogos
             $table->string('codigo', 100);
             $table->string('nombre', 100);
@@ -24,10 +24,12 @@ class CrearTablaItems extends Migration
             $table->integer('tx_id');
             $table->string('tx_host', 100);
 
-            $table->foreign('id_catalogos')->references('id_catalogos')->on('catalogos');
+            $table->foreign('id_catalogos')->references('id')->on('catalogos');
 
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
         });
     }
 

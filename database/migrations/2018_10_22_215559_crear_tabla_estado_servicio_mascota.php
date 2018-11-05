@@ -14,13 +14,15 @@ class CrearTablaEstadoServicioMascota extends Migration
     public function up()
     {
         Schema::create('estado_servicio_mascota', function (Blueprint $table) {
-            $table->increments('id_estado');
+            $table->increments('id');
             $table->string('estado',100);
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
         });
     }
 

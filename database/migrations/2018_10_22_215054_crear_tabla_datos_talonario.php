@@ -28,6 +28,8 @@ class CrearTablaDatosTalonario extends Migration
 
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
 
         });
     }

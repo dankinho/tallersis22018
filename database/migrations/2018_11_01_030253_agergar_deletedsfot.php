@@ -9,7 +9,7 @@ class AgergarDeletedsfot extends Migration
     public function up()
     {
         Schema::table('talonarios', function (Blueprint $table) {
-            $table->softDeletes(); //Nueva línea, para el borrado lógico
+          //  $table->softDeletes(); //Nueva línea, para el borrado lógico
 
         });
 
@@ -18,7 +18,7 @@ class AgergarDeletedsfot extends Migration
     public function down()
     {
         Schema::table('talonarios', function (Blueprint $table) {
-            $table->softDeletes(); //Nueva línea, para el borrado lógico
+           // $table->softDeletes(); //Nueva línea, para el borrado lógico
 
         });
     }

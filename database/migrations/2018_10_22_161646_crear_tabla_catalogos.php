@@ -14,7 +14,7 @@ class CrearTablaCatalogos extends Migration
     public function up()
     {
         Schema::create('catalogos', function (Blueprint $table) {
-            $table->increments('id_catalogos');
+            $table->increments('id');
             $table->string('entidad', 100);
             $table->string('descripcion', 100);
             $table->timestamp('tx_fecha');
@@ -22,6 +22,8 @@ class CrearTablaCatalogos extends Migration
             $table->string('tx_host', 100);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
         });
     }
 

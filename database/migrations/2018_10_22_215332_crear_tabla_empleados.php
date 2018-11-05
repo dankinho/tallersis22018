@@ -14,7 +14,7 @@ class CrearTablaEmpleados extends Migration
     public function up()
     {
         Schema::create('empleados', function (Blueprint $table) {
-            $table->increments('id_empleado');
+            $table->increments('id');
             $table->integer('id_usuarios')->unsigned();
             $table->string('nombre_empleado',100);
             $table->string('apellido_empleado',100);
@@ -23,7 +23,10 @@ class CrearTablaEmpleados extends Migration
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
-            $table->foreign('id_usuarios')->references('id_usuarios')->on('usuarios');
+            $table->foreign('id_usuarios')->references('id')->on('usuarios');
+            $table->rememberToken();
+            $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
         });
     }
 

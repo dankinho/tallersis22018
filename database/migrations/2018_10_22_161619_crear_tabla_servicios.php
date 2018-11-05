@@ -14,7 +14,7 @@ class CrearTablaServicios extends Migration
     public function up()
     {
         Schema::create('datos_servicios', function (Blueprint $table) {
-            $table->increments('id_datos_servicio');
+            $table->increments('id');
             $table->integer('cat_id_tipo_casa');
             $table->integer('cat_id_tipo_campo_exterior');
             $table->string ('direccion_calle', 100);
@@ -30,6 +30,8 @@ class CrearTablaServicios extends Migration
             $table->string ('tx_host', 100);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
 
 
         });

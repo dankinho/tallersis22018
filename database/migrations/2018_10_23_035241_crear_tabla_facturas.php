@@ -14,7 +14,7 @@ class CrearTablaFacturas extends Migration
     public function up()
     {
         Schema::create('facturas', function (Blueprint $table) {
-            $table->increments('id_facturas');
+            $table->increments('id');
             $table->integer('id_clientes')->unsigned();
             $table->integer('id_talonarios')->unsigned();
             $table->integer('id_empleado')->unsigned();
@@ -29,12 +29,14 @@ class CrearTablaFacturas extends Migration
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
-            $table->foreign('id_clientes')->references('id_clientes')->on('clientes');
+            $table->foreign('id_clientes')->references('id')->on('clientes');
             $table->foreign('id_talonarios')->references('id')->on('talonarios');
-            $table->foreign('id_empleado')->references('id_empleado')->on('empleados');
+            $table->foreign('id_empleado')->references('id')->on('empleados');
 
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
         });
     }
 

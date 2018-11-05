@@ -14,7 +14,7 @@ class CrearTablaClientes extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->increments('id_clientes');
+            $table->increments('id');
             $table->integer('id_usuarios')->unsigned();
             $table->string('nombre_cliente',100);
             $table->string('apellido_cliente',100);
@@ -28,10 +28,12 @@ class CrearTablaClientes extends Migration
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
-            $table->foreign('id_usuarios')->references('id_usuarios')->on('usuarios');
+            $table->foreign('id')->references('id')->on('users');
 
-            $table->rememberToken();
+             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
         });
     }
 

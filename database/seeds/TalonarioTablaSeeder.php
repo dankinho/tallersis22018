@@ -23,6 +23,7 @@ class TalonarioTablaSeeder extends Seeder
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
+
         ]);
 
         DB::table('talonarios')->insert([

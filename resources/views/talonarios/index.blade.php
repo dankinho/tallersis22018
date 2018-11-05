@@ -47,7 +47,7 @@
                         </a>
                     </td>
                     <td width="20px">
- 
+
                         <form action="{{ route('talonarios.destroy', $talonario->id ) }}" method="POST">
                             {{csrf_field()}}
                             <input type="hidden" name="_method" value="DELETE">

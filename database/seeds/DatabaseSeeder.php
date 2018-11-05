@@ -11,9 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      //  $this->truncateTables(['talonarios']);
+      //  $this->truncateTables(['talonarios']);::class);
+        $this->call(UsersTableSedder::class);
          $this->call(EmpresasTablaSeeder::class);
         $this->call(TalonarioTablaSeeder::class);
+        $this->call(ClientesTableSedder::class);
+        $this->call(MascotasTableSedder::class);
     }
     protected  function  truncateTables(array  $tables) //para vaciar tablas
     {

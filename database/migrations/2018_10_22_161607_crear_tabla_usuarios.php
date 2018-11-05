@@ -14,7 +14,7 @@ class CrearTablaUsuarios extends Migration
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->increments('id_usuarios');
+            $table->increments('id');
 
             $table->string('nombre', 100);
             $table->string('correo', 100);
@@ -24,6 +24,8 @@ class CrearTablaUsuarios extends Migration
             $table->string('tx_host', 100);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
         });
     }
 

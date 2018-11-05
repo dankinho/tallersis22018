@@ -14,7 +14,7 @@ class CrearTablaMascotas extends Migration
     public function up()
     {
         Schema::create('mascotas', function (Blueprint $table) {
-            $table->increments('id_mascotas');
+            $table->increments('id');
             $table->integer('id_clientes')->unsigned();
             $table->string('nombre_mascota',100);
             $table->date('fecha_nacimiento');
@@ -26,10 +26,12 @@ class CrearTablaMascotas extends Migration
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
-            $table->foreign('id_clientes')->references('id_clientes')->on('clientes');
+            $table->foreign('id_clientes')->references('id')->on('clientes');
 
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
         });
     }
 

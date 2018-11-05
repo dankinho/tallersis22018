@@ -15,7 +15,7 @@ class CrearTablaServicio extends Migration
     {
         Schema::create('servicios', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id_servicios');
+            $table->increments('id');
             $table->integer('id_comision')->unsigned();
             $table->integer('id_datos_servicio')->unsigned();
             $table->integer('cat_id_tipo_servicio');
@@ -27,10 +27,12 @@ class CrearTablaServicio extends Migration
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
-            $table->foreign('id_comision')->references('id_comision')->on('comisiones');
-            $table->foreign('id_datos_servicio')->references('id_datos_servicio')->on('datos_servicios');
+            $table->foreign('id_comision')->references('id')->on('comisiones');
+            $table->foreign('id_datos_servicio')->references('id')->on('datos_servicios');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
         });
     }
 

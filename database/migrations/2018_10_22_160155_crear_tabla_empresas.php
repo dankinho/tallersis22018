@@ -26,6 +26,11 @@ class CrearTablaEmpresas extends Migration
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host', 100);
+
+            $table->rememberToken();
+            $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
         });
     }
 
