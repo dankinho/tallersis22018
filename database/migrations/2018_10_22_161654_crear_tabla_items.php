@@ -25,7 +25,6 @@ class CrearTablaItems extends Migration
             $table->string('tx_host', 100);
 
             $table->foreign('id_catalogos')->references('id')->on('catalogos');
-
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes(); //Nueva línea, para el borrado lógico

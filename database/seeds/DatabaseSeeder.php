@@ -13,8 +13,11 @@ class DatabaseSeeder extends Seeder
     {
       //  $this->truncateTables(['talonarios']);::class);
         $this->call(UsersTableSedder::class);
+        $this->call(CatalogosTableSeeder::class);
+
          $this->call(EmpresasTablaSeeder::class);
         $this->call(TalonarioTablaSeeder::class);
+        $this->call(ItemsTableSeeder::class);
         $this->call(ClientesTableSedder::class);
         $this->call(MascotasTableSedder::class);
     }

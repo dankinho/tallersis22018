@@ -18,7 +18,7 @@ class CrearTablaClientes extends Migration
             $table->integer('id_usuarios')->unsigned();
             $table->string('nombre_cliente',100);
             $table->string('apellido_cliente',100);
-            $table->string('cat_id_tipo_identidad',100);
+            $table->integer('cat_id_tipo_identidad');
             $table->string('num_doc_identidad',100);
             $table->string('genero_cliente',100);
             $table->string('direccion_casa',100);

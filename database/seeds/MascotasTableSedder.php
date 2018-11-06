@@ -13,12 +13,12 @@ class MascotasTableSedder extends Seeder
     {
         DB::table('mascotas')->insert([
 
-            'id_clientes' =>2,
+            'id_clientes' =>1,
             'nombre_mascota' =>'Laika',
             'fecha_nacimiento'=>'2017-01-05',
             'genero' =>'Hembra',
-            'cat_raza' => 1,
-            'cat_tamano' =>1,
+            'cat_raza' => 8,
+            'cat_tamano' =>15,
             'url_imagen_mascota' => 'www.google.com' ,
             'observaciones' =>'Sin observaciones',
 
