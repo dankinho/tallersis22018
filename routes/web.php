@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('empresas','EmpresasController');
 Route::resource('talonarios','TalonariosController');
+Route::resource('reservas','Reservas_serviciosController');

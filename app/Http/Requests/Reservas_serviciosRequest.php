@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TalonarioRequest extends FormRequest
+class Reservas_serviciosRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class TalonarioRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,11 +24,7 @@ class TalonarioRequest extends FormRequest
     public function rules()
     {
         return [
-            'dosificacion' => 'required',
-            'n_autorizacion' => 'required',
-            'leyenda' => 'required',
-            'fecha_limite_emision' => 'required',
-
+            //
         ];
     }
 }
