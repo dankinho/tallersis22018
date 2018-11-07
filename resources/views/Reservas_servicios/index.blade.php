@@ -33,6 +33,6 @@
                 <h6><b>Cuidador:</b> Mateo Navia </h6>
                 <h6><b>Macrodistrito:</b> Bolognia</h6>
                 <h6><b>Descripcion:</b> Ofrezco mi casa para cuidarlos, con mucho espacio para ellos<h6> y paseos largos en distintos parques </h6>
-                    <h6><b>paseo por hora: Bs.20</b></h6>
-                    <h6><b>alojamiento: Bs.50</b></h6>
+                    <h6><b>paseo por hora: Bs.10</b></h6>
+                    <h6><b>alojamiento: Bs.40</b></h6>
 @endsection
