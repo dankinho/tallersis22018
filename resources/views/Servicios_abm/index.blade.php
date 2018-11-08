@@ -34,7 +34,9 @@
             <tr>
                 <th width="20px">ID</th>
                 <th colspan="3">&nbsp;</th>
-                <th>Nombre </th>
+                <th>Servicio </th>
+                <th>Cuidador </th>
+                <th>Precio </th>
                 <th>Descripcion </th>
                 <th colspan="3">&nbsp;</th>
 

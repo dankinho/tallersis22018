@@ -23,3 +23,4 @@ Route::resource('empresas','EmpresasController');
 Route::resource('talonarios','TalonariosController');
 Route::resource('reservas','Reservas_serviciosController');
 Route::resource('servicios','abmservicios');
+Route::resource('altas','altascontroller');
