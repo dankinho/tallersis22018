@@ -20,6 +20,12 @@
                         <div class="card-header">
                             <a href="{{route('talonarios.index')}}">Ver talonarios</a>
                         </div>
+                        <div class="card-header">
+                            <a href="{{route('mascotas.index')}}">Ver Mascotas</a>
+                        </div>
+                        <div class="card-header">
+                            <a href="{{route('servicios.index')}}">Ver Servicios</a>
+                        </div>
 
                 </div>
             </div>
