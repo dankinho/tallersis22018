@@ -87,8 +87,8 @@
                 <div class="links">
                     <a href="{{route('empresas.index')}}">Ver empresa datos</a>
                     <a href="{{route('talonarios.index')}}">Ver talonarios</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="{{route('mascotas.index')}}">Mascotas</a>
+                    <a href="{{route('servicios.index')}}">Servicios</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
