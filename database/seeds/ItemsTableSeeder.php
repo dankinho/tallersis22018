@@ -191,5 +191,89 @@ class ItemsTableSeeder extends Seeder
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
         ]);
+        //cris
+        // 17
+        //tipo de casa
+        DB::table('items')->insert([
+
+            'id_catalogos' =>5,
+            'codigo' =>'tc1',
+            'nombre' =>'condominio',
+            'descripcion' =>'condominio de 5 casas',
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
+        // 18
+        //tipo de casa
+        DB::table('items')->insert([
+
+            'id_catalogos' =>5,
+            'codigo' =>'tc2',
+            'nombre' =>'departamento',
+            'descripcion' =>'Departamento de 3 habitaciones y 1 terraza',
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
+        // 19
+        //tipo de casa
+        DB::table('items')->insert([
+
+            'id_catalogos' =>5,
+            'codigo' =>'tc3',
+            'nombre' =>'casa',
+            'descripcion' =>'casa con patio ',
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
+        // 19
+        //tipo de campo exterior
+        DB::table('items')->insert([
+
+            'id_catalogos' =>6,
+            'codigo' =>'tce1',
+            'nombre' =>'grande',
+            'descripcion' =>'espacio para que jueguen',
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);// 20
+        //tipo de campo exterior
+        DB::table('items')->insert([
+
+            'id_catalogos' =>6,
+            'codigo' =>'tce2',
+            'nombre' =>'pequeño',
+            'descripcion' =>'espacio reducido',
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
+        //21
+        //tipo servicio
+        DB::table('items')->insert([
+
+            'id_catalogos' =>7,
+            'codigo' =>'ts1',
+            'nombre' =>'alojamiento',
+            'descripcion' =>'alojamiento para la mascota que solicita el servicio',
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
+        //22
+        //estado servicio
+        DB::table('items')->insert([
+
+            'id_catalogos' =>8,
+            'codigo' =>'es1',
+            'nombre' =>'activo',
+            'descripcion' =>'el servicio esta activo',
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
     }
 }

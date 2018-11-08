@@ -20,6 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemsTableSeeder::class);
         $this->call(ClientesTableSedder::class);
         $this->call(MascotasTableSedder::class);
+        //christian
+        $this->call(ComisionesTablaSeeder::class);
+        $this->call(DatosServiciosTablaSeeder::class);
+        $this->call(ServiciosTablaSeeder::class);
     }
     protected  function  truncateTables(array  $tables) //para vaciar tablas
     {

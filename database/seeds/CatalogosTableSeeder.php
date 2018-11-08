@@ -48,5 +48,43 @@ class CatalogosTableSeeder extends Seeder
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
         ]);
+        //cris 5 y 6
+        DB::table('catalogos')->insert([
+
+            'entidad' =>'Tipo_casa',
+            'descripcion' =>'Tipos de casas para alojamientos',
+
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
+        DB::table('catalogos')->insert([
+
+            'entidad' =>'Tipo_campo_exterior',
+            'descripcion' =>'Tamanio del campo exterior en mts',
+
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
+        //7 y 8
+        DB::table('catalogos')->insert([
+
+            'entidad' =>'Tipo_servicio',
+            'descripcion' =>'Tipos de servicios que brindamos',
+
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
+        DB::table('catalogos')->insert([
+
+            'entidad' =>'Estado_servicio',
+            'descripcion' =>'si el servicio esta activo, cancelado, pendiente, etc',
+
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
     }
 }
