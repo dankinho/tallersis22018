@@ -30,5 +30,5 @@ Route::resource('mascotas','MascotaController');
 
 
 
-
+Route::resource('serviciosMascotas','ServiciosMascotaController');
 Route::get('items1/{id}','ItemController@itemsCatalogos');

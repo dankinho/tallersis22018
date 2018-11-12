@@ -268,9 +268,9 @@ class ItemsTableSeeder extends Seeder
         DB::table('items')->insert([
 
             'id_catalogos' =>8,
-            'codigo' =>'es1',
-            'nombre' =>'activo',
-            'descripcion' =>'el servicio esta activo',
+            'codigo' =>'ts2',
+            'nombre' =>'paseo',
+            'descripcion' =>'paseo para la mascota que solicita el servicio',
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
