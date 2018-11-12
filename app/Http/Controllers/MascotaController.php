@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 use App\Mascota;
 use Illuminate\Http\Request;
 use App\item;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\MascotaRequest;
 class MascotaController extends Controller
 {
     public function  index()
     {
-        $mascotas = Mascota::orderBy('id','DESC')->paginate(6);
+        $mascotas = Mascota::where('id_clientes','=',Auth::user()->id)
+        ->orderBy('id','DESC')
+            ->paginate(6);
 
 
          return view('mascotas.index', compact('mascotas' ));
@@ -32,7 +35,7 @@ class MascotaController extends Controller
 
 
         $mascota = new Mascota ;
-        $mascota -> id_clientes =1;
+        $mascota -> id_clientes =Auth::user()->id;
         $mascota ->nombre_mascota = $request->nombre_mascota;
         $mascota ->fecha_nacimiento = $request->fecha_nacimiento;
         $mascota ->genero = $request->genero;
@@ -53,14 +56,11 @@ class MascotaController extends Controller
     public function update(MascotaRequest $request, $id)
     {$now = new \DateTime();
         $mascota = Mascota::find($id);
-        // $talonario-> id_empresa =1;
         $mascota ->nombre_mascota = $request->nombre_mascota;
         $mascota ->fecha_nacimiento = $request->fecha_nacimiento;
         $mascota ->genero = $request->genero;
         //raza
-        $id_raza = item:: items1((int)$request->cat_raza);
         $mascota ->cat_raza = $request->cat_raza;
-        $id_tamano = item:: items1((int)$request->cat_tamano);
         $mascota ->cat_tamano =  $request->cat_tamano;
         $mascota ->url_imagen_mascota ='www....';
         $mascota ->observaciones = $request->observaciones;

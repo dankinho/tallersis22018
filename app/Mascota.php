@@ -16,4 +16,6 @@ class Mascota extends Model
         'url_imagen_mascota', 'observaciones',
         'tx_fecha', 'tx_id', 'tx_host',
     ];
+
+
 }
