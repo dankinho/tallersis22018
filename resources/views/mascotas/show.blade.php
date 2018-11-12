@@ -6,14 +6,16 @@
     </h2>
     <div class="col-xs-12 col-sm-8">
         <h2>
-            <strong>Nombre   </strong> {{ $mascota->nombre_mascota }}
-            <a href="{{ route('mascotas.index') }}" class="btn btn-default pull-right">		Regresar
-            </a>
+           Nombre  	<strong>	  {{ $mascota->nombre_mascota }}  </strong>
+            <a href="{{ route('mascotas.index') }}" class="btn btn-default pull-right">Regresar
+               </a>
         </h2>
         <hr>
         <p>FECHA DE NACIMIENTO: {{ $mascota->fecha_nacimiento }}</p>
         <p>GENERO:                {{ $mascota->genero }}</p>
-        <p>OBSERVACIONES:{{ $mascota->observaciones}}</p>
+        <p>RAZA:                {{ $items }}</p>
+        <p>TAMANO:                {{ $items1 }}</p>
+        <p>OBSERVACIONES: {{ $mascota->observaciones}}</p>
 
 
         <a href="{{ route('mascotas.edit', $mascota->id ) }}" class="btn btn-primary">

@@ -28,3 +28,7 @@ Route::resource('altas','altascontroller');
 
 Route::resource('mascotas','MascotaController');
 
+
+
+
+Route::get('items1/{id}','ItemController@itemsCatalogos');

@@ -1,5 +1,10 @@
 @extends('layout')
-
+<head>
+    <title>Formulario con Combobox</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet" >
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
+</head>
 @section('content')
     <div class="col-xs-12 col-sm-8">
         <h2>

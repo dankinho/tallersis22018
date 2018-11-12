@@ -14,9 +14,8 @@
             <tr>
                 <th width="20px">ID</th>
                 <th>Nombre </th>
-                <th>Fecha de nacimiento</th>
-                <th>Genero</th>
-                <th>Observaciones</th>
+                <th>Fecha de creacion</th>
+                <th>Fecha de modificacion</th>
                 <th colspan="3">&nbsp;</th>
             </tr>
             </thead>
@@ -28,22 +27,14 @@
                         {{ $mascota->nombre_mascota }}
                     </td>
                     <td>
-                        {{ $mascota->fecha_nacimiento }}
+                        {{ $mascota->created_at }}
                     </td>
                     <td>
-                        {{ $mascota->genero }}
-                    </td>
-                    <td>
-                         {{ $mascota->observaciones }}
+                        {{ $mascota->updated_at }}
                     </td>
                     <td width="20px">
                         <a  href="{{ route('mascotas.show', $mascota->id ) }}" class="btn btn-link">
                             Ver
-                        </a>
-                    </td>
-                    <td width="20px">
-                        <a href="{{ route('mascotas.edit', $mascota->id ) }}" class="btn btn-link">
-                            Editar
                         </a>
                     </td>
                     <td width="20px">

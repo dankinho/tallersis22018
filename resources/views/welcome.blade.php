@@ -89,8 +89,6 @@
                     <a href="{{route('talonarios.index')}}">Ver talonarios</a>
                     <a href="{{route('mascotas.index')}}">Mascotas</a>
                     <a href="{{route('servicios.index')}}">Servicios</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>

@@ -3,22 +3,28 @@
 namespace App\Http\Controllers;
 use App\Mascota;
 use Illuminate\Http\Request;
-
+use App\item;
 use App\Http\Requests\MascotaRequest;
 class MascotaController extends Controller
 {
     public function  index()
     {
-        $mascotas = Mascota::orderBy('id','DESC')->paginate();
+        $mascotas = Mascota::orderBy('id','DESC')->paginate(6);
 
-        return view('mascotas.index', compact('mascotas'));
+
+         return view('mascotas.index', compact('mascotas' ));
+
 
     }
     public function show($id)
     {
         $mascota = Mascota::find($id);
+        $items = (string )item:: itemsshow($mascota->cat_raza ); //raza
+        $items1 = (string )item:: itemsshow($mascota->cat_tamano ); //tamano
+        return view('mascotas.show'
+        ,compact('mascota')
+            ,compact('items' ,'items1'));
 
-        return view('mascotas.show', compact('mascota'));
     }
 
     public function store(MascotaRequest $request)
@@ -30,10 +36,10 @@ class MascotaController extends Controller
         $mascota ->nombre_mascota = $request->nombre_mascota;
         $mascota ->fecha_nacimiento = $request->fecha_nacimiento;
         $mascota ->genero = $request->genero;
-        $mascota ->cat_raza = 8;
-            $mascota ->cat_tamano = 15;
-                $mascota ->url_imagen_mascota ='www....';
-                $mascota ->observaciones = $request->observaciones;
+        $mascota ->cat_raza =  $request->cat_raza;
+        $mascota ->cat_tamano =  $request->cat_tamano;
+        $mascota ->url_imagen_mascota ='www....';
+        $mascota ->observaciones = $request->observaciones;
         $mascota -> tx_fecha  ='2018-10-05 17:55:08';
         $mascota -> tx_id  ='1';
         $mascota ->  tx_host   ='0.0.0.0';
@@ -51,26 +57,39 @@ class MascotaController extends Controller
         $mascota ->nombre_mascota = $request->nombre_mascota;
         $mascota ->fecha_nacimiento = $request->fecha_nacimiento;
         $mascota ->genero = $request->genero;
+        //raza
+        $id_raza = item:: items1((int)$request->cat_raza);
+        $mascota ->cat_raza = $request->cat_raza;
+        $id_tamano = item:: items1((int)$request->cat_tamano);
+        $mascota ->cat_tamano =  $request->cat_tamano;
+        $mascota ->url_imagen_mascota ='www....';
         $mascota ->observaciones = $request->observaciones;
 
         $mascota-> tx_fecha  ='2018-10-05 17:55:08';
         $mascota->  tx_id  ='1';
         $mascota->  tx_host   ='0.0.0.0';
-
-
-        $$mascota->save();
+        $mascota->save();
         return redirect()->route('mascotas.index')
             ->with('info','La mascota fue actualizado');
     }
     public function edit($id)
     {
         $mascota = Mascota::find($id);
-
-        return view('mascotas.edit', compact('mascota'));
+        $items = item:: items1(3); //raza
+        $items2 = item:: items1(4); //tamano
+        return view('mascotas.edit'
+            ,compact('mascota')
+            ,compact('items' ,'items2'));
     }
     public function create()
     {
-        return view('mascotas.create');
+       // $items = item::pluck('nombre','id');
+        $items = item:: items1(3); //raza
+        $items2 = item:: items1(4); //tamano
+
+        return view('mascotas.create'
+
+            ,compact('items' ,'items2'));
     }
     public function destroy($id)
     {
