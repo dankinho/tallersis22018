@@ -451,6 +451,7 @@ body{
 	float:left;
 	width:59%;
 	border-right: 1px solid rgba(202, 202, 202, 0.29);
+    margin: 15px  ;
 }
 .cartire-grid-info ul li,.cartire-grid-info h3{
 	display: block;

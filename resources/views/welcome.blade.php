@@ -97,7 +97,7 @@
             <div class="sub-header">
                 <div class="logo">
                    <FONT COLOR="black"> <h1 >Bienvenido a DogFy</h1></FONT>
-                    <a href="index.html"><img src="images/logo.png" title="logo" /> </a>
+                    <a href="index.html"> </a>
                 </div>
                 <div class="sub-header-right">
                  </div>
@@ -158,19 +158,20 @@
         </div>
     </div>
     <!---End-wrap--->
-
-            <div class="content">
-
-                <div class="links">
-                    <a href="{{route('empresas.index')}}">Ver empresa datos</a>
-                    <a href="{{route('talonarios.index')}}">Ver talonarios</a>
-                    <a href="{{route('mascotas.index')}}">Mascotas</a>
-                    <a href="{{route('servicios.index')}}">Servicios</a>
-                    <a href="{{route('servicios.index')}}">Servicios</a>
-                </div>
-
-
-            </div>
+    <div class="clear"> </div>
+    <div class="footer" align="center">
+        <div class="col_1_of_1 span_1_of_1 footer-lastgrid">
+            <h3>Nuestras redes sociales</h3>
+            <ul>
+                <li><a href="#"><img src="images/facebook.png" title="facebook" /></a></li>
+                <li><a href="#"><img src="images/twitter.png" title="Twiiter" /></a></li>
+                <li><a href="#"><img src="images/rss.png" title="Rss" /></a></li>
+                <li><a href="#"><img src="images/gpluse.png" title="Google+" /></a></li>
+            </ul>
+            <p>&copy 2018  . All Rights Reserved | Design by <a href="http://google.com/">W3layouts</a></p>
+        </div>
+    </div>
+    </div>
 
         </div>
     </body>

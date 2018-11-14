@@ -1,27 +1,31 @@
-@extends('layout')
+@extends('layout2')
 
 @section('content')
     <h2>
-        Datos del talonario
+        Datos del servicio
     </h2>
     <div class="col-xs-12 col-sm-8">
         <h2>
-            <strong>Dosificacion </strong> {{ $talonario->dosificacion }}
-            <a href="{{ route('talonarios.index') }}" class="btn btn-default pull-right">		Regresar
+            <strong>Mascota </strong> {{ $servicioMascota->id_mascota }}
+            <a href="{{ route('serviciosMascotas.index') }}" class="btn btn-default pull-right">		Regresar
             </a>
         </h2>
         <hr>
-        <p>NUMERO DE AUTORIZACION: {{ $talonario->n_autorizacion }}</p>
-        <p>LEYENDA:                {{ $talonario->leyenda }}</p>
-        <p>FECHA LIMITE DE EMISION:{{ $talonario->fecha_limite_emision}}</p>
-
-
-        <a href="{{ route('talonarios.edit', $talonario->id ) }}" class="btn btn-primary">
-            Editar
+        <p>Servicio: {{ $servicioMascota->id_servicio }}</p>
+        <p>Tipo de Servicio:                {{ $servicioMascota->cat_id_tipo_servicio }}</p>
+        <p>Fecha inicio del servicio:{{ $servicioMascota->fecha_servicio_inicio       }}</p>
+        <p>Fecha de finalizacion del servicio:{{ $servicioMascota->fecha_servicio_final}}</p>
+        <p>Precio Bs. :{{ $servicioMascota->precio_servicio_mascota}}</p>
+        <p>Estado del servicio :{{ $servicioMascota->id_estado_servicio }}</p>
+        <a href="{{ route('serviciosMascotas.edit', $servicioMascota->id ) }}" class="btn btn-primary">
+            Cancelar
         </a>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-        @include('talonarios.fragment.aside')
+        <a href="{{ route('serviciosMascotas.edit', $servicioMascota->id ) }}" class="btn btn-primary">
+            Ver Chat
+        </a>
+        <a href="{{ route('serviciosMascotas.edit', $servicioMascota->id ) }}" class="btn btn-primary">
+            Ver servicio
+        </a>
     </div>
 @endsection
 

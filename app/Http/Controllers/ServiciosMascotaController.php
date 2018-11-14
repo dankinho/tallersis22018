@@ -20,7 +20,7 @@ class ServiciosMascotaController extends Controller
     public function show($id)
     {
         $servicioMascota = ServiciosMascota::find($id);
-        return view('mascotas.show' ,compact('servicioMascota') );
+        return view('serviciosMascotas.show' ,compact('servicioMascota') );
 
     }
 
