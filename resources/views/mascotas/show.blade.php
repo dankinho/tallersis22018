@@ -34,7 +34,7 @@
                             <li data-thumb="../images/triumph_big1.jpg">
                                 <div class="thumb-image"> <img src="../images/triumph_big1.jpg" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                             
+
                         </ul>
                         <div class="clear"></div>
                     </div>
