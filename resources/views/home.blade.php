@@ -1,37 +1,41 @@
-@extends('layouts.app')
+@extends('layout2')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Bienvenido</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                        <div class="card-header">
-                            <a href="{{route('empresas.index')}}">Ver empresa datos</a>
+<div class="content">
+    <div class="single-page"><br />
 
-                        </div>
-                        <div class="card-header">
-                            <a href="{{route('talonarios.index')}}">Ver talonarios</a>
-                        </div>
-                        <div class="card-header">
-                            <a href="{{route('mascotas.index')}}">Ver Mascotas</a>
-                        </div>
-                        <div class="card-header">
-                            <a href="{{route('servicios.index')}}">Ver Servicios</a>
-                        </div>
+        <div class="clear"> </div>
+        <div class="product-info">
+            <!-- FlexSlider -->
 
-                </div>
+
+            <div class="card-header">Bienvenido</div>
+
+            <div class="card-body" align="center">
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                    <hr>
+
+                    <a href="{{route('mascotas.index')}}" class="btn btn-default pull ">Ver mis mascotas</a>
+                    <hr>
+                    <a href="{{route('serviciosMascotas.index')}}" class="btn btn-default pull ">Ver mis servicios</a>
+                    <hr>
+                    <a href="{{route('servicios.index')}}" class="btn btn-default pull ">Ver Servicios</a>
+                    <hr>
+                    <a href="{{route('empresas.index')}}" class="btn btn-default pull " >Ver empresa datos</a>
+                    <a href="{{route('talonarios.index')}}" class="btn btn-default pull ">Ver talonarios</a>
+                    <hr>
             </div>
-        </div>
 
+            <!-- //FlexSlider-->
+
+
+            <div class="clear"> </div>
+        </div>
     </div>
 </div>
-
 @endsection

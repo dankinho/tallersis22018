@@ -11,7 +11,7 @@ class ServiciosMascotaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('servicio_mascota')->insert([
+        DB::table('servicios_mascotas')->insert([
 
             'id_servicio' =>1,
             'id_mascota' =>1,
@@ -28,7 +28,7 @@ class ServiciosMascotaSeeder extends Seeder
             'tx_host'  =>'0.0.0.0'
 
         ]);
-        DB::table('servicio_mascota')->insert([
+        DB::table('servicios_mascotas')->insert([
 
             'id_servicio' =>2,
             'id_mascota' =>2,

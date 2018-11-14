@@ -13,7 +13,7 @@ class CrearTablaServicioMascota extends Migration
      */
     public function up()
     {
-        Schema::create('servicio_mascota', function (Blueprint $table) {
+        Schema::create('servicios_mascotas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_servicio');
             $table->integer('id_mascota');
@@ -27,7 +27,10 @@ class CrearTablaServicioMascota extends Migration
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);
+            $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
 
             $table->foreign('id_servicio')->references('id')->on('servicios');
             $table->foreign('id_mascota')->references('id')->on('mascotas');
@@ -43,6 +46,6 @@ class CrearTablaServicioMascota extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servicio_mascota');
+        Schema::dropIfExists('servicios_mascotas');
     }
 }

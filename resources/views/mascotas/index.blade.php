@@ -20,7 +20,7 @@
                     @include('mascotas.fragment.info')
                     <div class="products products-secondbox">
                         @foreach($mascotas as $mascota)
-                            <div class="section group">
+                            <div class="cartires-grids">
                                 <div class="grid_1_of_5 images_1_of_5">
                                     <img src="images/g1.jpg">
                                     <h3>{{ $mascota->nombre_mascota }} </h3>

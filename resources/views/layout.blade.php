@@ -51,7 +51,7 @@
                 <div class="clear"> </div>
                 <div class="sub-header">
                     <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" title="logo" /></a>
+                        <a href="index.html">dogfy</a>
                     </div>
                     <div class="sub-header-right" align="center">
                         <ul>

@@ -15,9 +15,9 @@
                 <div class="product-image">
                     <div class="flexslider">
                         <!-- FlexSlider -->
-                        <script src="js/imagezoom.js"></script>
-                        <script defer src="js/jquery.flexslider.js"></script>
-                        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+                        <script src="../js/imagezoom.js"></script>
+                        <script defer src="../js/jquery.flexslider.js"></script>
+                        <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" />
 
                         <script>
                             // Can also be used with $(document).ready()
@@ -31,10 +31,10 @@
                         <!-- //FlexSlider-->
 
                         <ul class="slides">
-                            <li data-thumb="images/triumph_big1.jpg">
+                            <li data-thumb="../images/triumph_big1.jpg">
                                 <div class="thumb-image"> <img src="../images/triumph_big1.jpg" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-
+                             
                         </ul>
                         <div class="clear"></div>
                     </div>
