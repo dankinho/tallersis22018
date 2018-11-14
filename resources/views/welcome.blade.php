@@ -96,7 +96,8 @@
             <div class="clear"> </div>
             <div class="sub-header">
                 <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" title="logo" /></a>
+                   <FONT COLOR="black"> <h1 >Bienvenido a DogFy</h1></FONT>
+                    <a href="index.html"><img src="images/logo.png" title="logo" /> </a>
                 </div>
                 <div class="sub-header-right">
                  </div>
@@ -114,8 +115,8 @@
             <!-- Slideshow 1 -->
             <ul class="rslides" id="slider1">
                 <li><img src="images/slider1.jpg" alt=""></li>
+                <li><img src="images/slider2.jpg" alt=""></li>
                 <li><img src="images/slider3.jpg" alt=""></li>
-                <li><img src="images/slider1.jpg" alt=""></li>
             </ul>
             <!-- Slideshow 2 -->
         </div>
