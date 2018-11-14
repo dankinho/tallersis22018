@@ -1,58 +1,53 @@
-@extends('layout')
+@extends('layout2')
 
 @section('content')
-    <div class="col-xs-12 col-sm-8">
-        <h2>
-            Lista de mascotas
-            <a  href="{{ route('mascotas.create') }}"  class="btn btn-primary pull-right">Nuevo</a>
-        </h2>
+
+
+
+    <div class="content">
+    <div class="products-box">
+        <div class="products">
+
+            <h5 >
+                <a  href="{{ route('home') }}"    class="btn btn-default pull">Regresar</a>
+                <span>Tus mascotas</span>
+                <a  href="{{ route('mascotas.create') }}"    class="btn btn-primary pull" >Nuevo</a>
+            </h5>
         <hr>
+            <div class="section group" align="center">
+                <div class="col-xs-12 ">
 
-        @include('mascotas.fragment.info')
-        <table class="table table-hover table-striped">
-            <thead>
-            <tr>
-                <th width="20px">ID</th>
-                <th>Nombre </th>
-                <th>Fecha de creacion</th>
-                <th>Fecha de modificacion</th>
-                <th colspan="3">&nbsp;</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($mascotas as $mascota)
-                <tr>
-                    <td>{{ $mascota->id}}</td>
-                    <td>
-                        {{ $mascota->nombre_mascota }}
-                    </td>
-                    <td>
-                        {{ $mascota->created_at }}
-                    </td>
-                    <td>
-                        {{ $mascota->updated_at }}
-                    </td>
-                    <td width="20px">
-                        <a  href="{{ route('mascotas.show', $mascota->id ) }}" class="btn btn-link">
-                            Ver
-                        </a>
-                    </td>
-                    <td width="20px">
+                    @include('mascotas.fragment.info')
+                    <div class="products products-secondbox">
+                        @foreach($mascotas as $mascota)
+                            <div class="section group">
+                                <div class="grid_1_of_5 images_1_of_5">
+                                    <img src="images/g1.jpg">
+                                    <h3>{{ $mascota->nombre_mascota }} </h3>
+                                    <h4> Fecha de creacion </h4>
+                                    <p>{{ $mascota->created_at }}</p>
 
-                        <form action="{{ route('mascotas.destroy', $mascota->id ) }}" method="POST">
-                            {{csrf_field()}}
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="btn btn-link">Borrar</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+                                    <div class="button"><span><a href="{{ route('mascotas.show', $mascota->id ) }}" >Ver</a></span></div>
+                                    <div class="button"><span><a href="{{ route('mascotas.destroy', $mascota->id ) }}" >Borrar</a></span></div>
+                                </div>
 
-        {!! $mascotas->render() !!}
+                            </div>
+
+                        @endforeach
+
+
+                    </div>
+
+
+                    {!! $mascotas->render() !!}
+                </div>
+            </div>
+        </div>
+
     </div>
+
     <div class="col-xs-12 col-sm-4">
-        @include('mascotas.fragment.aside')
+
+    </div>
     </div>
 @endsection

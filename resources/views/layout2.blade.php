@@ -12,11 +12,11 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css"  media="all" />
     <link href='//fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/responsiveslides.css">
-    <script src="js/jquery.min.js"> </script>
-    <script src="js/responsiveslides.min.js"></script>
+    <script src="../js/jquery.min.js"> </script>
+    <script src="../js/responsiveslides.min.js"></script>
     <script>
         // You can also use "$(window).load(function() {"
         $(function () {
@@ -51,7 +51,7 @@
                 <div class="clear"> </div>
                 <div class="sub-header">
                     <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" title="logo" /></a>
+                        <a href="index.html"><img src="../images/logo.png" title="logo" /></a>
                     </div>
                     <div class="sub-header-right" align="center">
                         <ul>
@@ -63,13 +63,7 @@
                     <div class="clear"> </div>
                 </div>
                 <div class="clear"> </div>
-                <div class="top-nav">
-                    <ul>
-                         <li><a href="carbumpers.html">Alojamientos</a></li>
-                        <li><a href="caradsystem.html">Servicios</a></li>
-                         <div class="clear"> </div>
-                    </ul>
-                </div>
+
                 <!---end-top-header--->
                 <!---End-header--->
             </div>
@@ -82,10 +76,10 @@
                 <div class="col_1_of_1 span_1_of_1 footer-lastgrid">
                     <h3>Nuestras redes sociales</h3>
                     <ul>
-                        <li><a href="#"><img src="images/facebook.png" title="facebook" /></a></li>
-                        <li><a href="#"><img src="images/twitter.png" title="Twiiter" /></a></li>
-                        <li><a href="#"><img src="images/rss.png" title="Rss" /></a></li>
-                        <li><a href="#"><img src="images/gpluse.png" title="Google+" /></a></li>
+                        <li><a href="#"><img src="../images/facebook.png" title="facebook" /></a></li>
+                        <li><a href="#"><img src="../images/twitter.png" title="Twiiter" /></a></li>
+                        <li><a href="#"><img src="../images/rss.png" title="Rss" /></a></li>
+                        <li><a href="#"><img src="../images/gpluse.png" title="Google+" /></a></li>
                     </ul>
                     <p>&copy 2018  . All Rights Reserved | Design by <a href="http://google.com/">W3layouts</a></p>
                 </div>
