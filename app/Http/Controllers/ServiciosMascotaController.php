@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\ServiciosMascota;
 use Illuminate\Http\Request;
-
+use App\Servicio;
+use App\item;
 class ServiciosMascotaController extends Controller
 {
     public function  index()
@@ -11,9 +12,12 @@ class ServiciosMascotaController extends Controller
         $mascotasServicios = ServiciosMascota::where('id_mascota','=',1)
             ->orderBy('id','DESC')
             ->paginate(6);
-
-
-        return view('serviciosMascotas.index', compact('mascotasServicios' ));
+        $titulo = (string ) Servicio:: tituloServicio(1); //titulo del servicio
+        $desc = (string ) Servicio::  descripServicio(1); //descripcion del servicio
+        $estado = (string ) EstadoServicioMascota::  estadoshow(1);  //estado
+        return view('serviciosMascotas.index'
+            , compact('mascotasServicios' )
+            ,compact('titulo' , 'desc','estado' ));
 
 
     }

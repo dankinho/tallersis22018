@@ -30,21 +30,22 @@
                                     </div>
                                     <div class="cartire-grid-info">
                                         <ul>
-                                            <li><span>Servicio de Alojamiento</span>  </li>
-                                        </ul>
-                                        <h3>Datos del servicio adquirido</h3>
-                                        <p><span>Fecha y Hora de Inicio:</span>{{ $mascotaServicio->fecha_servicio_inicio }}</p>
-                                        <p><span>Fecha y Hora Final:</span>{{ $mascotaServicio->fecha_servicio_final }}</p>
-                                        <p><span>Precio:</span>{{ $mascotaServicio->precio_servicio_mascota }}</p>
+                                            <li><span>Servicio Adquirido</span>   </li>
+                                            <li> <p> <span>Fecha y Hora Inicial:</span> {{ $mascotaServicio->fecha_servicio_inicio }}</p></li>
+                                            <li><p><span>Fecha y Hora Final:</span>{{ $mascotaServicio->fecha_servicio_final }}</p></li>
+                                            <li><p><span>Precio:</span>  {{ $mascotaServicio->precio_servicio_mascota }}</p></li>
 
-                                        <h3>Datos del servicio en general</h3>
-                                        <p><span>Titulo:</span>{{ $mascotaServicio->fecha_servicio_inicio }}</p>
-                                        <p><span>Descripcion:</span>{{ $mascotaServicio->fecha_servicio_final }}</p>
+                                            <li><h3>Datos del servicio en general</h3></li>
+                                            <li><p><span>Titulo:</span> {{ $titulo }}</p></li>
+                                            <li><p><span>Descripcion:</span> {{ $desc }}</p></li>
+                                        </ul>
+
+
 
                                     </div>
                                     <div class="cartire-grid-cartinfo"  >
                                         <h4>Estado del servicio</h4>
-                                        <span>Pendiente</span>
+                                        <span>{{$estado}}</span>
                                         <br >
                                         <hr>
                                         <a href="{{ route('serviciosMascotas.show', $mascotaServicio->id ) }}">Ver</a><br />
