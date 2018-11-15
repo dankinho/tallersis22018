@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\ServiciosMascota;
 use Illuminate\Http\Request;
 use App\Servicio;
+use App\EstadoServicioMascota;
+
 use App\item;
 class ServiciosMascotaController extends Controller
 {
@@ -14,7 +16,7 @@ class ServiciosMascotaController extends Controller
             ->paginate(6);
         $titulo = (string ) Servicio:: tituloServicio(1); //titulo del servicio
         $desc = (string ) Servicio::  descripServicio(1); //descripcion del servicio
-        $estado = (string ) EstadoServicioMascota::  estadoshow(1);  //estado
+        //$estado = (string ) EstadoServicioMascota::  estadoshow(1);  //estado
         return view('serviciosMascotas.index'
             , compact('mascotasServicios' )
             ,compact('titulo' , 'desc','estado' ));

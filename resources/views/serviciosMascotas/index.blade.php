@@ -45,7 +45,7 @@
                                     </div>
                                     <div class="cartire-grid-cartinfo"  >
                                         <h4>Estado del servicio</h4>
-                                        <span>{{$estado}}</span>
+                                        <span>Pendiente</span>
                                         <br >
                                         <hr>
                                         <a href="{{ route('serviciosMascotas.show', $mascotaServicio->id ) }}">Ver</a><br />
