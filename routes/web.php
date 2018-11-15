@@ -29,6 +29,8 @@ Route::resource('altas','altascontroller');
 Route::resource('mascotas','MascotaController');
 
 
+Route::resource('/cuidador', 'CuidadorController');
+
 
 Route::resource('serviciosMascotas','ServiciosMascotaController');
 Route::get('items1/{id}','ItemController@itemsCatalogos');

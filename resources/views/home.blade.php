@@ -23,12 +23,30 @@
                     <a href="{{route('mascotas.index')}}" class="btn btn-default pull ">Ver mis mascotas</a>
                     <hr>
                     <a href="{{route('serviciosMascotas.index')}}" class="btn btn-default pull ">Ver mis servicios</a>
+                    <a href="{{route('cuidador.create')}}" class="btn btn-default pull ">Agregar servicio</a>
                     <hr>
                     <a href="{{route('servicios.index')}}" class="btn btn-default pull ">Ver Servicios</a>
                     <hr>
                     <a href="{{route('empresas.index')}}" class="btn btn-default pull " >Ver empresa datos</a>
                     <a href="{{route('talonarios.index')}}" class="btn btn-default pull ">Ver talonarios</a>
                     <hr>
+            </div>
+
+            <div>
+                <table style="width:100%">
+                <tr><th></th></tr>
+                <tr>
+                @for($i=0; $i<$num;$i++)
+                    <td>
+                        Servicio {{ $i+1 }} <br>
+                    Nombre: {{ $cuid->find($i+1)->titulo }}<br>
+                    Descripcion: {{ $cuid->find($i+1)->descripcion }}<br>
+                    Precio Paseo: {{ $cuid->find($i+1)->precio_paseo }}<br>
+                    Precio Alojamiento: {{ $cuid->find($i+1)->precio_alojamiento }}<br>
+                    </td>
+                             @endfor
+                </tr>
+                </table>
             </div>
 
             <!-- //FlexSlider-->
