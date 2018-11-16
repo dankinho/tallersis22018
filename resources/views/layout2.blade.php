@@ -63,17 +63,22 @@
                         </button>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html" class="act">Inicio</a></li>
+                            <li class="active"><a href="{{ route('home') }}" class="act">Inicio</a></li>
                             <!-- Mega Menu -->
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+                                <a href="{{ route('home') }}" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi-column columns-3">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <ul class="multi-column-dropdown">
-                                                <li><a href="products.html">Alojamientos</a></li>
-                                                <li><a href="products.html">Paseos</a></li>
+                                                <li><a href="{{route('servicios.index')}}">Alojamientos</a></li>
+                                                <li><a href="{{route('servicios.index')}}">Paseos</a></li>
                                             </ul>
                                         </div>
 
@@ -82,8 +87,8 @@
                                 </ul>
                             </li>
 
-                            <li><a href="short-codes.html">Tus Servicios</a></li>
-                            <li><a href="mail.html">Tu cuenta</a></li>
+                            <li><a href="{{route('serviciosMascotas.index')}}">Tus Servicios</a></li>
+                            <li><a  href="{{route('mascotas.index')}}">Tu cuenta</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -95,7 +100,7 @@
                     <!-- Left Side Of Navbar -->
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto" >
+                    <ul class="navbar-nav ml-auto"  >
                         <!-- Authentication Links -->
                         @guest
                             <a class="nav-link" href="{{ route('login') }}"><p>{{ __('Login') }}</p></a>
@@ -112,8 +117,7 @@
                                     @csrf
                                 </form>
 
-                            <div class="header-right">
-                                <div class="cart box_1">
+
                                     <a href="checkout.html">
                                         <h3> <div class="total">
                                                 <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
@@ -121,19 +125,17 @@
                                         </h3>
                                     </a>
                                     <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <h3>{{ Auth::user()->name }}</h3> <span class="caret"></span>
-                                    </a>
 
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <h3 align="right">{{ Auth::user()->name }}</h3>
+                                    </a>
+                                        <a class="simpleCart_empty" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            <p>{{ __('Logout') }}</p>
+                                            <p align="right">{{ __('Logout') }}</p>
                                         </a>
-                                    </div>
-                                 </div>
-                            </div>
+
+
                         @endguest
                     </ul>
                 </div>

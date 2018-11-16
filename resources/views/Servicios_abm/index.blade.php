@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout2')
 <?php
 /**
  * Created by PhpStorm.

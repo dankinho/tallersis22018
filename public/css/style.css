@@ -661,6 +661,17 @@ p.est{
 .new-collections-grid{
 	padding-left:0;
 }
+.new-collections-grid2{
+    font-family: 'Open Sans', sans-serif;
+    padding: 25px;
+    background: #fff;
+    font-size: .9em;
+    color: #222;
+    margin: 12px;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+}
 .new-collections-grids {
     margin: 3em 0 0;
 }
