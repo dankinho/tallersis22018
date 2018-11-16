@@ -18,20 +18,20 @@
         <div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".5s">
             <div class="flexslider">
                 <ul class="slides">
-                    <li data-thumb="../../../images/si.jpg">
-                        <div class="thumb-image"> <img src="images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                    </li>
                     <li data-thumb="../../images/si.jpg">
-                        <div class="thumb-image"> <img src="images/1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                        <div class="thumb-image"> <img src="../../images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
                     </li>
-                    <li data-thumb="../../../images/si2.jpg">
-                        <div class="thumb-image"> <img src="images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                    <li data-thumb="../../images/si1.jpg">
+                        <div class="thumb-image"> <img src="../../images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                    </li>
+                    <li data-thumb="../../images/si2.jpg">
+                        <div class="thumb-image"> <img src="../../images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
                     </li>
                 </ul>
             </div>
             <!-- flixslider -->
-            <script defer src="js/jquery.flexslider.js"></script>
-            <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+            <script defer src="../../js/jquery.flexslider.js"></script>
+            <link rel="stylesheet" href="../../css/flexslider.css" type="text/css" media="screen" />
             <script>
                 // Can also be used with $(document).ready()
                 $(window).load(function() {
