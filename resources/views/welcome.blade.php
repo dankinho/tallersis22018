@@ -6,173 +6,175 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>DogFy</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
-        <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
-        <link href='//fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/responsiveslides.css">
-        <script src="js/jquery.min.js"> </script>
-        <script src="js/responsiveslides.min.js"></script>
+        <!-- for-mobile-apps -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Best Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+            function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!-- //for-mobile-apps -->
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <!-- js -->
+        <script src="js/jquery.min.js"></script>
+        <!-- //js -->
+        <!-- cart -->
+        <script src="js/simpleCart.min.js"></script>
+        <!-- cart -->
+        <!-- for bootstrap working -->
+        <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+        <!-- //for bootstrap working -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <!-- timer -->
+        <link rel="stylesheet" href="css/jquery.countdown.css" />
+        <!-- //timer -->
+        <!-- animation-effect -->
+        <link href="css/animate.min.css" rel="stylesheet">
+        <script src="js/wow.min.js"></script>
         <script>
-            // You can also use "$(window).load(function() {"
-            $(function () {
-
-                // Slideshow 1
-                $("#slider1").responsiveSlides({
-                    maxwidth: 1600,
-                    speed: 600
-                });
-            });
+            new WOW().init();
         </script>
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-
-        </style>
+        <!-- //animation-effect -->
     </head>
     <body>
-    <!---start-wrap--->
-    <div class="wrap">
-        <!---start-header--->
-        <div class="header">
-            <!---start-top-header--->
-            <div class="top-header">
-                <div class="top-header-left">
-                 </div>
 
-                <div class="clear"> </div>
-            </div>
-            <div class="clear"> </div>
-            <div class="sub-header">
-                <div class="logo">
-                   <FONT COLOR="black"> <h1 >Bienvenido a DogFy</h1></FONT>
-                    <a href="index.html"> </a>
+
+    <!-- header -->
+    <div class="header">
+        <div class="container">
+
+            <div class="logo-nav">
+                <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".2s">
+                    <h1><a href="index.html">DOGFY <span>Tu mejor eleccion</span></a></h1>
                 </div>
-                <div class="sub-header-right">
-                 </div>
-                <div class="clear"> </div>
-            </div>
-            <div class="clear"> </div>
-            <div class="top-nav">
-             </div>
-            <!---end-top-header--->
-            <!---End-header--->
-        </div>
+                <div class="logo-nav-left1">
+                    <nav class="navbar navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header nav_2">
+                            <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 
-        <!--start-image-slider---->
-        <div class="image-slider">
-            <!-- Slideshow 1 -->
-            <ul class="rslides" id="slider1">
-                <li><img src="images/slider1.jpg" alt=""></li>
-                <li><img src="images/slider2.jpg" alt=""></li>
-                <li><img src="images/slider3.jpg" alt=""></li>
-            </ul>
-            <!-- Slideshow 2 -->
-        </div>
-        <!--End-image-slider---->
-        <div class="content">
-            <div class="products-box">
-                <div class="products">
-                    <h5><span>Bienvenido</span> </h5>
-                    <div class="section group" align="center">
-                        @if (Route::has('login'))
-                            @auth
-                                <a href="{{ url('/home') }}">Home</a>
-                                <div class="grid_1_of_2 images_1_of_5">
-                                <h3> Ingresar a la pagina </h3>
-                                <div class="button"><span><a href="{{ url('/home') }}">Inicio</a></span></div>
-                                </div>
-                            @else
-                        <div class="grid_1_of_2 images_1_of_5">
-                             <h3> Ingresar a la pagina </h3>
-                             <div class="button"><span><a href="{{ route('login') }}">Login</a></span></div>
                         </div>
-                                @if (Route::has('register'))
-                        <div class="grid_1_of_2 images_1_of_5">
-                             <h3>Si no tiene usuario click aqui para registrarse </h3>
-                             <div class="button"><span><a href="{{ route('register') }}">Registrar</a></span></div>
+                    </nav>
+                </div>
+                <div class="logo-nav-right">
+                    <div class="search-box">
+                        <div id="sb-search" class="sb-search">
+                            <form>
+                                <input class="sb-search-input" placeholder="Enter your search term..." type="search" id="search">
+                                <input class="sb-search-submit" type="submit" value="">
+                                <span class="sb-icon-search"> </span>
+                            </form>
                         </div>
-                                 @endif
-                            @endauth
-                        @endif
                     </div>
+                    <!-- search-scripts -->
+                    <script src="js/classie.js"></script>
+                    <script src="js/uisearch.js"></script>
+
+                    <!-- //search-scripts -->
                 </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+    <!-- collections-bottom -->
+    <div class="collections-bottom">
+        <div class="container">
+            <div class="collections-bottom-grids">
+                <div class="collections-bottom-grid animated wow slideInLeft" data-wow-delay=".2s">
+                    <h3>Conectamos <span>Cuidadores con mascotas</span></h3>
+                </div>
+            </div>
+
+            <div class="newsletter animated wow slideInUp" data-wow-delay=".2s" >
+                <h1 class="title animated wow zoomIn" data-wow-delay=".5s" >  <a    >BIENVENIDO</a> </h1>
+            @if (Route::has('login'))
+                @auth
+                     <div class="row animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms" align="center">
+                        <div class="col-lg-6 in-gp-tl">
+                            <div class="input-group">
+                                <h3>Duenio de la mascota</h3>
+                                <p>Quiero que me cuiden a mi mascota</p>
+                                <h3> <a href="{{ url('/home') }}"><span class="label label-primary">Ingresar</span></a> </h3>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6 in-gp-tb">
+                            <div class="input-group">
+                                <h3>Cuidador</h3>
+                                <p>Quiero cuidar mascotas</p>
+                                <h3> <a href="{{ url('/home') }}"><span class="label label-primary">Ingresar</span></a> </h3>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+
+
+                @else
+                    <div class="row animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms" align="center">
+                        <div class="col-lg-6 in-gp-tl">
+                            <div class="input-group">
+                                <h3>Duenio de la mascota</h3>
+                                <p>Quiero que me cuiden a mi mascota</p>
+                                <h3 align="center" > <a href="{{ route('login') }}"><span class="label label-primary">Login</span></a> </h3>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6 in-gp-tb">
+                            <div class="input-group">
+                                <h3>Cuidador</h3>
+                                <p>Quiero cuidar mascotas</p>
+                                <h3 align="center"> <a href="{{ route('login') }}"><span class="label label-primary">Login</span></a> </h3>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+
+
+                    @if (Route::has('register'))
+
+                        <div class="row animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms" align="center">
+                            <div class="col-lg-6 in-gp-tl">
+                                <div class="input-group">
+                                    <h3> <a href="{{ route('register') }}"><span class="label label-primary">Registrar</span></a> </h3>
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6 in-gp-tb">
+                                <div class="input-group">
+                                    <h3> <a href="{{ route('register') }}"><span class="label label-primary">Registrar</span></a> </h3>
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+
+
+                    @endif
+                @endauth
+            @endif
+
 
             </div>
         </div>
-        <div class="clear"> </div>
-        <div class="footer">
-            <div class="section group">
-              </div>
-        </div>
     </div>
-    <!---End-wrap--->
-    <div class="clear"> </div>
-    <div class="footer" align="center">
-        <div class="col_1_of_1 span_1_of_1 footer-lastgrid">
-            <h3>Nuestras redes sociales</h3>
-            <ul>
-                <li><a href="#"><img src="images/facebook.png" title="facebook" /></a></li>
-                <li><a href="#"><img src="images/twitter.png" title="Twiiter" /></a></li>
-                <li><a href="#"><img src="images/rss.png" title="Rss" /></a></li>
-                <li><a href="#"><img src="images/gpluse.png" title="Google+" /></a></li>
-            </ul>
-            <p>&copy 2018  . All Rights Reserved | Design by <a href="http://google.com/">W3layouts</a></p>
-        </div>
-    </div>
-    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-grids">
 
+
+                <div class="clearfix"> </div>
+            </div>
+            <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
+                <h2><a href="index.html">DOGFY <span>shop anywhere</span></a></h2>
+            </div>
+            <div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
+                <p>&copy 2016 Best Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+            </div>
         </div>
+    </div>
+    <!-- //footer -->
     </body>
 </html>
