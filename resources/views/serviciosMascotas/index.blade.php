@@ -28,7 +28,7 @@
                             <div class="new-products-grid1-right" data-wow-delay=".2s">
 
 
-                            <h4>{{ $titulo }}</h4>
+                            <h4>{{  $titulo }}</h4>
                                 <hr>
                             <h4>Descripcion: </h4>
                             <h5>{{ $desc }}</h5>

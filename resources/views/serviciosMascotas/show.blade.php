@@ -12,6 +12,7 @@
         </div>
     </div>
     <!-- //breadcrumbs -->
+    @foreach($mascotasServicios as $mascotaServ)
     <div class="single">
         <div class="container">
     <div class="col-md-12 single-right">
@@ -44,8 +45,8 @@
             <!-- flixslider -->
         </div>
     <div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".5s">
-        <h3>Men's Solid Casual Shirt</h3>
-        <h4><span class="item_price">$550</span> - $900</h4>
+        <h3>Titulo del servicio</h3>
+        <h4> Tipo de servicio</h4>
         <div class="rating1">
 						<span class="starRating">
 							<input id="rating5" type="radio" name="rating" value="5">
@@ -62,133 +63,37 @@
         </div>
         <div class="description">
             <h5><i>Description</i></h5>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            <p>{{ $mascotaServ->fecha_servicio_inicio }}</p>
+
+            <h5><i>Fecha Inicio</i></h5>
+            <p>{{ $mascotaServ->fecha_servicio_inicio }}</p>
+            <h5><i>Fecha Final</i></h5>
+            <p>{{$mascotaServ->fecha_servicio_final}}</p>
+            <h5><i>Precio</i></h5>
+            <p>Bs. {{$mascotaServ->precio_servicio_mascota}} </p>
         </div>
-        <div class="color-quality">
-            <div class="color-quality-left">
-                <h5>Color : </h5>
-                <ul>
-                    <li><a href="#"><span></span>Red</a></li>
-                    <li><a href="#" class="brown"><span></span>Yellow</a></li>
-                    <li><a href="#" class="purple"><span></span>Purple</a></li>
-                    <li><a href="#" class="gray"><span></span>Violet</a></li>
-                </ul>
-            </div>
-            <div class="color-quality-right">
-                <h5>Quality :</h5>
-                <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-                    <option value="null">5 Qty</option>
-                    <option value="null">6 Qty</option>
-                    <option value="null">7 Qty</option>
-                    <option value="null">10 Qty</option>
-                </select>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="occasional">
-            <h5>Occasion :</h5>
-            <div class="colr ert">
-                <label class="radio"><input type="radio" name="radio" checked=""><i></i>Casual Wear</label>
-            </div>
-            <div class="colr">
-                <label class="radio"><input type="radio" name="radio"><i></i>Party Wear</label>
-            </div>
-            <div class="colr">
-                <label class="radio"><input type="radio" name="radio"><i></i>Formal Wear</label>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+
+
         <div class="occasion-cart">
-            <a class="item_add" href="#">add to cart </a>
+            <a class="item_add" href= {{ route('serviciosMascotas.edit', $mascotaServ->id ) }}>Cancelar </a>
         </div>
         <div class="social">
-            <div class="social-left">
-                <p>Share On :</p>
+            <div class="description">
+                <h5><i>Mascota</i></h5>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                <h5><i>Estado del servicio:</i></h5>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
             </div>
-            <div class="social-right">
-                <ul class="social-icons">
-                    <li><a href="#" class="facebook"></a></li>
-                    <li><a href="#" class="twitter"></a></li>
-                    <li><a href="#" class="g"></a></li>
-                    <li><a href="#" class="instagram"></a></li>
-                </ul>
-            </div>
+
             <div class="clearfix"> </div>
         </div>
     </div>
     </div>
         </div>
     </div>
-
-    <div class="content">
-        <div class="single-page"><br />
-            <div class="single-top-pagination">
-                <ul>
-                    <li><a href="{{ route('serviciosMascotas.index') }}">Home /MisServicios/</a></li>
-                    <li><span>{{ $servicioMascota->id_servicio }}</span></li>
-                </ul>
-            </div>
-            <div class="clear"> </div>
-            <div class="product-info">
-
-                <div class="product-price-info">
-                    <hr>
-                    <div class="product-catrgory-pagenation">
-                        <ul>
-                            <li><h1> Servicio de Alojamiento</h1></li>
-
-                        </ul>
-                    </div>
-                    <hr>
-                    <div class="product-description" align="left">
-                        <span>ID de servicio: </span>
-                        <p >{{ $servicioMascota->id_servicio }}</p>
-                        <div class="clear"> </div>
-                    </div>
-                    <div class="product-description">
-                        <span>Mascota:</span>
-                        <p> Laika {{ $servicioMascota->id_servicio  }}</p>
-                        <div class="clear"> </div>
-                    </div>
-                    <div class="product-description">
-                        <span>Estado del servicio:</span>
-                        <p> Pendiente {{ $servicioMascota->id_servicio }} </p>
-                        <div class="clear"> </div>
-                    </div>
-                    <div class="product-description">
-                        <span>Fecha de inicio del servicio: </span>
-                        <p>{{ $servicioMascota->fecha_servicio_inicio }}</p>
-                        <div class="clear"> </div>
-                    </div>
-                    <div class="product-description">
-                        <h3>Fecha fina del servicio:</h3>
-                        <p> {{$servicioMascota->fecha_servicio_final}}</p>
-                        <a href="{{ route('mascotas.edit', $servicioMascota->id ) }}">Editar</a>
-                    </div>
-
-                    <div class="product-description">
-                        <h3>Precio</h3>
-                        <p> {{$servicioMascota->precio_servicio_mascota}}</p>
-                        <a href="{{ route('mascotas.edit', $servicioMascota->id ) }}">Editar</a>
-                    </div>
-                    <a href="{{ route('serviciosMascotas.edit', $servicioMascota->id ) }}" class="btn btn-primary">
-                        Cancelar
-                    </a>
-                    <a href="{{ route('serviciosMascotas.edit', $servicioMascota->id ) }}" class="btn btn-primary">
-                        Ver Chat
-                    </a>
-                    <a href="{{ route('serviciosMascotas.edit', $servicioMascota->id ) }}" class="btn btn-primary">
-                        Ver servicio
-                    </a>
-
-                    <br><br><br>
-                </div>
-
-                <div class="clear"> </div>
-            </div>
-        </div>
-    </div>
+    @endforeach
 
 
 @endsection

@@ -5,16 +5,22 @@ use App\ServiciosMascota;
 use Illuminate\Http\Request;
 use App\Servicio;
 use App\EstadoServicioMascota;
-
+use Illuminate\Support\Facades\Auth;
 use App\item;
+use App\Mascota;
 class ServiciosMascotaController extends Controller
 {
     public function  index()
     {
+        $count_mascotas = Mascota::where('id_clientes','=',Auth::user()->id)->count();
+        $mascotas = Mascota::where('id_clientes','=',Auth::user()->id)
+            ->orderBy('id','DESC')
+            ->paginate(6);
+
         $mascotasServicios = ServiciosMascota::where('id_mascota','=',1)
             ->orderBy('id','DESC')
             ->paginate(6);
-        $titulo = (string ) Servicio:: tituloServicio(1); //titulo del servicio
+
         $desc = (string ) Servicio::  descripServicio(1); //descripcion del servicio
         //$estado = (string ) EstadoServicioMascota::  estadoshow(1);  //estado
         return view('serviciosMascotas.index'
@@ -22,6 +28,12 @@ class ServiciosMascotaController extends Controller
             ,compact('titulo' , 'desc','estado' ));
 
 
+    }
+    public function f1($id)
+    {
+
+
+        return  (string ) Servicio:: tituloServicio($id); //titulo del servicio;
     }
     public function show($id)
     {
