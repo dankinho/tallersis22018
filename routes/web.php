@@ -30,6 +30,10 @@ Route::resource('mascotas','MascotaController');
 
 
 Route::resource('/cuidador', 'CuidadorController');
+Route::get('/cuid/vista', array('as' => 'cuidador.vista', 'uses' => 'CuidadorController@vista'));
+Route::get('/cuid/vista2', array('as' => 'cuidador.vista2', 'uses' => 'CuidadorController@vista2'));
+Route::post('/cuid/com', array('as' => 'cuidador.com', 'uses' => 'CuidadorController@com'));
+Route::post('/cuid/com2', array('as' => 'cuidador.com2', 'uses' => 'CuidadorController@com2'));
 
 
 Route::resource('serviciosMascotas','ServiciosMascotaController');

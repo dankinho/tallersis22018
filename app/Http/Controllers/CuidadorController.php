@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Servicio;
 use App\DatosServicio;
+use App\ComentarioAlojamiento;
+use App\ComentarioPaseo;
 
 class CuidadorController extends Controller
 {
@@ -25,7 +27,9 @@ class CuidadorController extends Controller
      */
     public function create()
     {
-            return view('cuidador.create');
+        $num2 = Servicio::count();
+        $cuid2 = Servicio::all();
+            return view('cuidador.create', ['num'=>$num2, 'cuid'=>$cuid2]);
     }
 
     /**
@@ -71,6 +75,7 @@ class CuidadorController extends Controller
         $servicios->id_datos_servicio = $datserv;
         $servicios->cat_id_tipo_servicio = $catid;
         $servicios->cat_id_estado_servicio = $catidest;
+        $servicios->tipo_serv = $serv;
         $servicios->tx_fecha = $txf;
         $servicios->tx_id = $txid;
         $servicios->tx_host = $txhost;
@@ -135,5 +140,45 @@ class CuidadorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function vista()
+    {
+        $num3 = Servicio::count();
+        $cuid3 = Servicio::all();
+        return view('cuidador.vista', ['num'=>$num3, 'cuid'=>$cuid3]);
+    }
+
+    public function vista2()
+    {
+        $num4 = Servicio::count();
+        $cuid4 = Servicio::all();
+        return view('cuidador.vista2', ['num'=>$num4, 'cuid'=>$cuid4]);
+    }
+
+    public function com(Request $request)
+    {
+        $nombre = $request['nombre'];
+        $coment = $request['coment'];
+        $comenta = new ComentarioAlojamiento;
+        $comenta->nombre = $nombre;
+        $comenta->comentario = $coment;
+        $comenta->save();
+        $num2 = ComentarioAlojamiento::count();
+        $obs = ComentarioAlojamiento::all();
+        return view('cuidador.vista', ['num'=>$num2, 'cuid'=>$obs]);
+    }
+
+    public function com2(Request $request)
+    {
+        $nombre = $request['nombre'];
+        $coment = $request['coment'];
+        $comenta = new ComentarioPaseo;
+        $comenta->nombre = $nombre;
+        $comenta->comentario = $coment;
+        $comenta->save();
+        $num2 = ComentarioPaseo::count();
+        $obs = ComentarioPaseo::all();
+        return view('cuidador.vista2', ['num'=>$num2, 'cuid'=>$obs]);
     }
 }

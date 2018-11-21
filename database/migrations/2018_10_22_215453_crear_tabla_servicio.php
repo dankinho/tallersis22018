@@ -24,6 +24,7 @@ class CrearTablaServicio extends Migration
             $table->string('descripcion',250);
             $table->decimal('precio_paseo',5,2);
             $table->decimal('precio_alojamiento',5,2);
+            $table->integer('tipo_serv');
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
             $table->string('tx_host',100);

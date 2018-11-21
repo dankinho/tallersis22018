@@ -14,8 +14,23 @@
                                 <label class="col-md-4 control-label">Seleccione servicios:</label>
 
                                 <div class="col-md-6">
-                                    <INPUT TYPE="Checkbox" Name="serv" Value ="1"><label>Alojamiento</label>
-                                    <INPUT TYPE="Checkbox" Name="serv" Value ="2"><label>Paseo</label>
+                                    @php ($h=0)
+                                    @for($i=0; $i<$num;$i++)
+                                        @if($cuid->find($i+1)->tipo_serv==1)
+                                            @php($h=$h+1)
+                                        @elseif($cuid->find($i+1)->tipo_serv==2)
+                                            @php($h=$h+2)
+                                        @endif
+                                    @endfor
+
+                                    @if($h==0)
+                                        <INPUT TYPE="Radio" Name="serv" ID="aloj" Value="1"><label>Alojamiento</label>
+                                        <INPUT TYPE="Radio" Name="serv" ID="pas" Value="2"><label>Paseo</label>
+                                        @elseif($h==1)
+                                        <INPUT TYPE="Radio" Name="serv" ID="pas" Value="2"><label>Paseo</label>
+                                        @elseif($h==2)
+                                        <INPUT TYPE="Radio" Name="serv" ID="aloj" Value="1"><label>Alojamiento</label>
+                                        @endif
 
                                     @if ($errors->has('name'))
                                         <span class="help-block">

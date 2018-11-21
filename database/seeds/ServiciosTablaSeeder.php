@@ -21,7 +21,7 @@ class ServiciosTablaSeeder extends Seeder
             'descripcion' =>'alojamiento con jardin en el centro de obrajes',
             'precio_paseo' => 20 ,
             'precio_alojamiento' =>50,
-
+            'tipo_serv' =>0,
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
@@ -37,7 +37,7 @@ class ServiciosTablaSeeder extends Seeder
             'descripcion' =>'Paseos y juegos en el parque para perros',
             'precio_paseo' => 20 ,
             'precio_alojamiento' =>50,
-
+            'tipo_serv' =>0,
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
