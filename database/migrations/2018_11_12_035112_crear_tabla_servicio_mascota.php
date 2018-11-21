@@ -32,9 +32,9 @@ class CrearTablaServicioMascota extends Migration
             $table->softDeletes(); //Nueva línea, para el borrado lógico
 
 
-            $table->foreign('id_servicio')->references('id')->on('servicios');
-            $table->foreign('id_mascota')->references('id')->on('mascotas');
-            $table->foreign('id_estado_servicio')->references('id')->on('estado_servicio_mascotas');
+          //  $table->foreign('id_servicio')->references('id')->on('servicios');
+          //  $table->foreign('id_mascota')->references('id')->on('mascotas');
+           // $table->foreign('id_estado_servicio')->references('id')->on('estado_servicio_mascotas');
 
         });
     }
