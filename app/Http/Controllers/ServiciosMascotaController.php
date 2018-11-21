@@ -12,20 +12,13 @@ class ServiciosMascotaController extends Controller
 {
     public function  index()
     {
-        $count_mascotas = Mascota::where('id_clientes','=',Auth::user()->id)->count();
-        $mascotas = Mascota::where('id_clientes','=',Auth::user()->id)
-            ->orderBy('id','DESC')
-            ->paginate(6);
-
         $mascotasServicios = ServiciosMascota::where('id_mascota','=',1)
             ->orderBy('id','DESC')
             ->paginate(6);
 
-        $desc = (string ) Servicio::  descripServicio(1); //descripcion del servicio
-        //$estado = (string ) EstadoServicioMascota::  estadoshow(1);  //estado
         return view('serviciosMascotas.index'
             , compact('mascotasServicios' )
-            ,compact('titulo' , 'desc','estado' ));
+           );
 
 
     }
@@ -37,8 +30,15 @@ class ServiciosMascotaController extends Controller
     }
     public function show($id)
     {
-        $servicioMascota = ServiciosMascota::find($id);
-        return view('serviciosMascotas.show' ,compact('servicioMascota') );
+        $mascotaServ = ServiciosMascota::find($id);
+        $titulo = Servicio::tituloServicio($mascotaServ->id_servicio);
+        $desc=Servicio::descripServicio($mascotaServ->id_servicio);
+        $estado=EstadoServicioMascota::estadoServicioShow($mascotaServ->id_estado_servicio);
+
+        $nombreMascota = Mascota::nombreMascota($mascotaServ->id_mascota);
+        $tipoServicio = item::itemsshow($mascotaServ->cat_id_tipo_servicio);
+        return view('serviciosMascotas.show' ,compact('mascotaServ')
+            ,compact('titulo' ,'desc','estado','nombreMascota','tipoServicio' ));
 
     }
 

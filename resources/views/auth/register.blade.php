@@ -95,7 +95,7 @@
                 </div>
             </div>
             <div class="register-home animated wow slideInUp" data-wow-delay=".5s">
-                <a href="index.html">Inicio</a>
+                <a href="{{ route('home') }}">Inicio</a>
             </div>
         </div>
     </div>

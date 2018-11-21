@@ -49,7 +49,7 @@
 
         <div class="logo-nav">
             <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".5s">
-                <h1><a href="index.html">DOGFY <span>TU MEJOR OPCION</span></a></h1>
+                <h1><a href="{{ route('home') }}">DOGFY <span>TU MEJOR OPCION</span></a></h1>
             </div>
             <div class="logo-nav-left1">
                 <nav class="navbar navbar-default">

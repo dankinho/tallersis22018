@@ -16,8 +16,8 @@ class EstadoServicioMascota extends Model
         'tx_fecha', 'tx_id', 'tx_host',
     ];
 
-    public static function estadoshow($id ){
-        return  item::where('id','=',$id)
+    public static function estadoServicioShow($id ){
+        return  EstadoServicioMascota::where('id','=',$id)
             ->value('estado') ;
     }
 }

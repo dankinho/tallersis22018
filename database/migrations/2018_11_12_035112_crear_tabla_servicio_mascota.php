@@ -34,7 +34,7 @@ class CrearTablaServicioMascota extends Migration
 
             $table->foreign('id_servicio')->references('id')->on('servicios');
             $table->foreign('id_mascota')->references('id')->on('mascotas');
-            $table->foreign('id_estado_servicio')->references('id')->on('estado_servicio_mascota');
+            $table->foreign('id_estado_servicio')->references('id')->on('estado_servicio_mascotas');
 
         });
     }

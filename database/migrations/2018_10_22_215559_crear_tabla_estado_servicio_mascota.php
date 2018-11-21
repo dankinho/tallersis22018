@@ -13,7 +13,7 @@ class CrearTablaEstadoServicioMascota extends Migration
      */
     public function up()
     {
-        Schema::create('estado_servicio_mascota', function (Blueprint $table) {
+        Schema::create('estado_servicio_mascotas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('estado',100);
             $table->timestamp('tx_fecha');
@@ -33,6 +33,6 @@ class CrearTablaEstadoServicioMascota extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estado_servicio_mascota');
+        Schema::dropIfExists('estado_servicio_mascotas');
     }
 }
