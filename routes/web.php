@@ -24,7 +24,7 @@ Route::resource('talonarios','TalonariosController');
 Route::resource('reservas','Reservas_serviciosController');
 Route::resource('servicios','abmservicios');
 
-Route::resource('altas','altascontroller');
+Route::resource('/altas','abmservicios');
 
 Route::resource('mascotas','MascotaController');
 
@@ -35,3 +35,7 @@ Route::resource('/cuidador', 'CuidadorController');
 Route::resource('serviciosMascotas','ServiciosMascotaController');
 Route::get('items1/{id}','ItemController@itemsCatalogos');
 Route::get('showitem/{id}',  'ItemController@itemsshow');
+Route::get('eliminaritem/{id}',  'abmservicios@eliminar');
+Route::get('editar/{id}',  'abmservicios@edit');
+Route::post('ruta','abmservicios@update');
+//sdfsd
