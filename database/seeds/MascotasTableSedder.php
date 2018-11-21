@@ -28,7 +28,7 @@ class MascotasTableSedder extends Seeder
         ]);
         DB::table('mascotas')->insert([
 
-            'id_clientes' =>2,
+            'id_clientes' =>1,
             'nombre_mascota' =>'Naira',
             'fecha_nacimiento'=>'2017-01-05',
             'genero' =>'Hembra',

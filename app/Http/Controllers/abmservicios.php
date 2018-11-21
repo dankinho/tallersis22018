@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Servicio;
 use Illuminate\Http\Request;
 
 class abmservicios extends Controller
@@ -9,6 +10,10 @@ class abmservicios extends Controller
 
     function index (Request $request)
     {
-        return view('Servicios_abm.index');
+        $servicios = Servicio::orderBy('id','DESC')->paginate();
+
+
+        return view('Servicios_abm.index', compact('servicios'));
+
     }
 }

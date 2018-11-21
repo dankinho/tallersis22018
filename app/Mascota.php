@@ -16,4 +16,9 @@ class Mascota extends Model
         'url_imagen_mascota', 'observaciones',
         'tx_fecha', 'tx_id', 'tx_host',
     ];
+    public static function nombreMascota($id)
+    {
+        return Servicio::where('id', '=', $id)
+            ->value('nombre_mascota');
+    }
 }

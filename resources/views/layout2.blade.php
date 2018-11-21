@@ -1,118 +1,183 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>App | Dogfy</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>DogFy</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link href="../css/style.css" rel="stylesheet" type="text/css"  media="all" />
-    <link href='//fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/responsiveslides.css">
-    <script src="../js/jquery.min.js"> </script>
-    <script src="../js/responsiveslides.min.js"></script>
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+
+
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- js -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- //js -->
+    <!-- cart -->
+    <script src="../js/simpleCart.min.js"></script>
+    <!-- cart -->
+    <!-- for bootstrap working -->
+    <script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
+    <!-- //for bootstrap working -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- timer -->
+    <link rel="stylesheet" href="../css/jquery.countdown.css" />
+    <!-- //timer -->
+    <!-- animation-effect -->
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <script src="../js/wow.min.js"></script>
     <script>
-        // You can also use "$(window).load(function() {"
-        $(function () {
-
-            // Slideshow 1
-            $("#slider1").responsiveSlides({
-                maxwidth: 1600,
-                speed: 600
-            });
-        });
+        new WOW().init();
     </script>
-    <!-- Styles -->
+    <!-- //animation-effect -->
+
+
 
 </head>
 <body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- header -->
+<div class="header">
+    <div class="container">
 
-<body>
-        <!---start-wrap--->
-        <div class="wrap">
-            <!---start-header--->
-            <div class="header">
-                <!---start-top-header--->
-                <div class="top-header">
-                    <div class="top-header-left">
-
+        <div class="logo-nav">
+            <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".5s">
+                <h1><a href="index.html">DOGFY <span>TU MEJOR OPCION</span></a></h1>
+            </div>
+            <div class="logo-nav-left1">
+                <nav class="navbar navbar-default">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header nav_2">
+                        <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
                     </div>
-                    <div class="clear"> </div>
-                </div>
-                <div class="clear"> </div>
-                <div class="sub-header">
-                    <div class="logo">
-                        <a href="index.html"><img src="../images/logo.png" title="logo" /></a>
-                    </div>
-                    <div class="sub-header-right"   id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="{{ route('home') }}" class="act">Inicio</a></li>
+                            <!-- Mega Menu -->
+                            <li class="dropdown">
+                                <a href="{{ route('home') }}" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+                                <ul class="dropdown-menu multi-column columns-3">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <ul class="multi-column-dropdown">
+                                                <li><a href="{{route('servicios.index')}}">Alojamientos</a></li>
+                                                <li><a href="{{route('servicios.index')}}">Paseos</a></li>
+                                            </ul>
+                                        </div>
 
-                        <ul class="navbar-nav ml-auto">
-                            <!-- Authentication Links -->
-                            @guest
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                                <li class="nav-item">
-                                    @if (Route::has('register'))
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    @endif
-                                </li>
-                            @else
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" style="text-color:black;"><FONT COLOR="black"> {{ __('Cerrar sesion') }} </FONT>
-
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
+                                        <div class="clearfix"></div>
                                     </div>
-                                </li>
-                            @endguest
+                                </ul>
+                            </li>
+
+                            <li><a href="{{route('serviciosMascotas.index')}}">Tus Servicios</a></li>
+                            <li><a  href="{{route('mascotas.index')}}">Tu cuenta</a></li>
                         </ul>
                     </div>
-                </div>
-                <div class="clear"> </div>
-
-                <!---end-top-header--->
-                <!---End-header--->
+                </nav>
             </div>
-            <div class="content">
 
-            @yield('content')
-            </div>
-            <div class="clear"> </div>
-            <div class="footer" align="center">
-                <div class="col_1_of_1 span_1_of_1 footer-lastgrid">
-                    <h3>Nuestras redes sociales</h3>
-                    <ul>
-                        <li><a href="#"><img src="../images/facebook.png" title="facebook" /></a></li>
-                        <li><a href="#"><img src="../images/twitter.png" title="Twiiter" /></a></li>
-                        <li><a href="#"><img src="../images/rss.png" title="Rss" /></a></li>
-                        <li><a href="#"><img src="../images/gpluse.png" title="Google+" /></a></li>
+
+            <div class="header-right">
+                <div class="cart box_1">
+                    <!-- Left Side Of Navbar -->
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto"  >
+                        <!-- Authentication Links -->
+                        @guest
+                            <a class="nav-link" href="{{ route('login') }}"><p>{{ __('Login') }}</p></a>
+
+                            @if (Route::has('register'))
+                                <a class="nav-link" href="{{ route('register') }}"><p>{{ __('Register') }}</p></a>
+                            @endif
+
+                        @else
+
+
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+
+
+                                    <a href="checkout.html">
+                                        <h3> <div class="total">
+                                                <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+                                            <img src="images/bag.png" alt="" />
+                                        </h3>
+                                    </a>
+                                    <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <h3 align="right">{{ Auth::user()->name }}</h3>
+                                    </a>
+                                        <a class="simpleCart_empty" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            <p align="right">{{ __('Logout') }}</p>
+                                        </a>
+
+
+                        @endguest
                     </ul>
-                    <p>&copy 2018  . All Rights Reserved | Design by <a href="http://google.com/">W3layouts</a></p>
                 </div>
-             </div>
+                <div class="clearfix"> </div>
+            </div>
         </div>
-        <!---End-wrap--->
-</body>
+    </div>
+</div>
+<!-- //header -->
+
+
+@yield('content')
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-6 footer-grid animated wow slideInLeft" data-wow-delay=".3s">
+                <h3>Sobre Nosotros</h3>
+                <p>DogFy es una plataforma que pone en contacto a cuidadores de perros con experiencia y propietarios de perros<span>
+                        Permite a que cada propietario encontrar el cuidador adecuado para su mascota,
+                        haciendo la reservacion en el sistema sea garantizando.  </span></p>
+            </div>
+            <div class="col-md-6 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
+                <h3>Contactanos</h3>
+                <ul>
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Calle 2, Obrajes <span>La Paz, Bolivia</span></li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@dogfy.com</a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+591 76868123</li>
+                </ul>
+            </div>
+
+
+            <div class="clearfix"> </div>
+        </div>
+        <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
+            <h2><a href="index.html">DOGFY <span>TU MEJOR OPCION</span></a></h2>
+        </div>
+        <div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
+            <p>&copy 2016 Best Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+        </div>
+    </div>
+</div>
+<!-- //footer -->
 </body>
 </html>
-
