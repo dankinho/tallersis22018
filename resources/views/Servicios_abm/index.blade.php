@@ -10,7 +10,7 @@
 
 
 @section('content')
-    <br><center><h1>CRUD SERVICIOS</h1></center></br>
+    <br><center><h1>SERVICIOS</h1></center></br>
     <table width="100%">
         <tr>
 
