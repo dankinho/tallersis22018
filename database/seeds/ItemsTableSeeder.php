@@ -251,7 +251,7 @@ class ItemsTableSeeder extends Seeder
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
         ]);
-        //21
+        //22
         //tipo servicio
         DB::table('items')->insert([
 
@@ -263,7 +263,7 @@ class ItemsTableSeeder extends Seeder
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
         ]);
-        //22
+        //23
         //estado servicio
         DB::table('items')->insert([
 

@@ -1,53 +1,68 @@
 @extends('layout2')
 
 @section('content')
+    <!-- breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".1s">
+                <li><a href="{{ route('home') }}" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Inicio/</a></li>
+                <li class="active"> Tu Cuenta </li>
+            </ol>
+        </div>
+    </div>
+    <!-- //breadcrumbs -->
 
-
-
-    <div class="content">
-    <div class="products-box">
-        <div class="products">
-
-            <h5 >
-                <a  href="{{ route('home') }}"    class="btn btn-default pull">Regresar</a>
-                <span>Tus mascotas</span>
-                <a  href="{{ route('mascotas.create') }}"    class="btn btn-primary pull" >Nuevo</a>
-            </h5>
-        <hr>
-            <div class="section group" align="center">
-                <div class="col-xs-12 ">
-
-                    @include('mascotas.fragment.info')
-                    <div class="products products-secondbox">
-                        @foreach($mascotas as $mascota)
-                            <div class="cartires-grids">
-                                <div class="grid_1_of_5 images_1_of_5">
-                                    <img src="images/g1.jpg">
-                                    <h3>{{ $mascota->nombre_mascota }} </h3>
-                                    <h4> Fecha de creacion </h4>
-                                    <p>{{ $mascota->created_at }}</p>
-
-                                    <div class="button"><span><a href="{{ route('mascotas.show', $mascota->id ) }}" >Ver</a></span></div>
-                                    <div class="button"><span><a href="{{ route('mascotas.destroy', $mascota->id ) }}" >Borrar</a></span></div>
-                                </div>
+    <!-- collections -->
+    <div class="new-collections"   >
+        <div class="container">
+            <h3 class="animated wow zoomIn" data-wow-delay=".5s">Mis Mascotas</h3>
+            <p class="est animated wow zoomIn" data-wow-delay=".5s">.</p>
+            <div >
+                @foreach($mascotas as $mascota)
+                    <div class="col-md-12  ">
+                        <div class="new-collections-grid2   " data-wow-delay=".1s" >
+                            <div class="new-products-grid-right">
+                                <a href="single.html" class="product-image"><img width="200px" height="50px"  align="right" src="images/g1.jpg" alt=" " class="img-responsive" /></a>
 
                             </div>
+                            <div class="new-products-grid1-right" data-wow-delay=".2s">
 
-                        @endforeach
 
+                                <h4>Nombre: {{ $mascota->nombre_mascota }}</h4>
+                                <hr>
+                                <h4>Genero: </h4>
+                                <h5>  {{ $mascota->genero }} </h5>
+                                <hr>
+                                <h4>Observaciones </h4>
+                                <h5> {{ $mascota->observaciones }} </h5>
+
+                                <hr>
+
+                                <div class="new-collections-grid1-left simpleCart_shelfItem" align="center">
+                                    <p>
+                                        <a class="item_add" href="{{ route('mascotas.show', $mascota->id ) }}" >Ver mas </a>
+                                    </p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+
+                        </div>
 
                     </div>
-
-
-                    {!! $mascotas->render() !!}
-                </div>
+                @endforeach
             </div>
+            {!!  $mascotas->render() !!}
+            <h2 align="center" data-wow-delay=".2s">
+                <a href="{{ route('mascotas.create') }}"  class="item_add"  >
+                    <span class="label label-warning">Nueva mascota
+                    </span>
+                </a>
+            </h2>
+
         </div>
 
     </div>
+    <div class="clearfix"> </div>
+    <!-- //collections -->
 
-    <div class="col-xs-12 col-sm-4">
-
-    </div>
-    </div>
 @endsection

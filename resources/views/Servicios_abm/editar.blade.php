@@ -25,40 +25,48 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6">
-                                <form role="form" method="post" action="/altas">
+                                <form role="form" method="post" action="/ruta ">
                                     {{ csrf_field() }}
+
+                                    <div class="form-group">
+                                        <label>ID</label>
+                                        <label for="validationServer01">First name</label>
+                                        <input type="text" class="form-control is-valid" id="validationServer01" name="id" placeholder="Ingrese nombre de la vacuna" value="{{$editar->id}}" required>
+                                        <div class="valid-feedback">
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label>Servicio</label>
                                         <label for="validationServer01">First name</label>
-                                        <input type="text" class="form-control is-valid" id="validationServer01" name="titulo" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                        <input type="text" class="form-control is-valid" id="validationServer01" name="titulo" placeholder="Ingrese nombre de la vacuna" value="{{$editar->titulo}}" required>
                                         <div class="valid-feedback">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>descripcion</label>
                                         <label for="validationServer01">First name</label>
-                                        <input type="text" class="form-control is-valid" id="validationServer01" name="descripcion" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                        <input type="text" class="form-control is-valid" id="validationServer01" name="descripcion" placeholder="Ingrese nombre de la vacuna" value="{{$editar->descripcion}}" required>
                                         <div class="valid-feedback">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Precio paseo</label>
                                         <label for="validationServer01">First name</label>
-                                        <input type="text" class="form-control is-valid" id="validationServer01" name="precio_paseo" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                        <input type="text" class="form-control is-valid" id="validationServer01" name="precio_paseo" placeholder="Ingrese nombre de la vacuna" value="{{$editar->precio_paseo}}" required>
                                         <div class="valid-feedback">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Precio alojamiento</label>
                                         <label for="validationServer01">First name</label>
-                                        <input type="text" class="form-control is-valid" id="validationServer01" name="precio_alojamiento" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                        <input type="text" class="form-control is-valid" id="validationServer01" name="precio_alojamiento" placeholder="Ingrese nombre de la vacuna" value="{{$editar->precio_alojamiento}}" required>
                                         <div class="valid-feedback">
                                         </div>
                                     </div>
 
 
                                     <button type="submit" class="btn btn-success">Guardar</button>
-                                    <button type="reset" class="btn btn-info">Vaciar </button>
 
 
 
@@ -66,9 +74,9 @@
                             </div> <!-- /.col-lg-6 (nested) -->
 
                             <div class="col-lg-6">
+                                <!-- /.col-lg-6 (nested) -->
 
 
-                                !-- /.col-lg-6 (nested) -->
                             </div>
 
                             </form> <!-- /.col-lg-6 (nested) -->
@@ -77,6 +85,5 @@
                 </div> <!-- /.panel -->
             </div> <!-- /.col-lg-12 -->
         </div><!-- /.row -->
-
     </div>
 @endsection

@@ -22,7 +22,7 @@
                 </h3>
             </td>
             <td>
-            <a   class="btn btn-primary pull-right">Nuevo</a>
+            <a  href="{{url('altas/create')}}" class="btn btn-primary pull-right">Nuevo</a>
             </td>
         </h2></div>
         </tr>
@@ -34,9 +34,9 @@
             <tr>
                 <th width="20px">ID</th>
                  <th>Servicio </th>
-                <th>Cuidador </th>
-                <th>Precio </th>
                 <th>Descripcion </th>
+                <th>Precio paseo</th>
+                <th>Precio alojamiento </th>
                  <th colspan="3">&nbsp;</th>
 
             </tr>
@@ -50,35 +50,29 @@
                     </td>
                     <td>
                         {{ $servicio->descripcion }}
+
                     </td>
+
                     <td>
                         {{ $servicio->precio_paseo  }}
                     </td>
                     <td>
                         {{ $servicio->precio_alojamiento  }}
                     </td>
+
                     <td width="20px">
-                        <a  href="{{ route('talonarios.show', $servicio->id ) }}" class="btn btn-link">
-                            Ver
-                        </a>
-                    </td>
-                    <td width="20px">
-                        <a href="{{ route('talonarios.edit', $servicio->id ) }}" class="btn btn-link">
-                            Editar
+                    <td><a href="{{ url('/editar', $servicio->id) }}" type="button" class="btn btn-link">Editar</a>
                         </a>
                     </td>
                     <td width="20px">
 
-                        <form action="{{ route('talonarios.destroy', $servicio->id ) }}" method="POST">
-                            {{csrf_field()}}
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="btn btn-link">Borrar</button>
-                        </form>
+                    <td><a href="{{ url('/eliminaritem', $servicio->id) }}" type="button" class="btn btn-link">Eliminar</a>
+
                     </td>
                 </tr>
             @endforeach
             </tbody>
 
         </table>
-
+    <!-- /.col-lg-6 (nested) -->
 @endsection

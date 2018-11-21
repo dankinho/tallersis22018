@@ -18,7 +18,9 @@ class Mascota extends Model
     ];
     public static function nombreMascota($id)
     {
-        return Servicio::where('id', '=', $id)
+        return Mascota::where('id', '=', $id)
             ->value('nombre_mascota');
     }
+
+
 }

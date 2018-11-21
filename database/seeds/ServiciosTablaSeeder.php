@@ -42,5 +42,6 @@ class ServiciosTablaSeeder extends Seeder
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
         ]);
+
     }
-}
+}//dfgsgf

@@ -7,12 +7,12 @@
         <div class="container">
             <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".1s">
                 <li><a href="{{ route('home') }}" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Inicio/Mis Servicios</a></li>
-                <li class="active">{{ $servicioMascota->id_servicio }}</li>
+                <li class="active"> {{ $mascotaServ->id }}</li>
             </ol>
         </div>
     </div>
     <!-- //breadcrumbs -->
-    @foreach($mascotasServicios as $mascotaServ)
+
     <div class="single">
         <div class="container">
     <div class="col-md-12 single-right">
@@ -45,9 +45,9 @@
             <!-- flixslider -->
         </div>
     <div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".5s">
-        <h3>Titulo del servicio</h3>
-        <h4> Tipo de servicio</h4>
-        <div class="rating1">
+        <h3>{{$titulo}}</h3>
+        <h4> Tipo de servicio : {{$tipoServicio}}</h4>
+    <!--  <div class="rating1">
 						<span class="starRating">
 							<input id="rating5" type="radio" name="rating" value="5">
 							<label for="rating5">5</label>
@@ -60,10 +60,12 @@
 							<input id="rating1" type="radio" name="rating" value="1">
 							<label for="rating1">1</label>
 						</span>
-        </div>
+        </div> -->
         <div class="description">
-            <h5><i>Description</i></h5>
-            <p>{{ $mascotaServ->fecha_servicio_inicio }}</p>
+            <h5><i>Estado del servicio (Pendiente, cancelado, pasado, en proceso)</i></h5>
+            <p>{{ $estado   }}</p>
+            <h5><i>Descripcion</i></h5>
+            <p>{{ $desc   }}</p>
 
             <h5><i>Fecha Inicio</i></h5>
             <p>{{ $mascotaServ->fecha_servicio_inicio }}</p>
@@ -71,29 +73,84 @@
             <p>{{$mascotaServ->fecha_servicio_final}}</p>
             <h5><i>Precio</i></h5>
             <p>Bs. {{$mascotaServ->precio_servicio_mascota}} </p>
+            <h5><i>Nombre de la mascota</i></h5>
+            <p>{{$nombreMascota}}   <p>
         </div>
 
 
-        <div class="occasion-cart">
-            <a class="item_add" href= {{ route('serviciosMascotas.edit', $mascotaServ->id ) }}>Cancelar </a>
-        </div>
+
         <div class="social">
             <div class="description">
-                <h5><i>Mascota</i></h5>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                <h5><i>Estado del servicio:</i></h5>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                <h5><i>Opciones</i></h5>
+                <br><br>
+                <div class="occasion-cart">
+                    <a class="item_add" href= {{ route('serviciosMascotas.edit', $mascotaServ->id ) }}>Cancelar </a>
+                </div>
             </div>
 
             <div class="clearfix"> </div>
         </div>
     </div>
+
     </div>
+            <div class="clearfix"> </div>
+
+            <div class="grid_3 grid_5 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+
+                <h3>Comentarios</h3>
+
+                <div class="well">
+                    <tr>
+                        <td>Usuario</td>
+                        <td><span class="badge badge-warning">Cristian2000</span></td>
+                    </tr>
+                    <tr>
+                        <td>Calificacion</td>
+                        <td><span class="badge">3/5</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fecha</td>
+                        <td><span class="badge">10/03/2018</span></td>
+                    </tr>
+                    <hr>
+                    <i>Comentario:</i> <br>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                </div>
+                <div class="well">
+                    <tr>
+                        <td>Usuario</td>
+                        <td><span class="badge badge-warning">Cristian2000</span></td>
+                    </tr>
+                    <tr>
+                        <td>Calificacion</td>
+                        <td><span class="badge">3/5</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fecha</td>
+                        <td><span class="badge">10/03/2018</span></td>
+                    </tr>
+                    <hr>
+                    <i>Comentario:</i> <br>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                </div>
+                <div class="well">
+                    <tr>
+                        <td>Usuario</td>
+                        <td><span class="badge badge-warning">Cristian2000</span></td>
+                    </tr>
+                    <tr>
+                        <td>Calificacion</td>
+                        <td><span class="badge">3/5</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fecha</td>
+                        <td><span class="badge">10/03/2018</span></td>
+                    </tr>
+                    <hr>
+                    <i>Comentario:</i> <br>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                </div>
+            </div>
         </div>
     </div>
-    @endforeach
+
 
 
 @endsection

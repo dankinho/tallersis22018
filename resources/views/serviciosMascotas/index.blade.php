@@ -22,16 +22,13 @@
                     <div class="col-md-12  ">
                         <div class="new-collections-grid2   " data-wow-delay=".1s" >
                             <div class="new-products-grid-right">
-                                <a href="single.html" class="product-image"><img src="images/5.jpg" alt=" " class="img-responsive" /></a>
+                                <a href="single.html" class="product-image"><img width="500px" height="200px"  src="images/12.jpg" alt=" " class="img-responsive" /></a>
 
                             </div>
                             <div class="new-products-grid1-right" data-wow-delay=".2s">
 
 
-                            <h4>{{  $titulo }}</h4>
-                                <hr>
-                            <h4>Descripcion: </h4>
-                            <h5>{{ $desc }}</h5>
+                            <h4>Servicio Nro.  {{ $mascotaServicio->id_servicio }}</h4>
                                 <hr>
                             <h4>Precios: </h4>
                             <h5>Bs.    {{ $mascotaServicio->precio_servicio_mascota }} </h5>
@@ -41,25 +38,26 @@
                                 <h5>Fecha final:    {{ $mascotaServicio->fecha_servicio_final }} </h5>
 
                                 <hr>
-                                <h4>Calificacion: </h4>
-                            </div>
+                                <!--          <h4>Calificacion: </h4>
+                          </div>
                                 <div class="rating">
-                                    <div class="rating-left">
-                                        <img src="images/2.png" alt=" " class="img-responsive" />
-                                    </div>
-                                    <div class="rating-left">
-                                        <img src="images/2.png" alt=" " class="img-responsive" />
-                                    </div>
-                                    <div class="rating-left">
-                                        <img src="images/2.png" alt=" " class="img-responsive" />
-                                    </div>
-                                    <div class="rating-left">
-                                        <img src="images/2.png" alt=" " class="img-responsive" />
-                                    </div>
-                                    <div class="rating-left">
-                                        <img src="images/1.png" alt=" " class="img-responsive" />
-                                    </div>
-                                    <br>
+                                  <div class="rating-left">
+                                      <img src="images/2.png" alt=" " class="img-responsive" />
+                                  </div>
+                                  <div class="rating-left">
+                                      <img src="images/2.png" alt=" " class="img-responsive" />
+                                  </div>
+                                  <div class="rating-left">
+                                      <img src="images/2.png" alt=" " class="img-responsive" />
+                                  </div>
+                                  <div class="rating-left">
+                                      <img src="images/2.png" alt=" " class="img-responsive" />
+                                  </div>
+                                  <div class="rating-left">
+                                      <img src="images/1.png" alt=" " class="img-responsive" />
+                                  </div>
+                                  <br>
+                                  -->
                                     <div class="new-collections-grid1-left simpleCart_shelfItem" align="center">
                                         <p>
                                             <a class="item_add" href="{{ route('serviciosMascotas.show', $mascotaServicio->id ) }}" >Ver mas </a>

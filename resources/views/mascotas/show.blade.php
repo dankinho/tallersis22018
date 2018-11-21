@@ -1,85 +1,68 @@
 @extends('layout2')
 
 @section('content')
+    <!-- breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".1s">
+                <li><a href="{{ route('home') }}" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Inicio/Mis Servicios</a></li>
+                <li class="active"> {{$mascota->nombre_mascota }} </li>
+            </ol>
+        </div>
+    </div>
+    <!-- //breadcrumbs -->
 
-    <div class="content">
-        <div class="single-page"><br />
-            <div class="single-top-pagination">
-                <ul>
-                    <li><a href="{{ route('mascotas.index') }}">Home /</a></li>
-                    <li><span>{{ $mascota->nombre_mascota }}</span></li>
-                </ul>
-            </div>
-            <div class="clear"> </div>
-            <div class="product-info">
-                <div class="product-image">
+    <div class="single">
+        <div class="container">
+            <div class="col-md-12 single-right">
+                <div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".5s">
                     <div class="flexslider">
-                        <!-- FlexSlider -->
-                        <script src="../js/imagezoom.js"></script>
-                        <script defer src="../js/jquery.flexslider.js"></script>
-                        <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" />
-
-                        <script>
-                            // Can also be used with $(document).ready()
-                            $(window).load(function() {
-                                $('.flexslider').flexslider({
-                                    animation: "slide",
-                                    controlNav: "thumbnails"
-                                });
-                            });
-                        </script>
-                        <!-- //FlexSlider-->
-
                         <ul class="slides">
-                            <li data-thumb="../images/triumph_big1.jpg">
-                                <div class="thumb-image"> <img src="../images/triumph_big1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                            <li data-thumb="../../images/g1.jpg">
+                                <div class="thumb-image"> <img src="../../images/g1.jpg" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
 
                         </ul>
-                        <div class="clear"></div>
                     </div>
                 </div>
-                <div class="product-price-info">
-                    <hr>
-                    <div class="product-catrgory-pagenation">
-                        <ul>
-                            <li><h1> {{ $mascota->nombre_mascota }}</h1></li>
+                <div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".5s">
+                    <h3>{{$mascota->nombre_mascota }}</h3>
+                    <h4> Raza : {{ $items }} </h4>
 
-                        </ul>
-                    </div>
-                    <hr>
-                    <div class="product-description" align="left">
-                        <span>Fecha de nacimiento: </span>
-                        <p >{{ $mascota->fecha_nacimiento }}</p>
-                        <div class="clear"> </div>
-                    </div>
-                    <div class="product-description">
-                        <span>Genero:</span>
+                    <div class="description">
+                        <h5><i>Fecha de nacimiento:</i></h5>
+                        <p>{{ $mascota->fecha_nacimiento }}</p>
+                        <h5><i>Genero:</i></h5>
                         <p>{{ $mascota->genero }}</p>
-                        <div class="clear"> </div>
-                    </div>
-                    <div class="product-description">
-                        <span>Raza:</span>
-                        <p>{{ $items }} </p>
-                        <div class="clear"> </div>
-                    </div>
-                    <div class="product-description">
-                        <span>Tamano: </span>
-                        <p>{{ $items1 }}</p>
-                        <div class="clear"> </div>
-                    </div>
-                    <div class="product-description">
-                        <h3>Observaciones:</h3>
-                        <p> {{ $mascota->observaciones}}</p>
-                        <a href="{{ route('mascotas.edit', $mascota->id ) }}">Editar</a>
-                    </div>
-                    <br><br><br>
-                </div>
 
-                <div class="clear"> </div>
+                        <h5><i>Raza:</i></h5>
+                        <p>{{ $items }} </p>
+                        <h5><i>Tamano: </i></h5>
+                        <p>{{ $items1 }}</p>
+                        <h5><i>Observaciones:</i></h5>
+                        <p>{{ $mascota->observaciones}}   <p>
+                    </div>
+                     <div class="social">
+                        <div class="description">
+                            <h5><i>Opciones</i></h5>
+                             <br>
+                            <div class="occasion-cart">
+                                <a class="item_add" href="{{ route('mascotas.edit', $mascota->id ) }}">Cancelar </a>
+                            </div>
+                            <br>
+                            <div class="occasion-cart">
+                                <a class="item_add" href="{{ route('mascotas.edit', $mascota->id ) }}">Editar informacion </a>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
 
 @endsection
 

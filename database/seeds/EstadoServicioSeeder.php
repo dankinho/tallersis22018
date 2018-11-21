@@ -11,7 +11,7 @@ class EstadoServicioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('estado_servicio_mascota')->insert([
+        DB::table('estado_servicio_mascotas')->insert([
 
             'estado' => 'Pendiente',
 
@@ -19,7 +19,7 @@ class EstadoServicioSeeder extends Seeder
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
         ]);
-        DB::table('estado_servicio_mascota')->insert([
+        DB::table('estado_servicio_mascotas')->insert([
 
             'estado' => 'Pasadp',
 
@@ -27,7 +27,7 @@ class EstadoServicioSeeder extends Seeder
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
         ]);
-        DB::table('estado_servicio_mascota')->insert([
+        DB::table('estado_servicio_mascotas')->insert([
 
             'estado' => 'Cancelado',
 
@@ -35,7 +35,7 @@ class EstadoServicioSeeder extends Seeder
             'tx_id' =>'1',
             'tx_host'  =>'0.0.0.0'
         ]);
-        DB::table('estado_servicio_mascota')->insert([
+        DB::table('estado_servicio_mascotas')->insert([
 
             'estado' => 'En proceso',
 

@@ -26,9 +26,9 @@
                     <div class="new-collections-grid1 new-collections-grid1-image-width animated wow slideInUp" data-wow-delay=".5s">
                         <div class="new-collections-grid1-image">
                             @if($cuid->find($i+1)->tipo_serv==1)
-                            <a href="{{ route('cuidador.vista') }}" class="product-image"><img src="images/5.jpg" alt=" " class="img-responsive" /></a>
+                            <a href="{{ route('cuidador.vista') }}" class="product-image"><img width="500px" height="200px" src="images/triumph_big1.jpg" alt=" " class="img-responsive" /></a>
                                 @elseif($cuid->find($i+1)->tipo_serv==2)
-                                <a href="{{ route('cuidador.vista2') }}" class="product-image"><img src="images/5.jpg" alt=" " class="img-responsive" /></a>
+                                <a href="{{ route('cuidador.vista2') }}" class="product-image"><img width="500px" height="200px" src="images/triumph_big1.jpg" alt=" " class="img-responsive" /></a>
                             @endif
                             <div class="new-collections-grid1-image-pos new-collections-grid1-image-pos1">
                                 @if($cuid->find($i+1)->tipo_serv==1)
