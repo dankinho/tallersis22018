@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\SoftDeletes; //línea necesaria
 class Servicio extends Model
 {
@@ -32,10 +31,4 @@ class Servicio extends Model
         return  Servicio::where('id','=',$id)
             ->value('descripcion') ;
     }
-=======
-
-class Servicio extends Model
-{
-    //
->>>>>>> 3f36fe1b89481b4e7f0720536cbe2379c7157d0f
 }
