@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
     <div class="container">
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('reason') ? ' has-error' : '' }}">
+                            <!--<div class="form-group{{ $errors->has('reason') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">Tipo de Casa:</label>
 
                                 <div class="col-md-6">
@@ -97,7 +97,7 @@
                                     </span>
                                     @endif
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">Superficie de zonas exteriores:</label>
@@ -114,6 +114,27 @@
                             </div>
 
                             <label class="col-md-4 control-label">Coordenadas</label>
+                            <br>
+                            <br>
+
+                            <?php
+                            $config = array();
+                            $config['center'] = 'auto';
+
+                            app('map')->initialize($config);
+
+                            $marker = array();
+                            $marker['position'] = '-16.5003, -68.1515';
+                            $marker['draggable'] = true;
+                            $marker['ondragend'] = 'alert(\'You just dropped me at: \' + event.latLng.lat() + \', \' + event.latLng.lng());';
+                            app('map')->add_marker($marker);
+
+                            $map = app('map')->create_map();
+                            echo "<html><head><script type='text/javascript'>var centreGot = false;</script>".$map['js']."</head><body>".$map['html']."</body></html>";
+                            ?>
+
+                            <br>
+                            <br>
 
                             <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">Longitud:</label>
@@ -225,6 +246,7 @@
                 </div>
             </div>
         </div>
+
         <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
     </div>
 @endsection
