@@ -22,8 +22,8 @@ class CrearTablaServicios extends Migration
             $table->decimal('tamano_campo_exterior', 5, 2);
             $table->boolean('existencia_perro_casa');
             $table->integer('cant_perro_casa');
-            $table->decimal('coor_longitud', 10, 10);
-            $table->decimal('coor_latitud', 10, 10);
+            $table->float('coor_longitud', 10, 20);
+            $table->float('coor_latitud', 10, 20);
             $table->decimal('coor_altitud', 10, 10);
             $table->timestamp('tx_fecha');
             $table->integer('tx_id');
