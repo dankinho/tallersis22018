@@ -92,7 +92,12 @@ class CuidadorController extends Controller
         $datosservicio->tx_fecha = $txf;
         $datosservicio->tx_id = $txid;
         $datosservicio->tx_host = $txhost;
-        $servicios->save();
+        echo Servicio::where('id', 4)->get();
+        if(Servicio::where('id', 4)->get()=='[]')
+        {
+            $servicios->id = 4;
+            $servicios->save();
+        }
         $datosservicio->save();
         return redirect('/home');
     }
@@ -140,6 +145,17 @@ class CuidadorController extends Controller
     public function destroy($id)
     {
         //
+        $servicio = Servicio::where('tipo_serv', $id);
+        $servicio->delete();
+        Servicio::onlyTrashed()->where('tipo_serv', $id)->forceDelete();
+        if(Servicio::where('id', 4))
+        {
+            Servicio::where('id', 4)->update(['id'=>3]);
+
+        }
+        return redirect('/home');
+
+
     }
 
     public function vista()
