@@ -13,7 +13,7 @@ class CrearTablaComentarios extends Migration
      */
     public function up()
     {
-        Schema::create('comentarioalojamientos', function (Blueprint $table) {
+        Schema::create('comentario_alojamientos', function (Blueprint $table) {
             $table->string('nombre',100);
             $table->string('comentario',250);
             $table->increments('id');

@@ -92,7 +92,12 @@ class CuidadorController extends Controller
         $datosservicio->tx_fecha = $txf;
         $datosservicio->tx_id = $txid;
         $datosservicio->tx_host = $txhost;
-        $servicios->save();
+        echo Servicio::where('id', 4)->get();
+        if(Servicio::where('id', 4)->get()=='[]')
+        {
+            $servicios->id = 4;
+            $servicios->save();
+        }
         $datosservicio->save();
         return redirect('/home');
     }
@@ -140,20 +145,35 @@ class CuidadorController extends Controller
     public function destroy($id)
     {
         //
+        $servicio = Servicio::where('tipo_serv', $id);
+        $servicio->delete();
+        Servicio::onlyTrashed()->where('tipo_serv', $id)->forceDelete();
+        if(Servicio::where('id', 4))
+        {
+            Servicio::where('id', 4)->update(['id'=>3]);
+
+        }
+        return redirect('/home');
+
+
     }
 
     public function vista()
     {
         $num3 = Servicio::count();
         $cuid3 = Servicio::all();
-        return view('cuidador.vista', ['num'=>$num3, 'cuid'=>$cuid3]);
+        $numal = ComentarioAlojamiento::count();
+        $obs = ComentarioAlojamiento::all();
+        return view('cuidador.vista', ['num2'=>$numal, 'cuid2'=>$obs, 'num'=>$num3, 'cuid'=>$cuid3]);
     }
 
     public function vista2()
     {
         $num4 = Servicio::count();
         $cuid4 = Servicio::all();
-        return view('cuidador.vista2', ['num'=>$num4, 'cuid'=>$cuid4]);
+        $numal = ComentarioPaseo::count();
+        $obs = ComentarioPaseo::all();
+        return view('cuidador.vista2', ['num2'=>$numal, 'cuid2'=>$obs, 'num'=>$num4, 'cuid'=>$cuid4]);
     }
 
     public function com(Request $request)

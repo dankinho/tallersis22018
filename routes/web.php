@@ -19,6 +19,29 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/map', function(){
+    $config = array();
+    $config['center'] = 'auto';
+    $config['onboundschanged'] = 'if (!centreGot) {
+            var mapCentre = map.getCenter();
+            marker_0.setOptions({
+                position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
+            });
+        }
+        centreGot = true;';
+
+    app('map')->initialize($config);
+
+    // set up the marker ready for positioning
+    // once we know the users location
+    $marker = array();
+    app('map')->add_marker($marker);
+
+    $map = app('map')->create_map();
+    echo "<html><head><script type='text/javascript'>var centreGot = false;</script>".$map['js']."</head><body>".$map['html']."</body></html>";
+
+});
+
 Route::resource('empresas','EmpresasController');
 Route::resource('talonarios','TalonariosController');
 Route::resource('reservas','Reservas_serviciosController');
@@ -33,8 +56,8 @@ Route::resource('mascotas','MascotaController');
 Route::resource('/cuidador', 'CuidadorController');
 Route::get('/cuid/vista', array('as' => 'cuidador.vista', 'uses' => 'CuidadorController@vista'));
 Route::get('/cuid/vista2', array('as' => 'cuidador.vista2', 'uses' => 'CuidadorController@vista2'));
-Route::post('/cuid/com', array('as' => 'cuidador.com', 'uses' => 'CuidadorController@com'));
-Route::post('/cuid/com2', array('as' => 'cuidador.com2', 'uses' => 'CuidadorController@com2'));
+Route::resource('/comentario', 'ComentarioController');
+Route::resource('/comentario2', 'Comentario2Controller');
 
 
 Route::resource('serviciosMascotas','ServiciosMascotaController');
