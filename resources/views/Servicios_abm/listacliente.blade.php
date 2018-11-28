@@ -33,7 +33,7 @@
         <thead>
         <tr>
             <th width="20px">ID</th>
-            <th>Cuidador </th>
+            <th>Titulo </th>
             <th>Descripcion de servicio </th>
             <th>Precio paseo</th>
             <th>Precio alojamiento </th>
@@ -68,6 +68,7 @@
 
 
             </tr>
+
         @endforeach
         </tbody>
 

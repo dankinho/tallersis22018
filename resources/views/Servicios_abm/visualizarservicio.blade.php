@@ -13,17 +13,19 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Crear nueva solicitud de permiso o vacacion</div>
+                    <div class="panel-heading">Servicios</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/cuidador') }}">
                             {!! csrf_field() !!}
+                            <label class="col-md-4 control-label">Titulo:</label>
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">{{ $servicios->titulo }}</label>
+                                <label class="col-md-4 control-label">  {{ $servicios->titulo }}</label>
 
                             </div>
-                            <a  class="product-image"><img width="200px" height="500px" src="../../images/1234.jpeg" alt=" " class="img-responsive" /></a>
-
+<center>
+                            <a  class="product-image"><img width="400px" height="500px" src="../../images/1234.jpeg" alt=" " class="img-responsive" /></a>
+</center>
                             <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
 
                                 <div class="col-md-6">
@@ -126,7 +128,11 @@
 
                 </div>
             </div>
+                <button type="submit" class="btn btn-success">Adquirir paseo</button>
+                <button type="submit" class="btn btn-success">Adquirir alojamiento</button>
         </div>
         <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
+
+    </div>
     </div>
 @endsection

@@ -49,7 +49,7 @@ Route::resource('servicios','abmservicios');
 Route::get('/listacliente','abmservicios@listaclientes');
 
 Route::resource('/altas','abmservicios');
-
+Route::get('/adquirir', 'abmservicios@adquirir');
 Route::resource('mascotas','MascotaController');
 
 
@@ -58,6 +58,8 @@ Route::get('/cuid/vista', array('as' => 'cuidador.vista', 'uses' => 'CuidadorCon
 Route::get('/cuid/vista2', array('as' => 'cuidador.vista2', 'uses' => 'CuidadorController@vista2'));
 Route::resource('/comentario', 'ComentarioController');
 Route::resource('/comentario2', 'Comentario2Controller');
+
+
 
 
 Route::resource('serviciosMascotas','ServiciosMascotaController');

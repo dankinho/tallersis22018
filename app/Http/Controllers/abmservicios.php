@@ -9,31 +9,33 @@ use Illuminate\Support\Facades\DB;
 class abmservicios extends Controller
 {
 
-    function index (Request $request)
+    function index(Request $request)
     {
-        $servicios = Servicio::orderBy('id','ASC')->paginate()
-            ->where('cat_id_estado_servicio',22);
+        $servicios = Servicio::orderBy('id', 'ASC')->paginate()
+            ->where('cat_id_estado_servicio', 22);
 
 
         return view('Servicios_abm.index', compact('servicios'));
 
     }
-    public function eliminar ($id)
+
+    public function eliminar($id)
     {
         $e = Servicio::find($id);
-        $e-> cat_id_estado_servicio = 0;
-        $e-> save();
+        $e->cat_id_estado_servicio = 0;
+        $e->save();
         return redirect()->action('abmservicios@index');
 
     }
-    public  function create()
+
+    public function create()
     {
         return view('Servicios_abm.altas');
     }
 
-    public  function store(Request $request)
+    public function store(Request $request)
     {
-        $a= new Servicio();
+        $a = new Servicio();
         $a->id_comision = 1;
         $a->id_datos_servicio = 1;
         $a->cat_id_tipo_servicio = 21;
@@ -46,51 +48,60 @@ class abmservicios extends Controller
         $a->tx_id = '1';
         $a->tx_host = '0.0.0.0';
         $a->save();
-       //  return $request;
-        return redirect()->action('abmservicios@index');  
+        //  return $request;
+        return redirect()->action('abmservicios@index');
     }
-    public function edit ($id)
+
+    public function edit($id)
     {
-        $editar =Servicio::find ($id);
-            return view('Servicios_abm.editar' ,compact('editar') );
+        $editar = Servicio::find($id);
+        return view('Servicios_abm.editar', compact('editar'));
     }
-    public function  update (Request $request)
+
+    public function update(Request $request)
     {
-                     //  Servicio::find($id2)->update($request->all());
-                     //  return redirect()->action('abmservicios@index');
+        //  Servicio::find($id2)->update($request->all());
+        //  return redirect()->action('abmservicios@index');
 
 
-                               $id= $request->input('id');
-                               $e = Servicio::find($id);
-                                $e-> titulo=    $request->input('titulo');
-                                    $e-> descripcion=    $request->input('descripcion');
-                                        $e-> precio_paseo=    $request->input('precio_paseo');
-                                            $e-> precio_alojamiento=    $request->input('precio_alojamiento');
-                                $e-> save();
-          return redirect()->action('abmservicios@index');
-          //afafa
+        $id = $request->input('id');
+        $e = Servicio::find($id);
+        $e->titulo = $request->input('titulo');
+        $e->descripcion = $request->input('descripcion');
+        $e->precio_paseo = $request->input('precio_paseo');
+        $e->precio_alojamiento = $request->input('precio_alojamiento');
+        $e->save();
+        return redirect()->action('abmservicios@index');
+        //afafa
     }
 
-    public function visualizar($id){
-        $servicios= DB::table('servicios')
-            ->join('datos_servicios','datos_servicios.id', '=', 'servicios.id_datos_servicio')
-            ->join('servicios_mascotas','servicios.id','=','servicios_mascotas.id_servicio')
-            ->join('mascotas','mascotas.id','=','servicios_mascotas.id_mascota')
-            ->where('servicios.id','=',$id)
+    public function visualizar($id)
+    {
+        $servicios = DB::table('servicios')
+            ->join('datos_servicios', 'datos_servicios.id', '=', 'servicios.id_datos_servicio')
+            ->join('servicios_mascotas', 'servicios.id', '=', 'servicios_mascotas.id_servicio')
+            ->join('mascotas', 'mascotas.id', '=', 'servicios_mascotas.id_mascota')
+            ->where('servicios.id', '=', $id)
             ->first();
         return view('Servicios_abm.visualizarservicio', compact('servicios'));
     }
 
-    public function listaclientes(){
-        $servicios1 = Servicio::orderBy('id','ASC')->paginate()
-            ->where('cat_id_estado_servicio',22);
+    public function listaclientes()
+    {
+        $servicios1 = Servicio::orderBy('id', 'ASC')->paginate()
+            ->where('cat_id_estado_servicio', 22);
 
-        $servicios= DB::table('servicios')
-            ->orderBy('id','ASC')
+        $servicios = DB::table('servicios')
+            ->orderBy('id', 'ASC')
             ->paginate();
 
 
         return view('Servicios_abm.listacliente', compact('servicios'));
     }
 
+    public function adquirir()
+    {
+        return view('Servicios_abm.adquirir');
+
+    }
 }
