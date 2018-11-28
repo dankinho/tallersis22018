@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Servicio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class abmservicios extends Controller
 {
@@ -68,6 +69,28 @@ class abmservicios extends Controller
                                 $e-> save();
           return redirect()->action('abmservicios@index');
           //afafa
+    }
+
+    public function visualizar($id){
+        $servicios= DB::table('servicios')
+            ->join('datos_servicios','datos_servicios.id', '=', 'servicios.id_datos_servicio')
+            ->join('servicios_mascotas','servicios.id','=','servicios_mascotas.id_servicio')
+            ->join('mascotas','mascotas.id','=','servicios_mascotas.id_mascota')
+            ->where('servicios.id','=',$id)
+            ->first();
+        return view('Servicios_abm.visualizarservicio', compact('servicios'));
+    }
+
+    public function listaclientes(){
+        $servicios1 = Servicio::orderBy('id','ASC')->paginate()
+            ->where('cat_id_estado_servicio',22);
+
+        $servicios= DB::table('servicios')
+            ->orderBy('id','ASC')
+            ->paginate();
+
+
+        return view('Servicios_abm.listacliente', compact('servicios'));
     }
 
 }

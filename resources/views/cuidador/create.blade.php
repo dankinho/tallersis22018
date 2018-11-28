@@ -1,4 +1,12 @@
-@extends('layouts.app')
+@extends('layout2')
+<?php
+/**
+ * Created by PhpStorm.
+ * User: chris
+ * Date: 07-11-18
+ * Time: 06:52 PM
+ */
+?>
 
 @section('content')
     <div class="container">
