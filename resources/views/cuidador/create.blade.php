@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
     <div class="container">
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('reason') ? ' has-error' : '' }}">
+                            <!--<div class="form-group{{ $errors->has('reason') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">Tipo de Casa:</label>
 
                                 <div class="col-md-6">
@@ -97,7 +97,7 @@
                                     </span>
                                     @endif
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">Superficie de zonas exteriores:</label>
@@ -114,6 +114,32 @@
                             </div>
 
                             <label class="col-md-4 control-label">Coordenadas</label>
+                            <br>
+                            <br>
+
+                            <?php
+                            $config = array();
+                            $config['center'] = 'auto';
+
+                            app('map')->initialize($config);
+
+                            $marker = array();
+                            $marker['position'] = '-16.5003, -68.1515';
+                            $marker['draggable'] = true;
+                            $marker['ondragend'] = 'var a = event.latLng.lat(); var b = event.latLng.lng();
+                            document.getElementById("longitud").value = b;
+                            document.getElementById("latitud").value = a;';
+                            $marker['er'] = 'document.getElementById("demo").innerHTML = a;';
+                            app('map')->add_marker($marker);
+
+                            echo "<script>document.getElementById('demo').innerHTML = a;</script>";
+
+                            $map = app('map')->create_map();
+                            echo "<html><head><script type='text/javascript'>var centreGot = false;</script>".$map['js']."</head><body>".$map['html']."</body></html>";
+                            ?>
+
+                            <br>
+                            <br>
 
                             <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">Longitud:</label>
@@ -143,19 +169,6 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Altitud:</label>
-
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="altitud" id="altitud" value="{{ old('days') }}">
-
-                                    @if ($errors->has('days'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('days') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">¿Tiene perro en casa?</label>
@@ -206,6 +219,7 @@
                             <input type="hidden" name="cat_id_estado_servicio" value="22">
                             <input type="hidden" name="tx_fecha" value="2018-10-05 17:55:08">
                             <input type="hidden" name="tx_id" value="1">
+                            <input type="hidden" name="altitud" value="0.5">
                             <input type="hidden" name="tx_host" value="0.0.0.0">
                             <input type="hidden" name="tipo_casa" value="17">
                             <input type="hidden" name="tipo_campo" value="19">
@@ -225,6 +239,7 @@
                 </div>
             </div>
         </div>
+
         <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
     </div>
 @endsection

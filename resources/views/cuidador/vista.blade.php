@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout2')
 
 @section('content')
     <div class="container">
@@ -70,8 +70,45 @@
             <br>
             <br>
             <br>
+            <br>
 
-            <form class="form-horizontal" method="post" action="{{ url('/cuid/com2') }}">
+            <h1>Comentarios</h1>
+
+            <br><br>
+
+            @for($i=0; $i<$num2;$i++)
+                <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Nombre:</label>
+
+                    <div class="col-md-6">
+                        <label class="col-md-4 control-label">{{ $cuid2->find($i+1)->nombre }}</label>
+
+                        @if ($errors->has('days'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('days') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Comentario {{ $i+1 }}:</label>
+
+                    <div class="col-md-6">
+                        <label class="col-md-4 control-label">{{ $cuid2->find($i+1)->comentario }}</label>
+
+                        @if ($errors->has('days'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('days') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+                @endfor
+
+            <div>
+            <form class="form-horizontal" method="post" action="{{ url('comentario') }}">
+                {{csrf_field()}}
 
             <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
                 <label class="col-md-4 control-label">Nombre:</label>

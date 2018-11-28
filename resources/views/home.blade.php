@@ -32,9 +32,25 @@
                             @endif
                             <div class="new-collections-grid1-image-pos new-collections-grid1-image-pos1">
                                 @if($cuid->find($i+1)->tipo_serv==1)
-                                    <a href="{{ route('cuidador.vista') }}">Quick View</a>
+                                    <a href="{{ route('cuidador.vista') }}">Detalles</a>
+                                    <div class="new-collections-grid1-left simpleCart_shelfItem">
+                                        <p>
+                                        <form action="{{ route('cuidador.destroy', 1) }}" method="POST">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button>Delete User</button>
+                                        </form></p>
+                                    </div>
                                 @elseif($cuid->find($i+1)->tipo_serv==2)
-                                    <a href="{{ route('cuidador.vista2') }}">Quick View</a>
+                                    <a href="{{ route('cuidador.vista2') }}">Detalles</a>
+                                    <div class="new-collections-grid1-left simpleCart_shelfItem">
+                                        <p>
+                                        <form action="{{ route('cuidador.destroy', 2) }}" method="POST">
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                            {{ csrf_field() }}
+                                            <button>Delete User</button>
+                                        </form></p>
+                                    </div>
                                 @endif
 
                             </div>

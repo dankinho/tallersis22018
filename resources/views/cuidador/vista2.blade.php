@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout2')
 
 @section('content')
     <div class="container">
@@ -71,7 +71,8 @@
             <br>
             <br>
 
-            <form class="form-horizontal" role="form" method="POST" action="{{ url('/cuid/com2') }}">
+            <form class="form-horizontal" role="form" method="POST" action="{{ url('comentario2') }}">
+                {{csrf_field()}}
 
             <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
                 <label class="col-md-4 control-label">Nombre:</label>
@@ -87,28 +88,86 @@
                 </div>
             </div>
 
-            <div class="form-group{{ $errors->has('note') ? ' has-error' : '' }}">
-                <label class="col-md-4 control-label">Agregar comentario:</label>
-                <div class="col-md-6">
-                    <textarea class="form-control" name="coment" rows="5" id="coment" value="{{ old('note') }}"></textarea>
-                    @if ($errors->has('note'))
-                        <span class="help-block">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <h1>Comentarios</h1>
+
+                <br><br>
+
+                @for($i=0; $i<$num2;$i++)
+                    <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
+                        <label class="col-md-4 control-label">Nombre:</label>
+
+                        <div class="col-md-6">
+                            <label class="col-md-4 control-label">{{ $cuid2->find($i+1)->nombre }}</label>
+
+                            @if ($errors->has('days'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('days') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
+                        <label class="col-md-4 control-label">Comentario {{ $i+1 }}:</label>
+
+                        <div class="col-md-6">
+                            <label class="col-md-4 control-label">{{ $cuid2->find($i+1)->comentario }}</label>
+
+                            @if ($errors->has('days'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('days') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+                @endfor
+
+                <div>
+                    <form class="form-horizontal" method="post" action="{{ url('comentario') }}">
+                        {{csrf_field()}}
+
+                        <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Nombre:</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="nombre" id="nombre" value="{{ old('days') }}">
+
+                                @if ($errors->has('days'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('days') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('note') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Agregar comentario:</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" name="coment" rows="5" id="coment" value="{{ old('note') }}"></textarea>
+                                @if ($errors->has('note'))
+                                    <span class="help-block">
                                         <strong>{{ $errors->first('note') }}</strong>
                                     </span>
-                    @endif
-                </div>
-            </div>
+                                @endif
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-4">
-                        <button type="submit" class="btn btn-primary" onclick="">
-                            Comentar
-                        </button>
-                    </div>
-                </div>
-            </form>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary" onclick="">
+                                    Comentar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
+                </div>
+                <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
         </div>
-        <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
-    </div>
 @endsection
