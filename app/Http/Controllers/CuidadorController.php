@@ -112,7 +112,7 @@ class CuidadorController extends Controller
      */
     public function show($id)
     {
-        //
+        //gg
     }
 
     /**
