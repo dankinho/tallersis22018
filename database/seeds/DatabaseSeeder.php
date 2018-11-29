@@ -29,6 +29,11 @@ class DatabaseSeeder extends Seeder
         $this->call(EstadoServicioSeeder::class);
         $this->call(ServiciosMascotaSeeder::class);
 
+        $this->call(EstadoOpcionesTablaSeeder::class);
+
+        $this->call(CancelacionesTablaSeeder::class);
+        $this->call(ComentariosTablaSeeder::class);
+
     }
     protected  function  truncateTables(array  $tables) //para vaciar tablas
     {

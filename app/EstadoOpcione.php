@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes; //línea necesaria
-class cancelacionServiciosMascota extends Model
+class EstadoOpcione extends Model
 {
     use SoftDeletes; //Implementamos
 
     protected $dates = ['deleted_at']; //Registramos la nueva columna
     //
     protected $fillable = [
-        'id_estado', 'fecha_cancelacion', 'justificacion', 'tx_fecha', 'tx_id', 'tx_host',
+        'estado',   'tx_fecha', 'tx_id', 'tx_host',
     ];
 }

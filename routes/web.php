@@ -60,6 +60,7 @@ Route::get('/cuid/vista2', array('as' => 'cuidador.vista2', 'uses' => 'CuidadorC
 Route::resource('/comentario', 'ComentarioController');
 Route::resource('/comentario2', 'Comentario2Controller');
 
+Route::resource('/comentarios', 'ServicioMascotaComentariosController');
 
 
 
