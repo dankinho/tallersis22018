@@ -84,9 +84,11 @@
                                 <p>Descripcion: </p>
                                 <h4>{{ $cuid->find($i+1)->descripcion }}</h4>
                                 <p>Precios: </p>
-                                <h4>Paseo por hora : Bs. {{ $cuid->find($i+1)->precio_paseo }}   </h4>
-
+                                @if($cuid->find($i+1)->tipo_serv==1)
                                 <h4>Alojamiento por dia: Bs. {{ $cuid->find($i+1)->precio_alojamiento }} </h4>
+                                @elseif($cuid->find($i+1)->tipo_serv==2)
+                                    <h4>Paseo por hora : Bs. {{ $cuid->find($i+1)->precio_paseo }}   </h4>
+                                @endif
                                 <div class="new-collections-grid1-left simpleCart_shelfItem">
                                     <p>
                                         <a class="item_add" href="#">Comprar</a></p>
