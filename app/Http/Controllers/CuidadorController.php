@@ -99,6 +99,7 @@ class CuidadorController extends Controller
                 $servicios->save();
             }
         }
+        else $servicios->save();
         $datosservicio->save();
         return redirect('/home');
     }
