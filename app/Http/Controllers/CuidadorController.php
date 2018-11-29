@@ -93,10 +93,11 @@ class CuidadorController extends Controller
         $datosservicio->tx_id = $txid;
         $datosservicio->tx_host = $txhost;
         echo Servicio::where('id', 4)->get();
-        if(Servicio::where('id', 4)->get()=='[]')
-        {
-            $servicios->id = 4;
-            $servicios->save();
+        if(Servicio::where('id', 3)->get()!='[]') {
+            if (Servicio::where('id', 4)->get() == '[]') {
+                $servicios->id = 4;
+                $servicios->save();
+            }
         }
         $datosservicio->save();
         return redirect('/home');
