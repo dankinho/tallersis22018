@@ -71,7 +71,7 @@
             <br>
             <br>
 
-            <form class="form-horizontal" role="form" method="POST" action="{{ url('comentario2') }}">
+            <!--<form class="form-horizontal" role="form" method="POST" action="{{ url('comentario2') }}">
                 {{csrf_field()}}
 
             <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
@@ -86,7 +86,7 @@
                                     </span>
                     @endif
                 </div>
-            </div>
+            </div>-->
 
                 <br>
                 <br>
@@ -129,7 +129,7 @@
                 @endfor
 
                 <div>
-                    <form class="form-horizontal" method="post" action="{{ url('comentario') }}">
+                    <form class="form-horizontal" method="post" action="{{ url('comentario2') }}">
                         {{csrf_field()}}
 
                         <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
