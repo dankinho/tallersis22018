@@ -8,6 +8,7 @@ use App\EstadoServicioMascota;
 use Illuminate\Support\Facades\Auth;
 use App\item;
 use App\Mascota;
+use App\ServicioMascotaComentario;
 class ServiciosMascotaController extends Controller
 {
     public function  index()
@@ -37,8 +38,13 @@ class ServiciosMascotaController extends Controller
 
         $nombreMascota = Mascota::nombreMascota($mascotaServ->id_mascota);
         $tipoServicio = item::itemsshow($mascotaServ->cat_id_tipo_servicio);
+        $aut= Auth::user();
+        $comentarios = ServicioMascotaComentario::where('id_usuario','=',1)->where('id_servicio_mascota','=',1)
+            ->orderBy('id','DESC')
+            ->paginate(6);
+
         return view('serviciosMascotas.show' ,compact('mascotaServ')
-            ,compact('titulo' ,'desc','estado','nombreMascota','tipoServicio' ));
+            ,compact('titulo' ,'desc','estado','nombreMascota','tipoServicio', 'comentarios' ));
 
     }
 

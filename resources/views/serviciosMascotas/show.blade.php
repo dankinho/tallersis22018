@@ -98,56 +98,39 @@
             <div class="grid_3 grid_5 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
 
                 <h3>Comentarios</h3>
+                @foreach($comentarios as $cometario)
 
                 <div class="well">
                     <tr>
                         <td>Usuario</td>
-                        <td><span class="badge badge-warning">Cristian2000</span></td>
+                        <td><span class="badge badge-warning"> {{ $cometario->id_usuario }}</span></td>
                     </tr>
                     <tr>
                         <td>Calificacion</td>
-                        <td><span class="badge">3/5</span></td>
+                        <td><span class="badge">{{ $cometario->calificacion}} /5</span></td>
                     </tr>
                     <tr>
                         <td>Fecha</td>
-                        <td><span class="badge">10/03/2018</span></td>
+                        <td><span class="badge">{{ $cometario->fecha_hora}} </span></td>
                     </tr>
                     <hr>
-                    <i>Comentario:</i> <br>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                    <i>Comentario:</i> <br> {{ $cometario->comentario }}
                 </div>
-                <div class="well">
-                    <tr>
-                        <td>Usuario</td>
-                        <td><span class="badge badge-warning">Cristian2000</span></td>
-                    </tr>
-                    <tr>
-                        <td>Calificacion</td>
-                        <td><span class="badge">3/5</span></td>
-                    </tr>
-                    <tr>
-                        <td>Fecha</td>
-                        <td><span class="badge">10/03/2018</span></td>
-                    </tr>
-                    <hr>
-                    <i>Comentario:</i> <br>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                </div>
-                <div class="well">
-                    <tr>
-                        <td>Usuario</td>
-                        <td><span class="badge badge-warning">Cristian2000</span></td>
-                    </tr>
-                    <tr>
-                        <td>Calificacion</td>
-                        <td><span class="badge">3/5</span></td>
-                    </tr>
-                    <tr>
-                        <td>Fecha</td>
-                        <td><span class="badge">10/03/2018</span></td>
-                    </tr>
-                    <hr>
-                    <i>Comentario:</i> <br>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                </div>
+                @endforeach
+
             </div>
+            <h2 align="center" data-wow-delay=".2s">
+                <a href="{{route('comentarios.create')}}"  class="item_add"  >
+                    <span class="label label-warning">Agregar tu comentario
+                    </span>
+                </a>
+            </h2>
+            <h2 align="center" data-wow-delay=".2s">
+                <a href="{{ route('mascotas.create') }}"  class="item_add"  >
+                    <span class="label label-warning">Nueva mascota
+                    </span>
+                </a>
+            </h2>
         </div>
     </div>
 

@@ -10,7 +10,8 @@ class MascotaController extends Controller
 {
     public function  index()
     {
-        $mascotas = Mascota::where('id_clientes','=',Auth::user()->id)
+        $id1 = Auth::user()->id;
+        $mascotas = Mascota::where('id_clientes','=',$id1)
         ->orderBy('id','DESC')
             ->paginate(6);
 
