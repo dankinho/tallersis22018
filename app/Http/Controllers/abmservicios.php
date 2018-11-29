@@ -40,6 +40,7 @@ class abmservicios extends Controller
         $a->id_datos_servicio = 1;
         $a->cat_id_tipo_servicio = 21;
         $a->cat_id_estado_servicio = 22;
+        $a->tipo_serv = 0;
         $a->titulo = $request->input('titulo');
         $a->descripcion = $request->input('descripcion');
         $a->precio_paseo = $request->input('precio_paseo');
@@ -104,4 +105,10 @@ class abmservicios extends Controller
         return view('Servicios_abm.adquirir');
 
     }
+    public function adquirir1()
+    {
+        return view('Servicios_abm.adquirir1');
+
+    }
+
 }

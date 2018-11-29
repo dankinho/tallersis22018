@@ -21,9 +21,7 @@
                             Lista de servicios
                         </h3>
                     </td>
-                    <td>
-                        <a  href="{{url('altas/create')}}" class="btn btn-primary pull-right">Nuevo</a>
-                    </td>
+
                 </h2></div>
         </tr>
     </table>

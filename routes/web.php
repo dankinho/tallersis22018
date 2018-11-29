@@ -50,6 +50,7 @@ Route::get('/listacliente','abmservicios@listaclientes');
 
 Route::resource('/altas','abmservicios');
 Route::get('/adquirir', 'abmservicios@adquirir');
+Route::get('/adquirir1', 'abmservicios@adquirir1');
 Route::resource('mascotas','MascotaController');
 
 
