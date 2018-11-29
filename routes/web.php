@@ -46,9 +46,11 @@ Route::resource('empresas','EmpresasController');
 Route::resource('talonarios','TalonariosController');
 Route::resource('reservas','Reservas_serviciosController');
 Route::resource('servicios','abmservicios');
+Route::get('/listacliente','abmservicios@listaclientes');
 
 Route::resource('/altas','abmservicios');
-
+Route::get('/adquirir', 'abmservicios@adquirir');
+Route::get('/adquirir1', 'abmservicios@adquirir1');
 Route::resource('mascotas','MascotaController');
 
 
@@ -59,10 +61,12 @@ Route::resource('/comentario', 'ComentarioController');
 Route::resource('/comentario2', 'Comentario2Controller');
 
 
+
+
 Route::resource('serviciosMascotas','ServiciosMascotaController');
 Route::get('items1/{id}','ItemController@itemsCatalogos');
 Route::get('showitem/{id}',  'ItemController@itemsshow');
 Route::get('eliminaritem/{id}',  'abmservicios@eliminar');
 Route::get('editar/{id}',  'abmservicios@edit');
+Route::get('visualserv/{id}',  'abmservicios@visualizar');
 Route::post('ruta','abmservicios@update');
-//sdfsd

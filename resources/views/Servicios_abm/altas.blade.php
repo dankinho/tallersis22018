@@ -28,28 +28,28 @@
                                     <div class="form-group">
                                         <label>Servicio</label>
                                         <label for="validationServer01"></label>
-                                        <input type="text" class="form-control is-valid" id="validationServer01" name="titulo" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                        <input type="text" class="form-control is-valid" id="validationServer01" name="titulo" placeholder="Ingrese " value="" required>
                                         <div class="valid-feedback">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>descripcion</label>
                                         <label for="validationServer01"></label>
-                                        <input type="text" class="form-control is-valid" id="validationServer01" name="descripcion" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                        <input type="text" class="form-control is-valid" id="validationServer01" name="descripcion" placeholder="Ingrese " value="" required>
                                         <div class="valid-feedback">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Precio paseo</label>
                                         <label for="validationServer01"></label>
-                                        <input type="text" class="form-control is-valid" id="validationServer01" name="precio_paseo" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                        <input type="text" class="form-control is-valid" id="validationServer01" name="precio_paseo" placeholder="Ingrese " value="" required>
                                         <div class="valid-feedback">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Precio alojamiento</label>
                                         <label for="validationServer01"></label>
-                                        <input type="text" class="form-control is-valid" id="validationServer01" name="precio_alojamiento" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                        <input type="text" class="form-control is-valid" id="validationServer01" name="precio_alojamiento" placeholder="Ingrese " value="" required>
                                         <div class="valid-feedback">
                                         </div>
                                     </div>

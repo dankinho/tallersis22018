@@ -33,8 +33,8 @@
             <thead>
             <tr>
                 <th width="20px">ID</th>
-                 <th>Servicio </th>
-                <th>Descripcion </th>
+                 <th>Cuidador </th>
+                <th>Descripcion de servicio </th>
                 <th>Precio paseo</th>
                 <th>Precio alojamiento </th>
                  <th colspan="3">&nbsp;</th>
