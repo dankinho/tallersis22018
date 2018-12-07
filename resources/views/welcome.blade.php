@@ -66,15 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </nav>
                 </div>
                 <div class="logo-nav-right">
-                    <div class="search-box">
-                        <div id="sb-search" class="sb-search">
-                            <form>
-                                <input class="sb-search-input" placeholder="Enter your search term..." type="search" id="search">
-                                <input class="sb-search-submit" type="submit" value="">
-                                <span class="sb-icon-search"> </span>
-                            </form>
-                        </div>
-                    </div>
+
                     <!-- search-scripts -->
                     <script src="js/classie.js"></script>
                     <script src="js/uisearch.js"></script>
@@ -101,7 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                      <div class="row animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms" align="center">
                         <div class="col-lg-6 in-gp-tl">
                             <div class="input-group">
-                                <h3>Duenio de la mascota</h3>
+                                <h3>Dueño de la mascota</h3>
                                 <p>Quiero que me cuiden a mi mascota</p>
                                 <h3> <a href="{{ url('/home') }}"><span class="label label-primary">Ingresar</span></a> </h3>
                             </div><!-- /input-group -->
@@ -129,7 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="input-group">
                                 <h3>Cuidador</h3>
                                 <p>Quiero cuidar mascotas</p>
-                                <h3 align="center"> <a href="{{ route('login') }}"><span class="label label-primary">Login</span></a> </h3>
+                                <h3 align="center"> <a  ><span class="label label-primary">Login</span></a> </h3>
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
@@ -145,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6 in-gp-tb">
                                 <div class="input-group">
-                                    <h3> <a href="{{ route('register') }}"><span class="label label-primary">Registrar</span></a> </h3>
+                                    <h3> <a  ><span class="label label-primary">Registrar</span></a> </h3>
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
                         </div><!-- /.row -->

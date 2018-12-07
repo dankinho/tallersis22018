@@ -15,6 +15,34 @@
     <!-- collections -->
     <div class="new-collections"   >
         <div class="container">
+            <h3 class="animated wow zoomIn" data-wow-delay=".5s">Datos personales</h3>
+            <div class="col-md-12  ">
+                <div class="new-collections-grid2   " data-wow-delay=".1s" >
+
+                    <div class="new-products-grid1-right" data-wow-delay=".2s">
+
+
+                        <h4>Nombre: </h4>
+                        <h5>{{ $usuarios->nombre_cliente }} {{ $usuarios->apellido_cliente }}</h5>
+                        <hr>
+                        <h4>Numero de identidad: </h4>
+                        <h5>  {{ $usuarios->num_doc_identidad }} </h5>
+                        <hr>
+                        <h4>Genero: </h4>
+                        <h5> {{ $usuarios->genero_cliente }} </h5>
+                        <hr>
+                        <h4>Direccion de domicilio: </h4>
+                        <h5> {{ $usuarios->direccion_casa }} # {{ $usuarios->direccion_numero_casa }}</h5>
+                        <hr>
+                        <h4>Macrodistrito: </h4>
+                        <h5>  {{$items}} </h5>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </div>
+
+            </div>
+
             <h3 class="animated wow zoomIn" data-wow-delay=".5s">Mis Mascotas</h3>
             <p class="est animated wow zoomIn" data-wow-delay=".5s">.</p>
             <div >

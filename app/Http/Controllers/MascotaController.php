@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Mascota;
+use App\Cliente;
 use Illuminate\Http\Request;
 use App\item;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +16,9 @@ class MascotaController extends Controller
         ->orderBy('id','DESC')
             ->paginate(6);
 
-
-         return view('mascotas.index', compact('mascotas' ));
+        $usuarios = Cliente::find(2);
+        $items = (string )item:: itemsshow($usuarios->cat_macrodistrito ); //macrodistrito
+         return view('mascotas.index', compact('mascotas','usuarios','items' ));
 
 
     }

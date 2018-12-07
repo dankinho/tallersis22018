@@ -72,19 +72,8 @@
                             <li class="active"><a href="{{ route('home') }}" class="act">Inicio</a></li>
                             <!-- Mega Menu -->
                             <li class="dropdown">
-                                <a href="{{ route('home') }}" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
-                                <ul class="dropdown-menu multi-column columns-3">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="{{route('servicios.index')}}">Alojamientos</a></li>
-                                                <li><a href="{{route('servicios.index')}}">Paseos</a></li>
-                                            </ul>
-                                        </div>
+                                <a href="{{ url('/listacliente ') }}" class="act"  >Servicios  </a>
 
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </ul>
                             </li>
 
                             <li><a href="{{route('serviciosMascotas.index')}}">Tus Servicios</a></li>

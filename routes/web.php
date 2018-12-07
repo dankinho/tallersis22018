@@ -46,6 +46,7 @@ Route::resource('empresas','EmpresasController');
 Route::resource('talonarios','TalonariosController');
 Route::resource('reservas','Reservas_serviciosController');
 Route::resource('servicios','abmservicios');
+Route::resource('clientes','ClienteController');
 Route::get('/listacliente','abmservicios@listaclientes');
 
 Route::resource('/altas','abmservicios');
@@ -71,3 +72,4 @@ Route::get('eliminaritem/{id}',  'abmservicios@eliminar');
 Route::get('editar/{id}',  'abmservicios@edit');
 Route::get('visualserv/{id}',  'abmservicios@visualizar');
 Route::post('ruta','abmservicios@update');
+
