@@ -50,7 +50,7 @@
                     <div class="col-md-12  ">
                         <div class="new-collections-grid2   " data-wow-delay=".1s" >
                             <div class="new-products-grid-right">
-                                <a href="single.html" class="product-image"><img width="200px" height="50px"  align="right" src="images/g1.jpg" alt=" " class="img-responsive" /></a>
+                                <a href="single.html" class="product-image"><img width="200px" height="50px"  align="right" src={{ $usuarios->url_imagen_mascota }} alt=" " class="img-responsive" /></a>
 
                             </div>
                             <div class="new-products-grid1-right" data-wow-delay=".2s">

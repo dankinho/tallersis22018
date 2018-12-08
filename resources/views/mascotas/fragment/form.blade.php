@@ -21,6 +21,23 @@
     {!! Form::label('tamano', 'Tamano') !!}  <br>
     {!! Form::select('cat_tamano',$items2,null,['id'=>'cat_tamano']) !!}
 </div>
+<div class="panel-body">
+    {!! Form::open(array('url' => 'upload', 'method' => 'post', 'files' => true, 'action'=>'../../storage/create')) !!}
+
+    <div class="form-group">
+        {!! Form::label('file', 'Foto de la mascota') !!}
+        <br>
+        <span class="btn btn-default btn-file">Selecciona el archivo {!! Form::file('file') !!}</span>
+    </div>
+
+</div>
+{{ Form::open(array('url' => 'upload', 'files' => true)) }}
+
+{{ Form::label('photo', 'Foto') }}
+
+<!--así se crea un campo file en laravel-->
+{{ Form::file('photo') }}
+
 <div class="form-group">
     {!! Form::label('observaciones', 'Observaciones (Alergias, vacunas)') !!}
     {!! Form::textarea('observaciones', null, ['class' => 'form-control']) !!}

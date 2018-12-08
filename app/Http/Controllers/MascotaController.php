@@ -44,13 +44,17 @@ class MascotaController extends Controller
         $mascota ->genero = $request->genero;
         $mascota ->cat_raza =  $request->cat_raza;
         $mascota ->cat_tamano =  $request->cat_tamano;
-        $mascota ->url_imagen_mascota ='www....';
+
+        $filename = $request->file('photo')->getClientOriginalName();
+
+
+        $mascota ->url_imagen_mascota =$request->file('photo')->getRealPath();
         $mascota ->observaciones = $request->observaciones;
         $mascota -> tx_fecha  ='2018-10-05 17:55:08';
         $mascota -> tx_id  ='1';
         $mascota ->  tx_host   ='0.0.0.0';
 
-
+        Image::make('photo')->save('public/images/notices/'.$filename);
         $mascota ->save();
         return redirect()->route('mascotas.index')
             ->with('info','La mascota fue actualizado');

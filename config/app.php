@@ -229,5 +229,13 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
     ],
+    /*
+    / Aplication Services Providers
+    */
+    Intervention\Image\ImageServiceProvider::class,
 
+    /*
+    / Aliases
+    */
+    'Image' => Intervention\Image\Facades\Image::class,
 ];

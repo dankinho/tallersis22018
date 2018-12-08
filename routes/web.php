@@ -72,4 +72,32 @@ Route::get('eliminaritem/{id}',  'abmservicios@eliminar');
 Route::get('editar/{id}',  'abmservicios@edit');
 Route::get('visualserv/{id}',  'abmservicios@visualizar');
 Route::post('ruta','abmservicios@update');
+Route::get('formulario', 'StorageController@index');
+Route::post('storage/create', 'StorageController@save');
+Route::get('storage/{archivo}', function ($archivo) {
+    $public_path = public_path();
+    $url = $public_path.'/storage/'.$archivo;
+    //verificamos si el archivo existe y lo retornamos
+    if (Storage::exists($archivo))
+    {
+        return response()->download($url);
+    }
+    //si no se encuentra lanzamos un error 404.
+    abort(404);
 
+});
+Route::get("upload", function(){
+    return View::make("upload");
+});
+
+Route::post("upload", function(){
+    $file = Input::file("photo");
+    $dataUpload = array(
+         "photo" => $file//campo foto para validar
+    );
+    //guardamos la imagen en public/imgs con el nombre original
+    $file->move("imgs",$file->getClientOriginalName());
+    //redirigimos con un mensaje flash
+    return Redirect::to('upload')->with(array('confirm' => 'Te has registrado correctamente.'));
+
+});
