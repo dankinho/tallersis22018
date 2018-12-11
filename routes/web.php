@@ -62,12 +62,12 @@ Route::get('/cuid/chatlist', array('as' => 'cuidador.chatlista', 'uses' => 'Cuid
 Route::resource('/comentario', 'ComentarioController');
 Route::resource('/comentario2', 'Comentario2Controller');
 
-Route::resource('/comentarios', 'ServicioMascotaComentariosController');
-
-
+Route::resource('comentarios', 'ServicioMascotaComentariosController');
+Route::resource('cancelaciones', 'CancelacionServiciosMascotaController');
 
 Route::resource('serviciosMascotas','ServiciosMascotaController');
 Route::get('serviciosMascotas/buscar', 'ServiciosMascotaController@busqueda');
+Route::get('serviciosMascotas/comentar', ['as' => 'index', 'uses' => 'ServicioMascotaComentariosController@index']);
 Route::get('items1/{id}','ItemController@itemsCatalogos');
 Route::get('showitem/{id}',  'ItemController@itemsshow');
 Route::get('eliminaritem/{id}',  'abmservicios@eliminar');
@@ -88,19 +88,3 @@ Route::get('storage/{archivo}', function ($archivo) {
     abort(404);
 
 });
-Route::get("upload", function(){
-    return View::make("upload");
-});
-
-Route::post("upload", function(){
-    $file = Input::file("photo");
-    $dataUpload = array(
-         "photo" => $file//campo foto para validar
-    );
-    //guardamos la imagen en public/imgs con el nombre original
-    $file->move("imgs",$file->getClientOriginalName());
-    //redirigimos con un mensaje flash
-    return Redirect::to('upload')->with(array('confirm' => 'Te has registrado correctamente.'));
-
-});
-

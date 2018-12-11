@@ -19,7 +19,7 @@ class MascotasTableSedder extends Seeder
             'genero' =>'Hembra',
             'cat_raza' => 8,
             'cat_tamano' =>15,
-            'url_imagen_mascota' => 'www.google.com' ,
+            'url_imagen_mascota' => 'perro1.jpg' ,
             'observaciones' =>'Sin observaciones',
 
             'tx_fecha' =>'2018-10-05 17:55:08',
@@ -34,7 +34,22 @@ class MascotasTableSedder extends Seeder
             'genero' =>'Hembra',
             'cat_raza' => 10,
             'cat_tamano' =>16,
-            'url_imagen_mascota' => 'www.google.com' ,
+            'url_imagen_mascota' => 'perro2.jpg' ,
+            'observaciones' =>'Sin observaciones',
+
+            'tx_fecha' =>'2018-10-05 17:55:08',
+            'tx_id' =>'1',
+            'tx_host'  =>'0.0.0.0'
+        ]);
+        DB::table('mascotas')->insert([
+
+            'id_clientes' =>2,
+            'nombre_mascota' =>'Pikachu',
+            'fecha_nacimiento'=>'2017-01-05',
+            'genero' =>'Macho',
+            'cat_raza' => 10,
+            'cat_tamano' =>16,
+            'url_imagen_mascota' => 'perro3.jpg' ,
             'observaciones' =>'Sin observaciones',
 
             'tx_fecha' =>'2018-10-05 17:55:08',

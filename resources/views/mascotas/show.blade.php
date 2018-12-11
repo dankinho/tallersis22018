@@ -19,7 +19,7 @@
                     <div class="flexslider">
                         <ul class="slides">
                             <li data-thumb="../../images/g1.jpg">
-                                <div class="thumb-image"> <img src="../../images/g1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                <div class="thumb-image"> <img src="{{'../../storage/'.$mascota->url_imagen_mascota }}" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
 
                         </ul>

@@ -19,7 +19,7 @@ class TalonariosController extends Controller
     {
         $talonario = Talonario::find($id);
 
-        return view('talonarios.show', compact('talonario'));
+        return view('tailonarios.show', compact('talonario'));
     }
 
     public function store(TalonarioRequest $request)
