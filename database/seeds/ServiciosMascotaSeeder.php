@@ -15,6 +15,7 @@ class ServiciosMascotaSeeder extends Seeder
 
             'id_servicio' =>1,
             'id_mascota' =>1,
+            'id_usuario'=>1,
             'id_estado_servicio'=>1,
             'cat_id_tipo_servicio' =>22,
             'fecha_servicio_inicio' =>'2018-02-05',
@@ -32,6 +33,7 @@ class ServiciosMascotaSeeder extends Seeder
 
             'id_servicio' =>2,
             'id_mascota' =>1,
+            'id_usuario'=>1,
             'id_estado_servicio'=>1,
             'cat_id_tipo_servicio' =>22,
             'fecha_servicio_inicio' =>'2018-12-10',
@@ -49,6 +51,7 @@ class ServiciosMascotaSeeder extends Seeder
 
             'id_servicio' =>1,
             'id_mascota' =>2,
+            'id_usuario'=>2,
             'id_estado_servicio'=>1,
             'cat_id_tipo_servicio' =>23,
             'fecha_servicio_inicio' =>'2018-02-05',
@@ -67,6 +70,7 @@ class ServiciosMascotaSeeder extends Seeder
 
             'id_servicio' =>2,
             'id_mascota' =>2,
+            'id_usuario'=>1,
             'id_estado_servicio'=>1,
             'cat_id_tipo_servicio' =>23,
             'fecha_servicio_inicio' =>'2018-12-10',

@@ -11,14 +11,17 @@ use App\Mascota;
 use App\ServicioMascotaComentario;
 class ServiciosMascotaController extends Controller
 {
-    public function  index()
+    public function  index(Request $request)
     {
-        $mascotasServicios = ServiciosMascota::where('id_mascota','=',1)
+
+        $mascotasServicios = ServiciosMascota::name($request->get('name'))
+            ->where('id_usuario','=',Auth::user()->id)
             ->orderBy('id','DESC')
             ->paginate(6);
-
+        $m=Mascota::where('id_clientes','=',Auth::user()->id)
+            ->get( ) ->pluck('nombre_mascota','id');
         return view('serviciosMascotas.index'
-            , compact('mascotasServicios' )
+            , compact('mascotasServicios' ,'m')
            );
 
 
@@ -81,8 +84,6 @@ class ServiciosMascotaController extends Controller
         $serviciosMascota->delete();
         return back()->with('info','La mascota fue eliminado logicamente');
     }
-    public function scopeName($query, $name)
-    {
-        return $query->where('name', $name);
-    }
+
+
 }

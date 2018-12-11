@@ -17,6 +17,23 @@
         <div class="container">
             <h3 class="animated wow zoomIn" data-wow-delay=".5s">Mis Servicios</h3>
             <p class="est animated wow zoomIn" data-wow-delay=".5s">Servicios adquiridos anteriormente.</p>
+
+                <br>
+
+            <div class="container" align="center">
+                {!! Form::open(['route' => 'serviciosMascotas.index', 'method'=>'GET',  ])!!}
+
+
+                    <h4 ><label    class="label-control">Buscar servicios segun mascota: </label></h4>
+                <br>
+                  {!! Form::select('name',$m,null,['id'=>'nombre_mascota'] ) !!}<br>
+                <br><h2 align="center" ><button  type="submit" class="label label-warning"><span >Buscar
+                        </span></button></h2>
+                <br>
+                {!! Form::close() !!}
+            </div>
+
+
             <div >
                 @foreach($mascotasServicios as $mascotaServicio)
                     <div class="col-md-12  ">
@@ -65,6 +82,9 @@
     </div>
     <div class="clearfix"> </div>
     <!-- //collections -->
+
+
+
 
 
 

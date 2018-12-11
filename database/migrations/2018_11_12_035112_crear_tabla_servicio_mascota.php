@@ -17,6 +17,7 @@ class CrearTablaServicioMascota extends Migration
             $table->increments('id');
             $table->integer('id_servicio');
             $table->integer('id_mascota');
+            $table->integer('id_usuario');
             $table->integer('id_estado_servicio');
             $table->integer('cat_id_tipo_servicio');
             $table->timestamp('fecha_servicio_inicio');

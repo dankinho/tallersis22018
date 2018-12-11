@@ -67,6 +67,7 @@ Route::resource('/comentarios', 'ServicioMascotaComentariosController');
 
 
 Route::resource('serviciosMascotas','ServiciosMascotaController');
+Route::get('serviciosMascotas/buscar', 'ServiciosMascotaController@busqueda');
 Route::get('items1/{id}','ItemController@itemsCatalogos');
 Route::get('showitem/{id}',  'ItemController@itemsshow');
 Route::get('eliminaritem/{id}',  'abmservicios@eliminar');
@@ -102,3 +103,4 @@ Route::post("upload", function(){
     return Redirect::to('upload')->with(array('confirm' => 'Te has registrado correctamente.'));
 
 });
+
