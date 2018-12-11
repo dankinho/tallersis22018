@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <!--     <div class="new-collections-grids">
+             <div class="new-collections-grids">
                 @php ($h=0)
                 @for($i=0; $i<$num;$i++)
                     @if($cuid->find($i+1)->tipo_serv==1)
@@ -13,7 +13,9 @@
                 @endfor
 
                 @if($h==0 || $h==1 || $h==2)
-                    <h3 align="center" > <a href="{{ route('cuidador.create') }}"><span class="label label-primary">Agregar Servicio</span></a> </h3>
+                     <div class="new-collections-grid1-left simpleCart_shelfItem">
+                         <p align="center"><a href="{{ route('cuidador.create') }}"><span class="item_add">Agregar Servicio</span></a></p>
+                     </div>
                 @endif
 
                 @for($i=0; $i<$num;$i++)
@@ -95,9 +97,8 @@
                     @endif
                 @endfor
             </div>
-        </div>
-    </div>
-    -->
+
+
     <!-- collections -->
     <div class="new-collections">
         <div class="container">

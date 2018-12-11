@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 
 @section('content')
     <div class="container">
@@ -168,6 +168,10 @@
                     </form>
 
                 </div>
-                <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
+            <div class="new-collections-grid1-left simpleCart_shelfItem">
+                <p align="center">
+                    <a href="{{ url('/home') }}" class="item_add" role="button">Regresar</a>
+                </p>
+            </div>
         </div>
 @endsection
