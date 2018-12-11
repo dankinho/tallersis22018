@@ -33,7 +33,7 @@ class ClienteController extends Controller
 
 
         $mascota ->save();
-        return redirect()->route('../home');
+        return redirect()->route('home');
 
     }
 
