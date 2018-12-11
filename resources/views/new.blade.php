@@ -10,7 +10,7 @@
                     <div class="panel-heading">Agregar archivos</div>
                     <div class="panel-body">
                         <form method="POST"
-                               action="../../storage/create" accept-charset="UTF-8"
+                               action="http://localhost:8000/storage/create" accept-charset="UTF-8"
                               enctype="multipart/form-data">
 
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

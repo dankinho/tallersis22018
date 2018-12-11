@@ -76,11 +76,11 @@ Route::get('formulario', 'StorageController@index');
 Route::post('storage/create', 'StorageController@save');
 Route::get('storage/{archivo}', function ($archivo) {
     $public_path = public_path();
-    $url = $public_path.'/storage/'.$archivo;
+    $url = '/storage/'.$archivo;
     //verificamos si el archivo existe y lo retornamos
     if (Storage::exists($archivo))
     {
-        return response()->download($url);
+        return response()->download('casa2.jpg');
     }
     //si no se encuentra lanzamos un error 404.
     abort(404);

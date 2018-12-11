@@ -21,7 +21,7 @@ class ServiciosMascotaSeeder extends Seeder
             'fecha_servicio_final' =>'2018-01-05',
             'precio_servicio_mascota' =>50,
             'porcentaje_comision' =>10,
-            'url_imagen_servicio_mascota' =>'www....',
+            'url_imagen_servicio_mascota' =>'casa1.jpg',
 
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',
@@ -38,7 +38,7 @@ class ServiciosMascotaSeeder extends Seeder
             'fecha_servicio_final' =>'2018-12-10',
             'precio_servicio_mascota' =>70,
             'porcentaje_comision' =>60,
-            'url_imagen_servicio_mascota' =>'www....',
+            'url_imagen_servicio_mascota' =>'casa2.jpg',
 
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',
@@ -55,7 +55,7 @@ class ServiciosMascotaSeeder extends Seeder
             'fecha_servicio_final' =>'2018-01-05',
             'precio_servicio_mascota' =>40,
             'porcentaje_comision' =>30,
-            'url_imagen_servicio_mascota' =>'www....',
+            'url_imagen_servicio_mascota' =>'casa3.jpg',
 
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',
@@ -73,7 +73,7 @@ class ServiciosMascotaSeeder extends Seeder
             'fecha_servicio_final' =>'2018-12-10',
             'precio_servicio_mascota' =>100,
             'porcentaje_comision' =>90,
-            'url_imagen_servicio_mascota' =>'www....',
+            'url_imagen_servicio_mascota' =>'casa4.jpg',
 
             'tx_fecha' =>'2018-10-05 17:55:08',
             'tx_id' =>'1',

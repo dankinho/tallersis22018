@@ -81,4 +81,8 @@ class ServiciosMascotaController extends Controller
         $serviciosMascota->delete();
         return back()->with('info','La mascota fue eliminado logicamente');
     }
+    public function scopeName($query, $name)
+    {
+        return $query->where('name', $name);
+    }
 }

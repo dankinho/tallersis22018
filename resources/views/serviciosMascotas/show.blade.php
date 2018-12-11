@@ -19,15 +19,10 @@
         <div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".5s">
             <div class="flexslider">
                 <ul class="slides">
-                    <li data-thumb="../../images/si.jpg">
-                        <div class="thumb-image"> <img src="../../images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                    <li  >
+                        <div class="thumb-image"> <img src="{{'../../storage/'.$mascotaServ->url_imagen_servicio_mascota }}" data-imagezoom="true" class="img-responsive"> </div>
                     </li>
-                    <li data-thumb="../../images/si1.jpg">
-                        <div class="thumb-image"> <img src="../../images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                    </li>
-                    <li data-thumb="../../images/si2.jpg">
-                        <div class="thumb-image"> <img src="../../images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                    </li>
+
                 </ul>
             </div>
             <!-- flixslider -->
