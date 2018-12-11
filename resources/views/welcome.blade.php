@@ -121,7 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="input-group">
                                 <h3>Cuidador</h3>
                                 <p>Quiero cuidar mascotas</p>
-                                <h3 align="center"> <a  ><span class="label label-primary">Login</span></a> </h3>
+                                <h3 align="center" > <a href="{{ route('login') }}"><span class="label label-primary">Login</span></a> </h3>
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
@@ -137,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6 in-gp-tb">
                                 <div class="input-group">
-                                    <h3> <a  ><span class="label label-primary">Registrar</span></a> </h3>
+                                    <h3> <a href="{{ route('register') }}"><span class="label label-primary">Registrar</span></a> </h3>
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
                         </div><!-- /.row -->

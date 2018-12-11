@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Servicio;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request;
+
 
 class abmservicios extends Controller
 {
@@ -33,7 +35,7 @@ class abmservicios extends Controller
         return view('Servicios_abm.altas');
     }
 
-    public function store(Request $request)
+    public function store(HttpRequest $request)
     {
         $a = new Servicio();
         $a->id_comision = 1;
@@ -59,7 +61,7 @@ class abmservicios extends Controller
         return view('Servicios_abm.editar', compact('editar'));
     }
 
-    public function update(Request $request)
+    public function update(HttpRequest $request)
     {
         //  Servicio::find($id2)->update($request->all());
         //  return redirect()->action('abmservicios@index');
@@ -105,10 +107,24 @@ class abmservicios extends Controller
         return view('Servicios_abm.adquirir');
 
     }
-    public function adquirir1()
+    public function adquirir1( $id)
     {
-        return view('Servicios_abm.adquirir1');
+        $key = $id;
+        return view('Servicios_abm.adquirir1',compact('key'));
+    }
+    public function confalojamiento(HttpRequest $request,$id)
+    {
+        $servicios = DB::table('servicios')
+            ->join('datos_servicios', 'datos_servicios.id', '=', 'servicios.id_datos_servicio')
+            ->join('servicios_mascotas', 'servicios.id', '=', 'servicios_mascotas.id_servicio')
+            ->join('mascotas', 'mascotas.id', '=', 'servicios_mascotas.id_mascota')
+            ->where('servicios.id', '=', $id)
+            ->first();
+        $fechainicio = request::input('fechainicio');
 
+        $fechafin = request::input('fechafin');
+
+        return view('Servicios_abm.confirmacion',compact('fechainicio','fechafin','servicios'));
     }
 
 }
