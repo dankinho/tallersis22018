@@ -14,7 +14,8 @@
 
                 @if($h==0 || $h==1 || $h==2)
                      <div class="new-collections-grid1-left simpleCart_shelfItem">
-                         <p align="center"><a href="{{ route('cuidador.create') }}"><span class="item_add">Agregar Servicio</span></a></p>
+                         <p align="center"><a href="{{ route('cuidador.create') }}"><span class="item_add">Agregar Servicio</span></a>
+                             <a href="{{ route('cuidador.chatlista') }}"><span class="item_add">Iniciar Chat</span></a></p>
                      </div>
                 @endif
 
