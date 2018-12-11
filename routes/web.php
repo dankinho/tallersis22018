@@ -75,16 +75,4 @@ Route::get('editar/{id}',  'abmservicios@edit');
 Route::get('visualserv/{id}',  'abmservicios@visualizar');
 Route::post('ruta','abmservicios@update');
 Route::get('formulario', 'StorageController@index');
-Route::post('storage/create', 'StorageController@save');
-Route::get('storage/{archivo}', function ($archivo) {
-    $public_path = public_path();
-    $url = '/storage/'.$archivo;
-    //verificamos si el archivo existe y lo retornamos
-    if (Storage::exists($archivo))
-    {
-        return response()->download('casa2.jpg');
-    }
-    //si no se encuentra lanzamos un error 404.
-    abort(404);
-
-});
+Route::post('storage/create', 'MascotaController@save');

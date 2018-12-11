@@ -18,8 +18,8 @@
                 <div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".5s">
                     <div class="flexslider">
                         <ul class="slides">
-                            <li data-thumb="../../images/g1.jpg">
-                                <div class="thumb-image"> <img src="{{'../../storage/'.$mascota->url_imagen_mascota }}" data-imagezoom="true" class="img-responsive"> </div>
+                            <li >
+                                <div class="thumb-image"> <img width="400px" height="400px" src="{{'../../storage/'.$mascota->url_imagen_mascota }}" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
 
                         </ul>

@@ -32,11 +32,19 @@ class MascotaController extends Controller
             ,compact('items' ,'items1'));
 
     }
-
-    public function store(MascotaRequest $request)
+    public function save(Request $request)
     {
 
+        //obtenemos el campo file definido en el formulario
+        $file = $request->file('file');
 
+        //obtenemos el nombre del archivo
+        $nombre = $file->getClientOriginalName();
+
+        //indicamos que queremos guardar un nuevo archivo en el disco local
+        \Storage::disk('local')->put($nombre,  \File::get($file));
+
+        //
         $mascota = new Mascota ;
         $mascota -> id_clientes =Auth::user()->id;
         $mascota ->nombre_mascota = $request->nombre_mascota;
@@ -44,17 +52,31 @@ class MascotaController extends Controller
         $mascota ->genero = $request->genero;
         $mascota ->cat_raza =  $request->cat_raza;
         $mascota ->cat_tamano =  $request->cat_tamano;
-
-        $filename = $request->file('photo')->getClientOriginalName();
-
-
-        $mascota ->url_imagen_mascota =$request->file('photo')->getRealPath();
+        $mascota ->url_imagen_mascota =$nombre;
         $mascota ->observaciones = $request->observaciones;
         $mascota -> tx_fecha  ='2018-10-05 17:55:08';
         $mascota -> tx_id  ='1';
         $mascota ->  tx_host   ='0.0.0.0';
 
-        Image::make('photo')->save('public/images/notices/'.$filename);
+
+        $mascota ->save();
+        return redirect()->route('mascotas.store');
+    }
+    public function store(MascotaRequest $request)
+    {   $mascota = new Mascota ;
+        $mascota -> id_clientes =Auth::user()->id;
+        $mascota ->nombre_mascota = $request->nombre_mascota;
+        $mascota ->fecha_nacimiento = $request->fecha_nacimiento;
+        $mascota ->genero = $request->genero;
+        $mascota ->cat_raza =  $request->cat_raza;
+        $mascota ->cat_tamano =  $request->cat_tamano;
+        $mascota ->url_imagen_mascota =$nombre;
+        $mascota ->observaciones = $request->observaciones;
+        $mascota -> tx_fecha  ='2018-10-05 17:55:08';
+        $mascota -> tx_id  ='1';
+        $mascota ->  tx_host   ='0.0.0.0';
+
+
         $mascota ->save();
         return redirect()->route('mascotas.index')
             ->with('info','La mascota fue actualizado');
