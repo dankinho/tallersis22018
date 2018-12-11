@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 
 @section('content')
     <div class="container">
@@ -228,10 +228,12 @@
                             <input type="hidden" name="cantperro" value="3">
 
                             <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" onclick="">
+                                <div class="new-collections-grid1-left simpleCart_shelfItem">
+                                    <p align="center">
+                                    <button type="submit" class="item_add" onclick="">
                                         Registrar Solicitud
                                     </button>
+                                    </p>
                                 </div>
                             </div>
                         </form>
@@ -239,7 +241,10 @@
                 </div>
             </div>
         </div>
-
-        <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
+        <div class="new-collections-grid1-left simpleCart_shelfItem">
+            <p align="center">
+        <a href="{{ url('/home') }}" class="item_add" role="button">Regresar</a>
+        </p>
+        </div>
     </div>
 @endsection

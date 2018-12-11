@@ -7,6 +7,8 @@ use App\Servicio;
 use App\DatosServicio;
 use App\ComentarioAlojamiento;
 use App\ComentarioPaseo;
+use App\User;
+use Auth;
 
 class CuidadorController extends Controller
 {
@@ -202,5 +204,12 @@ class CuidadorController extends Controller
         $num2 = ComentarioPaseo::count();
         $obs = ComentarioPaseo::all();
         return view('cuidador.vista2', ['num'=>$num2, 'cuid'=>$obs]);
+    }
+
+    public function chatlista()
+    {
+        $usuc = User::count();
+        $usu = User::all();
+        return view('cuidador.chatlista', ['usu'=>$usu, 'usuc'=>$usuc]);
     }
 }
