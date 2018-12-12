@@ -63,6 +63,7 @@ Route::resource('/comentario', 'ComentarioController');
 Route::resource('/comentario2', 'Comentario2Controller');
 Route::post('/chat', array('as'=>'cuidador.chat', 'uses'=>'CuidadorController@chat'));
 Route::post('/chatcr', array('as'=>'cuidador.chatcr', 'uses'=>'CuidadorController@chatcr'));
+Route::post('/chatcr2', array('as'=>'cuidador.chatcr2', 'uses'=>'CuidadorController@chatcr2'));
 
 Route::resource('comentarios', 'ServicioMascotaComentariosController');
 Route::resource('cancelaciones', 'CancelacionServiciosMascotaController');

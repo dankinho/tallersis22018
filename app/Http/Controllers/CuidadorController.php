@@ -211,7 +211,30 @@ class CuidadorController extends Controller
     {
         $usuc = User::count();
         $usu = User::all();
-        return view('cuidador.chatlista', ['usu'=>$usu, 'usuc'=>$usuc]);
+
+        $messages = Chat::conversations()->for(auth()->user())->get();
+
+        $a=0;
+        if($messages->count()==0) {
+            $mi = 0;
+            $users = 0;
+            $userfinal = 0;
+        }
+        foreach ($messages as $messa) {
+            if($messa->last_message==null) {
+                $mi[] = 0;
+            }
+            else $mi[] = $messa->last_message;
+
+            $idc[] = $messa->id;
+            $conversation = Chat::conversations()->getById($idc[$a]);
+            $users[] = $conversation->users;
+            if($users[$a][0]->id!==auth()->user()->id) $userfinal[] = $users[$a][0]->name;
+            else $userfinal[] = $users[$a][1]->name;
+            $a=$a+1;
+        }
+
+        return view('cuidador.chatlista', ['usu'=>$usu, 'usuc'=>$usuc, 'mess'=>$messages, 'mi'=>$mi, 'users'=>$users, 'userf'=>$userfinal]);
     }
 
     public function chat(Request $request)
@@ -231,6 +254,13 @@ class CuidadorController extends Controller
             ->from(auth()->user())
             ->to($conversation)
             ->send();
+        $conversation2 = Chat::conversation($conversation)->for(auth()->user())->getMessages();
+        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2]);
+    }
+
+    public function chatcr2(Request $request)
+    {
+        $conversation = Chat::conversations()->getById($request['id']);
         $conversation2 = Chat::conversation($conversation)->for(auth()->user())->getMessages();
         return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2]);
     }
