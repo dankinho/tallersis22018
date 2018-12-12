@@ -9,6 +9,7 @@ use App\ComentarioAlojamiento;
 use App\ComentarioPaseo;
 use App\User;
 use Auth;
+use Chat;
 
 class CuidadorController extends Controller
 {
@@ -211,5 +212,26 @@ class CuidadorController extends Controller
         $usuc = User::count();
         $usu = User::all();
         return view('cuidador.chatlista', ['usu'=>$usu, 'usuc'=>$usuc]);
+    }
+
+    public function chat(Request $request)
+    {
+        $i = Auth::user()->id;
+        $i2 = $request['id2'];
+        $participants = [$i, $i2];
+        $conversation = Chat::createConversation($participants);
+        $messagew = Chat::conversation($conversation)->for(auth()->user())->getMessages();
+        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$messagew]);
+    }
+
+    public function chatcr(Request $request)
+    {
+        $conversation = Chat::conversations()->getById($request['id']);
+        $message = Chat::message($request['message'])
+            ->from(auth()->user())
+            ->to($conversation)
+            ->send();
+        $conversation2 = Chat::conversation($conversation)->for(auth()->user())->getMessages();
+        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2]);
     }
 }
