@@ -43,7 +43,7 @@
                         <p>{{ $mascota->observaciones}}   <p>
                     </div>
                      <div class="social">
-                        <div class="description">
+                         <!-- //breadcrumbs  <div class="description">
                             <h5><i>Opciones</i></h5>
                              <br>
                             <div class="occasion-cart">
@@ -54,8 +54,8 @@
                                 <a class="item_add" href="{{ route('mascotas.edit', $mascota->id ) }}">Editar informacion </a>
                             </div>
                         </div>
-
-                        <div class="clearfix"> </div>
+-->
+                             <div class="clearfix"> </div>
                     </div>
                 </div>
             </div>

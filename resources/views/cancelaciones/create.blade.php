@@ -34,19 +34,22 @@
 
 
                                     <h4>Titulo del servicio: </h4>
-                                    <h5> </h5>
+                                    <h5>{{$titulo}}</h5>
                                     <hr>
-                                    <h4>Cuidador: </h4>
-                                    <h5>   </h5>
+                                    <h4>Nombre de la mascota: </h4>
+                                    <h5> {{$nombreMascota}}   </h5>
                                     <hr>
-                                    <h4>Calificacion: </h4>
-                                    <h5> </h5>
+                                    <h4> Tipo de servicio : </h4>
+                                    <h5> {{$tipoServicio}}  </h5>
                                     <hr>
-                                    <h4>Fecha / Hora: </h4>
-                                    <h5>  </h5>
+                                    <h4>Fecha / Hora inicio: </h4>
+                                    <h5> {{ $mascotaServ->fecha_servicio_inicio }} </h5>
+                                    <hr>
+                                    <h4>Fecha / Hora final: </h4>
+                                    <h5> {{ $mascotaServ->fecha_servicio_final }} </h5>
                                     <hr>
                                     <h4>Precio: </h4>
-                                    <h5>    </h5>
+                                    <h5>  Bs. {{$mascotaServ->precio_servicio_mascota}}  </h5>
                                     <div class="clearfix"> </div>
                                 </div>
 
@@ -56,9 +59,9 @@
 
                         <hr>
         @include('cancelaciones.fragment.errors')
-        {!! Form::open(['route' => 'cancelaciones.store']) !!}
 
-        @include('cancelaciones.fragment.form')
+        {!! Form::model($mascotaServ, ['route' => ['cancelaciones.update', $mascotaServ->id], 'method' => 'PUT']) !!}
+                        @include('cancelaciones.fragment.form')
 
         {!! Form::close() !!}
                     </div>

@@ -16,7 +16,7 @@
     <div class="single">
         <div class="container">
     <div class="col-md-12 single-right">
-        <div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".5s">
+        <div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".1s">
             <div class="flexslider">
                 <ul class="slides">
                     <li  >
@@ -39,7 +39,7 @@
             </script>
             <!-- flixslider -->
         </div>
-    <div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".5s">
+    <div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".1s">
         <h3>{{$titulo}}</h3>
         <h4> Tipo de servicio : {{$tipoServicio}}</h4>
     <!--  <div class="rating1">
@@ -73,18 +73,20 @@
         </div>
 
 
-
+        @if($estado!='Cancelado')
         <div class="social">
             <div class="description">
                 <h5><i>Opciones</i></h5>
                 <br><br>
                 <div class="occasion-cart">
-                    <a class="item_add" href= {{ route('cancelaciones.index', $mascotaServ->id ) }}>Cancelar </a>
+                    <a class="item_add" href= {{ route('cancelaciones.show', $mascotaServ->id ) }}>Cancelar </a>
                 </div>
+
             </div>
 
             <div class="clearfix"> </div>
         </div>
+        @endif
     </div>
 
     </div>
@@ -97,7 +99,7 @@
 
                 <div class="well">
                     <tr>
-                        <td>Usuario</td>
+                        <td>ID Usuario</td>
                         <td><span class="badge badge-warning"> {{ $cometario->id_usuario }}</span></td>
                     </tr>
                     <tr>
@@ -113,30 +115,16 @@
                 </div>
                 @endforeach
 
-            </div>
-            <h2 align="center" data-wow-delay=".2s">
-                <a href="{{url('comentarios', ['mascotaServ' => $mascotaServ->id])}}"  class="item_add"  >
+
+            <h2 align="center" data-wow-delay=".1s">
+                <a href= {{ route('comentarios.show', $mascotaServ->id ) }}  class="item_add"  >
                     <span class="label label-warning">Agregar tu comentario
                     </span>
                 </a>
-                <a href="{{ route('comentarios.show',['id' => 1]  ) }}" class="btn btn-primary">
-                    Editar
-                </a>
+
             </h2>
-
-
-            <div class="occasion-cart">
-                <a class="item_add" href= {{ route('comentarios.create', $mascotaServ->id ) }}>agregar tu comentario </a>
             </div>
 
-
-            <br>
-            <h2 align="center" data-wow-delay=".2s">
-                <a href="{{ route('mascotas.create') }}"  class="item_add"  >
-                    <span class="label label-warning">Nueva mascota
-                    </span>
-                </a>
-            </h2>
         </div>
     </div>
 

@@ -16,6 +16,9 @@ class ClienteController extends Controller
 
     public function store(ClienteRequest $request)
     {
+        $now = new \DateTime();
+        $now->format('d-m-Y H:i:s');
+
         $mascota = new Cliente ;
         $mascota ->id_usuarios =Auth::user()->id;
         $mascota ->nombre_cliente = $request->nombre_cliente;
@@ -27,13 +30,13 @@ class ClienteController extends Controller
         $mascota ->direccion_numero_casa = $request->direccion_numero_casa;
         $mascota ->estado_usuario = true;
         $mascota ->cat_macrodistrito = $request->cat_macrodistrito;
-        $mascota -> tx_fecha  ='2018-10-05 17:55:08';
-        $mascota -> tx_id  ='1';
+        $mascota -> tx_fecha  =$now;
+        $mascota -> tx_id  =Auth::user()->id;
         $mascota ->  tx_host   ='0.0.0.0';
 
 
         $mascota ->save();
-        return redirect()->route('../home');
+        return redirect()->route('home');
 
     }
 

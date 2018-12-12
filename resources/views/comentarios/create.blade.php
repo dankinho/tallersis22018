@@ -25,17 +25,50 @@
 
                 <div class="col-md-12  ">
 
-                    <div class="new-collections-grid2   " data-wow-delay=".1s" >
-        <hr>
-        @include('comentarios.fragment.errors')
-        {!! Form::open(['route' => 'comentarios.store']) !!}
+                    <div  >
 
-        @include('comentarios.fragment.form')
 
-        {!! Form::close() !!}
-                    </div>
 
-                </div>
+                        <div >
+
+                            <div class="col-md-12  ">
+
+                                <div class="new-collections-grid2   " data-wow-delay=".1s" >
+
+                                    <div class="col-md-12  ">
+                                        <div class="new-collections-grid2   " data-wow-delay=".1s" >
+
+                                            <div class="new-products-grid1-right" data-wow-delay=".2s">
+
+
+                                                <h4>Titulo del servicio: </h4>
+                                                <h5>{{$titulo}}</h5>
+                                                <hr>
+                                                <h4> Tipo de servicio : </h4>
+                                                <h5> {{$tipoServicio}}  </h5>
+                                                 <hr>
+                                                <h4>Precio: </h4>
+                                                <h5>  Bs. {{$mascotaServ->precio_servicio_mascota}}  </h5>
+                                                <div class="clearfix"> </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <hr>
+                                    @include('comentarios.fragment.errors')
+
+                                    {!! Form::model($mascotaServ, ['route' => ['comentarios.update', $mascotaServ->id], 'method' => 'PUT']) !!}
+                                      @include('comentarios.fragment.form')
+                                    {!! Form::close() !!}
+                                </div>
+
+                            </div>
+
+
+
+
 
 
             </div>

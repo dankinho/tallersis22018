@@ -34,6 +34,8 @@ class MascotaController extends Controller
     }
     public function save(Request $request)
     {
+        $now = new \DateTime();
+        $now->format('d-m-Y H:i:s');
 
         //obtenemos el campo file definido en el formulario
         $file = $request->file('file');
@@ -54,8 +56,8 @@ class MascotaController extends Controller
         $mascota ->cat_tamano =  $request->cat_tamano;
         $mascota ->url_imagen_mascota =$nombre;
         $mascota ->observaciones = $request->observaciones;
-        $mascota -> tx_fecha  ='2018-10-05 17:55:08';
-        $mascota -> tx_id  ='1';
+        $mascota -> tx_fecha  =$now;
+        $mascota -> tx_id  =Auth::user()->id;
         $mascota ->  tx_host   ='0.0.0.0';
 
 
@@ -63,17 +65,20 @@ class MascotaController extends Controller
         return redirect()->route('mascotas.store');
     }
     public function store(MascotaRequest $request)
-    {   $mascota = new Mascota ;
+    {    $now = new \DateTime();
+        $now->format('d-m-Y H:i:s');
+
+        $mascota = new Mascota ;
         $mascota -> id_clientes =Auth::user()->id;
         $mascota ->nombre_mascota = $request->nombre_mascota;
         $mascota ->fecha_nacimiento = $request->fecha_nacimiento;
         $mascota ->genero = $request->genero;
         $mascota ->cat_raza =  $request->cat_raza;
         $mascota ->cat_tamano =  $request->cat_tamano;
-        $mascota ->url_imagen_mascota =$nombre;
+        $mascota ->url_imagen_mascota ='perro.jpg';
         $mascota ->observaciones = $request->observaciones;
-        $mascota -> tx_fecha  ='2018-10-05 17:55:08';
-        $mascota -> tx_id  ='1';
+        $mascota -> tx_fecha  =$now;
+        $mascota -> tx_id  =Auth::user()->id;
         $mascota ->  tx_host   ='0.0.0.0';
 
 
@@ -84,6 +89,8 @@ class MascotaController extends Controller
     }
     public function update(MascotaRequest $request, $id)
     {$now = new \DateTime();
+        $now->format('d-m-Y H:i:s');
+        $now = new \DateTime();
         $mascota = Mascota::find($id);
         $mascota ->nombre_mascota = $request->nombre_mascota;
         $mascota ->fecha_nacimiento = $request->fecha_nacimiento;
@@ -94,8 +101,8 @@ class MascotaController extends Controller
         $mascota ->url_imagen_mascota ='www....';
         $mascota ->observaciones = $request->observaciones;
 
-        $mascota-> tx_fecha  ='2018-10-05 17:55:08';
-        $mascota->  tx_id  ='1';
+        $mascota-> tx_fecha  =$now;
+        $mascota->  tx_id  =Auth::user()->id;
         $mascota->  tx_host   ='0.0.0.0';
         $mascota->save();
         return redirect()->route('mascotas.index')
