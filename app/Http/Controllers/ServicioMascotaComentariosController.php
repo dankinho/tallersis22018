@@ -6,8 +6,11 @@ use App\ServiciosMascota;
 use App\ServicioMascotaComentario;
 use App\Http\Requests\ComentariosRequest;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Servicio;
+use App\EstadoServicioMascota;
+use App\item;
+
 class ServicioMascotaComentariosController extends Controller
 {
     public $u="h";
@@ -17,28 +20,42 @@ class ServicioMascotaComentariosController extends Controller
          return view('comentarios.create'   );
     }
         public function show($id)
-    {    $servicioMascota= ServiciosMascota::find($id);
-    $u="h".$id;
-        return view('comentarios.create' , compact( 'u'));
+    {     $mascotaServ = ServiciosMascota::find($id);
+        $titulo = Servicio::tituloServicio($mascotaServ->id_servicio);
+        $desc=Servicio::descripServicio($mascotaServ->id_servicio);
+        $estado=EstadoServicioMascota::estadoServicioShow($mascotaServ->id_estado_servicio);
+
+        $nombreMascota = Mascota::nombreMascota($mascotaServ->id_mascota);
+        $tipoServicio = item::itemsshow($mascotaServ->cat_id_tipo_servicio);
+        $aut= Auth::user();
+        $comentarios = ServicioMascotaComentario::where('id_usuario','=',1)->where('id_servicio_mascota','=',1)
+            ->orderBy('id','DESC')
+            ->paginate(6);
+
+
+
+        return view('comentarios.create' ,compact('mascotaServ')
+            ,compact('titulo' ,'desc','estado','nombreMascota','tipoServicio', 'comentarios' ));
     }
     public function create( )
     {
 
         return view('comentarios.create');
     }
-    public function store(ComentariosRequest $request)
+    public function update(ComentariosRequest $request,$id )
     {
-
+        $now = new \DateTime();
+        $now->format('d-m-Y H:i:s');
 
         $comentario = new ServicioMascotaComentario() ;
         $comentario -> id_usuario= Auth::user()->id;
-        $comentario -> id_servicio_mascota =$request->mascotaServ;
-        $comentario ->fecha_hora = '2018-10-05 17:55:08';
+        $comentario -> id_servicio_mascota =$id;
+        $comentario ->fecha_hora = $now;
         $comentario ->comentario = $request->comentario;
 
         $comentario ->calificacion = $request->calificacion;
-        $comentario -> tx_fecha  ='2018-10-05 17:55:08';
-        $comentario -> tx_id  ='1';
+        $comentario -> tx_fecha  =$now;
+        $comentario -> tx_id  =Auth::user()->id;
         $comentario ->  tx_host   ='0.0.0.0';
 
 

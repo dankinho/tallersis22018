@@ -87,60 +87,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
 
             <div class="newsletter animated wow slideInUp" data-wow-delay=".2s" >
-                <h1 class="title animated wow zoomIn" data-wow-delay=".5s" >  <a    >BIENVENIDO</a> </h1>
+                <h1 class="title animated wow zoomIn" data-wow-delay=".5s" >  <a    >BIENVENIDO</a> </h1> <br>
             @if (Route::has('login'))
                 @auth
                      <div class="row animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms" align="center">
-                        <div class="col-lg-6 in-gp-tl">
+                        <div class="  in-gp-tl">
                             <div class="input-group">
-                                <h3>Dueño de la mascota</h3>
-                                <p>Quiero que me cuiden a mi mascota</p>
+
                                 <h3> <a href="{{ url('/home') }}"><span class="label label-primary">Ingresar</span></a> </h3>
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
-                        <div class="col-lg-6 in-gp-tb">
-                            <div class="input-group">
-                                <h3>Cuidador</h3>
-                                <p>Quiero cuidar mascotas</p>
-                                <h3> <a href="{{ url('/home') }}"><span class="label label-primary">Ingresar</span></a> </h3>
-                            </div><!-- /input-group -->
-                        </div><!-- /.col-lg-6 -->
+                        <div class="  in-gp-tb">
+
                     </div><!-- /.row -->
 
 
                 @else
                     <div class="row animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms" align="center">
-                        <div class="col-lg-6 in-gp-tl">
+                        <div class="  in-gp-tl">
                             <div class="input-group">
-                                <h3>Duenio de la mascota</h3>
-                                <p>Quiero que me cuiden a mi mascota</p>
+
                                 <h3 align="center" > <a href="{{ route('login') }}"><span class="label label-primary">Login</span></a> </h3>
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
-                        <div class="col-lg-6 in-gp-tb">
-                            <div class="input-group">
-                                <h3>Cuidador</h3>
-                                <p>Quiero cuidar mascotas</p>
-                                <h3 align="center"> <a  ><span class="label label-primary">Login</span></a> </h3>
-                            </div><!-- /input-group -->
-                        </div><!-- /.col-lg-6 -->
-                    </div><!-- /.row -->
+                      </div><!-- /.row -->
 
 
                     @if (Route::has('register'))
 
                         <div class="row animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms" align="center">
-                            <div class="col-lg-6 in-gp-tl">
-                                <div class="input-group">
+                            <div class="  in-gp-tl">
+                                <div  >
                                     <h3> <a href="{{ route('register') }}"><span class="label label-primary">Registrar</span></a> </h3>
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6 in-gp-tb">
-                                <div class="input-group">
-                                    <h3> <a  ><span class="label label-primary">Registrar</span></a> </h3>
-                                </div><!-- /input-group -->
-                            </div><!-- /.col-lg-6 -->
-                        </div><!-- /.row -->
+                         </div><!-- /.row -->
 
 
                     @endif
