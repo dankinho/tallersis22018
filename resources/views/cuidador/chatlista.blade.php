@@ -40,13 +40,18 @@
                         @for($i=0; $i<$usuc;$i++)
                             @if($usu->find($i+1)->name!=auth()->user()->name)
                             <tr>
+                                <form method="POST" action="{{ url('/chat') }}">
+                                    {{ csrf_field() }}
                                 <td>{{ $usu->find($i+1)->name }}</td>
-                                <td>.</td>
+                                <td>{{ $usu->find($i+1)->tipo_usuario }}</td>
                                 <td><div class="new-collections-grid1-left simpleCart_shelfItem">
+
+                                        <input type="hidden" name="id2" value="{{ $usu->find($i+1)->id }}">
                                         <p align="center">
-                                            <a href="" class="item_add" role="button">Iniciar</a>
+                                            <button type="submit" class="item_add">Iniciar</button>
                                         </p>
                                     </div></td>
+                                </form>
                             </tr>
                             @endif
                             @endfor
