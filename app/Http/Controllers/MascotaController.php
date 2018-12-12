@@ -70,7 +70,7 @@ class MascotaController extends Controller
         $mascota ->genero = $request->genero;
         $mascota ->cat_raza =  $request->cat_raza;
         $mascota ->cat_tamano =  $request->cat_tamano;
-        $mascota ->url_imagen_mascota =$nombre;
+        $mascota ->url_imagen_mascota ='perro.jpg';
         $mascota ->observaciones = $request->observaciones;
         $mascota -> tx_fecha  ='2018-10-05 17:55:08';
         $mascota -> tx_id  ='1';

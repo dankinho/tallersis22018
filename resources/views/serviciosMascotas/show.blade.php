@@ -73,18 +73,20 @@
         </div>
 
 
-
+        @if($estado!='Cancelado')
         <div class="social">
             <div class="description">
                 <h5><i>Opciones</i></h5>
                 <br><br>
                 <div class="occasion-cart">
-                    <a class="item_add" href= {{ route('cancelaciones.index', $mascotaServ->id ) }}>Cancelar </a>
+                    <a class="item_add" href= {{ route('cancelaciones.show', $mascotaServ->id ) }}>Cancelar </a>
                 </div>
+
             </div>
 
             <div class="clearfix"> </div>
         </div>
+        @endif
     </div>
 
     </div>

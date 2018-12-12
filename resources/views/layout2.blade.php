@@ -70,14 +70,16 @@
                         @endif
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="{{ route('home') }}" class="act">Inicio</a></li>
-                            <!-- Mega Menu -->
-                            <li class="dropdown">
+                            <!-- OPCIONES PARA DUENO DE PERROS -->
+                            @if (Auth::user()->hasRole(''.Auth::user()->id) )
+                                <li class="dropdown">
                                 <a href="{{ url('/listacliente ') }}" class="act"  >Servicios  </a>
 
                             </li>
 
                             <li><a href="{{route('serviciosMascotas.index')}}">Tus Servicios</a></li>
                             <li><a  href="{{route('mascotas.index')}}">Tu cuenta</a></li>
+                            @endif
                         </ul>
                     </div>
                 </nav>

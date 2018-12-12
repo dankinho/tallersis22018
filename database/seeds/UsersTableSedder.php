@@ -16,14 +16,16 @@ class UsersTableSedder extends Seeder
 
             'name' =>'Fabiola Acarapi',
             'email' =>'fabi2@gmail.com',
-            'password'=>Hash::make('123456')
+            'password'=>Hash::make('123456'),
+            'tipo_usuario'=>'dueno'
 
         ]);
         DB::table('users')->insert([
 
             'name' =>'Pedro Santander',
             'email' =>'pedro2@gmail.com',
-            'password'=>'123456'
+            'password'=>Hash::make('123456'),
+            'tipo_usuario'=>'cuidador'
 
         ]);
     }

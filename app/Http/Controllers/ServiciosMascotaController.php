@@ -13,9 +13,10 @@ class ServiciosMascotaController extends Controller
 {
     public function  index(Request $request)
     {
-
+// ->where('id_estado_servicio','=',1)
         $mascotasServicios = ServiciosMascota::name($request->get('name'))
             ->where('id_usuario','=',Auth::user()->id)
+
             ->orderBy('id','DESC')
             ->paginate(6);
         $m=Mascota::where('id_clientes','=',Auth::user()->id)

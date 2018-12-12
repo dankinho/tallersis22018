@@ -11,6 +11,6 @@ class cancelacionServiciosMascota extends Model
     protected $dates = ['deleted_at']; //Registramos la nueva columna
     //
     protected $fillable = [
-        'id_estado', 'fecha_cancelacion', 'justificacion', 'tx_fecha', 'tx_id', 'tx_host',
+        'id_servicio_mascota','id_estado', 'fecha_cancelacion', 'justificacion', 'tx_fecha', 'tx_id', 'tx_host',
     ];
 }

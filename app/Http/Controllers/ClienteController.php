@@ -16,6 +16,8 @@ class ClienteController extends Controller
 
     public function store(ClienteRequest $request)
     {
+
+
         $mascota = new Cliente ;
         $mascota ->id_usuarios =Auth::user()->id;
         $mascota ->nombre_cliente = $request->nombre_cliente;
