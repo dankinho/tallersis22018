@@ -48,7 +48,7 @@
     <div class="container">
 
         <div class="logo-nav">
-            <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".5s">
+            <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".2s">
                 <h1><a href="{{ route('home') }}">DOGFY <span>TU MEJOR OPCION</span></a></h1>
             </div>
             <div class="logo-nav-left1">
@@ -144,7 +144,7 @@
                         Permite a que cada propietario encontrar el cuidador adecuado para su mascota,
                         haciendo la reservacion en el sistema sea garantizando.  </span></p>
             </div>
-            <div class="col-md-6 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
+            <div class="col-md-6 footer-grid animated wow slideInLeft" data-wow-delay=".2s">
                 <h3>Contactanos</h3>
                 <ul>
                     <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Calle 2, Obrajes <span>La Paz, Bolivia</span></li>
@@ -156,10 +156,10 @@
 
             <div class="clearfix"> </div>
         </div>
-        <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
+        <div class="footer-logo animated wow slideInUp" data-wow-delay=".1s">
             <h2><a href="index.html">DOGFY <span>TU MEJOR OPCION</span></a></h2>
         </div>
-        <div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
+        <div class="copy-right animated wow slideInUp" data-wow-delay=".1s">
             <p>&copy 2016 Best Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
     </div>

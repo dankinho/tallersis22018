@@ -7,7 +7,7 @@
     <!-- breadcrumbs -->
     <div class="breadcrumbs">
         <div class="container">
-            <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <ol class="breadcrumb breadcrumb1 animated wow slideInLeft"  >
                 <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Inicio</a></li>
                 <li class="active">Ingresar</li>
             </ol>
@@ -17,11 +17,11 @@
     <!-- login -->
     <div class="login">
         <div class="container">
-            <h3 class="animated wow zoomIn" data-wow-delay=".5s">Ingresar Cuenta</h3>
-            <p class="est animated wow zoomIn" data-wow-delay=".5s">Ingrese su correo y contrasena</p>
+            <h3 class="animated wow  "  >Ingresar Cuenta</h3>
+            <p class="est animated wow  "  >Ingrese su correo y contrasena</p>
 
 
-            <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+            <div class="login-form-grids animated wow  "  >
                 <form method="POST" action="{{ route('login') }}" >
                     @csrf
                     <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Correo_Electronico') }}</label>
@@ -53,8 +53,8 @@
                     </a>
                 </form>
             </div>
-            <h4 class="animated wow slideInUp" data-wow-delay=".5s">No tengo cuenta</h4>
-            <p class="animated wow slideInUp" data-wow-delay=".5s"><a href="register.html">Registrate aqui </a> (o) Vuelve  a <a href="index.html">Inicio<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+            <h4 class="animated wow  "  >No tengo cuenta</h4>
+            <p class="animated wow  "  ><a href="register.html">Registrate aqui </a> (o) Vuelve  a <a href="index.html">Inicio<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
         </div>
     </div>
     <!-- //login -->

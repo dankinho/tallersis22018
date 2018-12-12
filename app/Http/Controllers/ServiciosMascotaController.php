@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\ServiciosMascota;
+use App\User;
 use Illuminate\Http\Request;
 use App\Servicio;
 use App\EstadoServicioMascota;
@@ -43,9 +44,10 @@ class ServiciosMascotaController extends Controller
         $nombreMascota = Mascota::nombreMascota($mascotaServ->id_mascota);
         $tipoServicio = item::itemsshow($mascotaServ->cat_id_tipo_servicio);
         $aut= Auth::user();
-        $comentarios = ServicioMascotaComentario::where('id_usuario','=',1)->where('id_servicio_mascota','=',1)
+        $comentarios = ServicioMascotaComentario::where('id_usuario','=',Auth::user()->id)->where('id_servicio_mascota','=',$id)
             ->orderBy('id','DESC')
             ->paginate(6);
+
 
         return view('serviciosMascotas.show' ,compact('mascotaServ')
             ,compact('titulo' ,'desc','estado','nombreMascota','tipoServicio', 'comentarios' ));

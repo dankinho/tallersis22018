@@ -38,5 +38,9 @@ class User extends Authenticatable
         }
 
     }
+    public static function nameshow($id ){
+        return  item::where('id','=',$id)
+            ->value('name') ;
+    }
 
 }
