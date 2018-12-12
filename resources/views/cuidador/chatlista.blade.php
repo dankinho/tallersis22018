@@ -20,7 +20,68 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Lista de Chats activos</div>
-                    ggg
+                    <div class="table-container">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th width="20px">ID</th>
+                                <th width="250px">Conversacion con:</th>
+                                <th width="250px">Ultimo Mensaje</th>
+                                <th width="250px">Fecha</th>
+                                <th width="250px"></th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $i=0;
+                            ?>
+
+                            @foreach($mess as $messa)
+                                <tr>
+                                    <td>{{ $messa->id }}</td>
+                                    <td>
+                                        <strong>
+                                            {{ $userf[$i] }}
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            @if($mi[$i]=="0")
+                                                {{ 0 }}
+                                            @else
+                                                {{ $mi[$i]->body }}
+                                            @endif
+                                        </strong>
+                                    </td>
+
+                                    <td>@if($mi[$i]=="0")
+                                            {{ 0 }}
+                                        @else
+                                            {{ $mi[$i]->created_at }}
+                                        @endif</td>
+                                    <td>
+                                        <form method="POST" action="{{ url('/chatcr2') }}">
+                                    {{ csrf_field() }}
+                                    <div class="new-collections-grid1-left simpleCart_shelfItem">
+
+                                            <input type="hidden" name="id" value="{{ $messa->id }}">
+                                            <p align="center">
+                                                <button type="submit" class="item_add">Continuar</button>
+                                            </p>
+                                        </div>
+                                    </form>
+                                    </td>
+
+                                </tr>
+                                <?php
+                                $i=$i+1;
+                                ?>
+                            @endforeach
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
             </div>
         </div>

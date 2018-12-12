@@ -5,6 +5,9 @@
         <div class="container">
             @if (Auth::user()->hasRole(''.Auth::user()->id) )
             <h3 class="animated wow zoomIn" data-wow-delay=".5s">Servicios</h3>
+                <div class="new-collections-grid1-left simpleCart_shelfItem">
+                    <p align="center"><a href="{{ route('cuidador.chatlista') }}"><span class="item_add">Chat de Usuarios</span></a></p>
+                </div>
                 <p class="est animated wow zoomIn" data-wow-delay=".5s">Encuentra al cuidador perfecto para tu mascota.</p>
                 <div class="new-collections">
                     <div class="container">
@@ -45,7 +48,7 @@
                     @if($h==0 || $h==1 || $h==2)
                         <div class="new-collections-grid1-left simpleCart_shelfItem">
                             <p align="center"><a href="{{ route('cuidador.create') }}"><span class="item_add">Agregar Servicio</span></a>
-                                <a href="{{ route('cuidador.chatlista') }}"><span class="item_add">Iniciar Chat</span></a></p>
+                                <a href="{{ route('cuidador.chatlista') }}"><span class="item_add">Chat de Usuarios</span></a></p>
                         </div>
                 </div>
             @endif
