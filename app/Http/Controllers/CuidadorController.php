@@ -213,7 +213,13 @@ class CuidadorController extends Controller
         $usu = User::all();
 
         $messages = Chat::conversations()->for(auth()->user())->get();
+
         $a=0;
+        if($messages->count()==0) {
+            $mi = 0;
+            $users = 0;
+            $userfinal = 0;
+        }
         foreach ($messages as $messa) {
             if($messa->last_message==null) {
                 $mi[] = 0;
