@@ -14,9 +14,17 @@
                         <form method="POST" action="{{ url('/chatcr') }}">
                             {{ csrf_field() }}
 
+                            <?php
+                            $i=0;
+                            ?>
                             @foreach($messw as $me)
+                                {{ $c2[$i]->name }}:
+                            <br>
                                 {{ $me->body }}
-                                <br>
+                                <br><br>
+                                <?php
+                                $i=$i+1;
+                                ?>
                             @endforeach
                             <div class="form-group">
                                 <label for="description">Message:</label>
