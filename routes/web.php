@@ -80,3 +80,4 @@ Route::post('ruta','abmservicios@update');
 Route::get('formulario', 'StorageController@index');
 Route::post('storage/create', 'MascotaController@save');
 Route::post('confirmaralojamiento/{id}', 'abmservicios@confalojamiento');
+Route::get('events','EventsController@showEvents');
