@@ -117,8 +117,7 @@
 
                 </div>
             </div>
-                <a class="btn btn-success" href="{{URL::action('abmservicios@adquirir1', $servicios->id)    }}" type="submit">Adquirir alojamiento</a>
-                <a class="btn btn-success" href="{{URL::action('abmservicios@adquirir')}}" type="submit">Adquirir paseo</a>
+               <a class="btn btn-success" href="{{URL::action('abmservicios@adquirir')}}" type="submit">Adquirir</a>
                 <br>
         </div>
         <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
