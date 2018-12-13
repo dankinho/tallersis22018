@@ -22,7 +22,7 @@
                     </a>
 
                 <hr>
-
+@foreach($datos as $datos)
                 <div class="col-md-12  ">
                     <div class="new-collections-grid2   " data-wow-delay=".1s" >
 
@@ -30,20 +30,20 @@
 
 
                             <h4>Titulo del servicio: </h4>
-                            <h5> ...........</h5>
+                            <h5> {{$datos->titulo}}</h5>
                             <hr>
                             <h4> Tipo de servicio : </h4>
-                            <h5> ...........  </h5>
+                            <h5> {{$datos->descripcion}} </h5>
                             <hr>
                             <h4>Precio: </h4>
-                            <h5>  .......... </h5>
+                            <h5> {{$datos->precio_alojamiento}}</h5>
                             <div class="clearfix"> </div>
                         </div>
 
                     </div>
 
                 </div>
- 
+                @endforeach
                 {!! Form::open(['route' => 'serviciosMascotas.store']) !!}
 
                 <div class="form-group">
