@@ -271,13 +271,19 @@ class CuidadorController extends Controller
             ->to($conversation)
             ->send();
         $conversation2 = Chat::conversation($conversation)->for(auth()->user())->getMessages();
-        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2]);
+        foreach ($conversation2 as $conv2) {
+            $c2[] = $conv2->sender;
+        }
+        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2, 'c2'=>$c2]);
     }
 
     public function chatcr2(Request $request)
     {
         $conversation = Chat::conversations()->getById($request['id']);
         $conversation2 = Chat::conversation($conversation)->for(auth()->user())->getMessages();
-        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2]);
+        foreach ($conversation2 as $conv2) {
+            $c2[] = $conv2->sender;
+        }
+        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2, 'c2'=>$c2]);
     }
 }

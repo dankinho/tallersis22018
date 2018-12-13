@@ -50,8 +50,15 @@
                             <p align="center"><a href="{{ route('cuidador.create') }}"><span class="item_add">Agregar Servicio</span></a>
                                 <a href="{{ route('cuidador.chatlista') }}"><span class="item_add">Chat de Usuarios</span></a></p>
                         </div>
+                    @else
+                        <div class="new-collections-grid1-left simpleCart_shelfItem">
+                            <p align="center">
+                                <a href="{{ route('cuidador.chatlista') }}"><span class="item_add">Chat de Usuarios</span></a>
+                            </p>
+                        </div>
+                    @endif
                 </div>
-            @endif
+
             @for($i=0; $i<$num;$i++)
                 @if($cuid->find($i+1)->tipo_serv==1 || $cuid->find($i+1)->tipo_serv==2)
                     <div class="col-md-6 new-collections-grid">
