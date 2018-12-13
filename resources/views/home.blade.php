@@ -10,24 +10,12 @@
                 </div>
                 <p class="est animated wow zoomIn" data-wow-delay=".5s">Encuentra al cuidador perfecto para tu mascota.</p>
                 <div class="new-collections">
-                    <div class="container">
-                         <div class="new-collections-grids">
-                            @for($i=0; $i<$num;$i++)
-                                <div class="col-md-6 new-collections-grid">
-
-                                        <h4><a href="single.html">{{ $cuid->find($i+1)->titulo }}</a></h4>
-                                        <p>Descripcion: </p>
-                                        <h4>{{ $cuid->find($i+1)->descripcion }}</h4>
-                                        <p>Precios: </p>
-                                        <h4>Paseo por hora : Bs. {{ $cuid->find($i+1)->precio_paseo }}   </h4>
-                                        <h4>Alojamiento por dia: Bs. {{ $cuid->find($i+1)->precio_alojamiento }} </h4>
-                                        <div class="new-collections-grid1-left simpleCart_shelfItem">
-                                            <p>
-                                                <a class="item_add" href="#">Comprar</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endfor
+                    <div class="container" align="center">
+                        <div class="new-collections-grids">
+                            <div class="new-collections-grid1-left simpleCart_shelfItem">
+                                <p>
+                                    <a class="item_add" href="serviciosMascotas.index">Servicios adquiridos</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>

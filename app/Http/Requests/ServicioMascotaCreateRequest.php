@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ComentariosRequest extends FormRequest
+class ServicioMascotaCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,16 @@ class ComentariosRequest extends FormRequest
     public function rules()
     {
         return [
-                'comentario' => 'required|string|min:5|max:100',
-                'calificacion' => 'required|numeric|digits_between: 1,5|min:1|max:5'
-
-
+            'name' => 'required',
+            'price' => 'required|min:0',
         ];
     }
     public function messages()
     {
         return [
-            'comentario.required' => 'El campo comentario es obligatorio',
-            'calificacion.required' => 'El campo calificacion es obligatorio',
+            'name.required' => 'El :attribute es obligatorio.',
+            'price.required' => 'Añade un :attribute al producto',
+            'price.min' => 'El :attribute debe ser mínimo 0'
         ];
     }
 }

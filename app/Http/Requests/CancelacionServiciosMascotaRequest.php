@@ -24,7 +24,13 @@ class CancelacionServiciosMascotaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'comentario' => 'required|string|min:5',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'comentario.required' => 'El campo de la cancelacion es obligatorio'
         ];
     }
 }
