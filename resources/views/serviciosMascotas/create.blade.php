@@ -44,7 +44,7 @@
                     </div>
 
                 </div>
- 
+
                 {!! Form::open(['route' => 'serviciosMascotas.store']) !!}
 
                 <div class="form-group">

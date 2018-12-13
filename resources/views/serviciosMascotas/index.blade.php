@@ -71,7 +71,7 @@
             </div>
             {!! $mascotasServicios->render() !!}
             <h2 align="center" data-wow-delay=".2s">
-                <a href="{{route('serviciosMascotas.create')}}"  class="item_add"  >
+                <a href="{{url('/listacliente ') }}"  class="item_add"  >
                     <span class="label label-warning">Adquirir nuevos sevicios
                     </span>
                 </a>
