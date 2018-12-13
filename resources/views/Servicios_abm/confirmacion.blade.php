@@ -109,7 +109,19 @@
                             {{ $servicios->descripcion }}
                         </div>
                     </div>
+                    <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
+                        <label class="col-md-4 control-label">Fecha inicio:</label>
+                        <div class="col-md-6">
+                            {{ $fechainicio }}
+                        </div>
+                    </div>
 
+                    <div class="form-group{{ $errors->has('days') ? ' has-error' : '' }}">
+                        <label class="col-md-4 control-label">Fecha fin:</label>
+                        <div class="col-md-6">
+                            {{ $fechafin }}
+                        </div>
+                    </div>
 
 
                         <div class="panel-body">
@@ -117,8 +129,7 @@
 
                 </div>
             </div>
-                <a class="btn btn-success" href="{{URL::action('abmservicios@adquirir1', $servicios->id)    }}" type="submit">Adquirir alojamiento</a>
-                <a class="btn btn-success" href="{{URL::action('abmservicios@adquirir')}}" type="submit">Adquirir paseo</a>
+                <a class="btn btn-success" href="{{URL::action('abmservicios@adquirir1')}}" type="submit">confirmar</a>
                 <br>
         </div>
         <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
