@@ -70,7 +70,7 @@
                                             <form action="{{ route('cuidador.destroy', 1) }}" method="POST">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button>Delete User</button>
+                                                <button>Borrar</button>
                                             </form></p>
                                         </div>
                                     @elseif($cuid->find($i+1)->tipo_serv==2)
@@ -80,7 +80,7 @@
                                             <form action="{{ route('cuidador.destroy', 2) }}" method="POST">
                                                 <input type="hidden" name="_method" value="DELETE" />
                                                 {{ csrf_field() }}
-                                                <button>Delete User</button>
+                                                <button>Borrar</button>
                                             </form></p>
                                         </div>
                                     @endif

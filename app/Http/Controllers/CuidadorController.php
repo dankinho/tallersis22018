@@ -43,6 +43,19 @@ class CuidadorController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'serv' => 'required',
+            'titulo' => 'required|string',
+            'desc' => 'required|string',
+            'sup' => 'required|numeric|max:1',
+            'latitud' => 'required|numeric',
+            'longitud' => 'required|numeric',
+            'perro' => 'required',
+            'alojamiento' => 'required|numeric',
+            'paseo' => 'required|numeric',
+        ]);
+
+
         //
         $serv = $request['serv'];
         $titulo = $request['titulo'];
@@ -102,7 +115,10 @@ class CuidadorController extends Controller
                 $servicios->save();
             }
         }
-        else $servicios->save();
+        else {
+            $servicios->id = 3;
+            $servicios->save();
+        }
         $datosservicio->save();
         return redirect('/home');
     }
