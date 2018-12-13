@@ -1,14 +1,14 @@
 <div class="form-group">
-    {!! Form::label('dosificacion', 'Dosificacion') !!}
-    {!! Form::text('dosificacion', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_mascota', 'Seleccionar mascota') !!}
+    {!! Form::text('id_mascota', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('n_autorizacion', 'Numero de Autorizacion') !!}
-    {!! Form::text('n_autorizacion', null, ['class' => 'form-control']) !!}
+    {!! Form::label('fecha_servicio_inicio', 'Seleccionar fecha inicio') !!}
+    {!! Form::text('fecha_servicio_inicio', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('leyenda', 'Leyenda') !!}
-    {!! Form::textarea('leyenda', null, ['class' => 'form-control']) !!}
+    {!! Form::label('fecha_servicio_final', 'Seleccionar fecha final') !!}
+    {!! Form::textarea('fecha_servicio_final', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('fecha_limite_emision', 'Fecha Limite Emision') !!}

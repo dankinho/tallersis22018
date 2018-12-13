@@ -24,16 +24,12 @@ class ServicioMascotaCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'price' => 'required|min:0',
         ];
     }
     public function messages()
     {
         return [
-            'name.required' => 'El :attribute es obligatorio.',
-            'price.required' => 'Añade un :attribute al producto',
-            'price.min' => 'El :attribute debe ser mínimo 0'
+
         ];
     }
 }

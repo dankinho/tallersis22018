@@ -54,12 +54,12 @@ class ServiciosMascotaController extends Controller
 
     }
 
-    public function store(MascotaRequest $request)
+    public function store(ServicioMascota $request)
     {
 
 
 
-        return redirect()->route('mascotas.index')
+        return redirect()->route('serviciosMascotas.index')
             ->with('info','La mascota fue actualizado');
 
     }
@@ -77,9 +77,7 @@ class ServiciosMascotaController extends Controller
     }
     public function create()
     {
-        // $items = item::pluck('nombre','id');
-
-        return view('mascotas.create');
+         return view('serviciosMascotas.create');
     }
     public function destroy($id)
     {
