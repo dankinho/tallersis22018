@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Servicio;
 use App\EstadoServicioMascota;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\item;
 use App\Mascota;
 use App\ServicioMascotaComentario;
@@ -26,6 +27,7 @@ class ServiciosMascotaController extends Controller
             , compact('mascotasServicios' ,'m')
            );
 
+    return view('serviciosMascotas.create',["datos"=>$datos]);
 
     }
     public function f1($id)
@@ -54,12 +56,12 @@ class ServiciosMascotaController extends Controller
 
     }
 
-    public function store(MascotaRequest $request)
+    public function store(ServicioMascota $request)
     {
 
 
 
-        return redirect()->route('mascotas.index')
+        return redirect()->route('serviciosMascotas.index')
             ->with('info','La mascota fue actualizado');
 
     }
@@ -77,9 +79,17 @@ class ServiciosMascotaController extends Controller
     }
     public function create()
     {
-        // $items = item::pluck('nombre','id');
+        $datos=DB::table ('servicios_mascotas')
+            ->select ('*')
+            ->join('estado_servicio_mascotas','estado_servicio_mascotas.id','=','servicios_mascotas.id_estado_servicio')
+            ->join('mascotas','mascotas.id','=','servicios_mascotas.id_mascota')
+            ->join('servicios','servicios.id','=','servicios_mascotas.id_servicio')
 
-        return view('mascotas.create');
+            ->where ('id_usuario','=',Auth::user()->id)
+            ->get();
+//dd($datos);
+        return view('serviciosMascotas.create',compact('datos'));
+
     }
     public function destroy($id)
     {

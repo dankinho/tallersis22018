@@ -49,8 +49,8 @@ class ServiciosMascotaSeeder extends Seeder
         ]);
         DB::table('servicios_mascotas')->insert([
 
-            'id_servicio' =>1,
-            'id_mascota' =>2,
+            'id_servicio' =>3,
+            'id_mascota' =>3,
             'id_usuario'=>2,
             'id_estado_servicio'=>1,
             'cat_id_tipo_servicio' =>23,
@@ -68,8 +68,8 @@ class ServiciosMascotaSeeder extends Seeder
 
         DB::table('servicios_mascotas')->insert([
 
-            'id_servicio' =>2,
-            'id_mascota' =>2,
+            'id_servicio' =>4,
+            'id_mascota' =>4,
             'id_usuario'=>1,
             'id_estado_servicio'=>1,
             'cat_id_tipo_servicio' =>23,

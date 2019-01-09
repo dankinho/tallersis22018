@@ -10,24 +10,12 @@
                 </div>
                 <p class="est animated wow zoomIn" data-wow-delay=".5s">Encuentra al cuidador perfecto para tu mascota.</p>
                 <div class="new-collections">
-                    <div class="container">
-                         <div class="new-collections-grids">
-                            @for($i=0; $i<$num;$i++)
-                                <div class="col-md-6 new-collections-grid">
-
-                                        <h4><a href="single.html">{{ $cuid->find($i+1)->titulo }}</a></h4>
-                                        <p>Descripcion: </p>
-                                        <h4>{{ $cuid->find($i+1)->descripcion }}</h4>
-                                        <p>Precios: </p>
-                                        <h4>Paseo por hora : Bs. {{ $cuid->find($i+1)->precio_paseo }}   </h4>
-                                        <h4>Alojamiento por dia: Bs. {{ $cuid->find($i+1)->precio_alojamiento }} </h4>
-                                        <div class="new-collections-grid1-left simpleCart_shelfItem">
-                                            <p>
-                                                <a class="item_add" href="#">Comprar</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endfor
+                    <div class="container" align="center">
+                        <div class="new-collections-grids">
+                            <div class="new-collections-grid1-left simpleCart_shelfItem">
+                                <p>
+                                    <a class="item_add" href="serviciosMascotas.index">Servicios adquiridos</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,8 +38,15 @@
                             <p align="center"><a href="{{ route('cuidador.create') }}"><span class="item_add">Agregar Servicio</span></a>
                                 <a href="{{ route('cuidador.chatlista') }}"><span class="item_add">Chat de Usuarios</span></a></p>
                         </div>
+                    @else
+                        <div class="new-collections-grid1-left simpleCart_shelfItem">
+                            <p align="center">
+                                <a href="{{ route('cuidador.chatlista') }}"><span class="item_add">Chat de Usuarios</span></a>
+                            </p>
+                        </div>
+                    @endif
                 </div>
-            @endif
+
             @for($i=0; $i<$num;$i++)
                 @if($cuid->find($i+1)->tipo_serv==1 || $cuid->find($i+1)->tipo_serv==2)
                     <div class="col-md-6 new-collections-grid">
@@ -70,7 +65,7 @@
                                             <form action="{{ route('cuidador.destroy', 1) }}" method="POST">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button>Delete User</button>
+                                                <button>Borrar</button>
                                             </form></p>
                                         </div>
                                     @elseif($cuid->find($i+1)->tipo_serv==2)
@@ -80,7 +75,7 @@
                                             <form action="{{ route('cuidador.destroy', 2) }}" method="POST">
                                                 <input type="hidden" name="_method" value="DELETE" />
                                                 {{ csrf_field() }}
-                                                <button>Delete User</button>
+                                                <button>Borrar</button>
                                             </form></p>
                                         </div>
                                     @endif

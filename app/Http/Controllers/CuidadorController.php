@@ -43,6 +43,19 @@ class CuidadorController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'serv' => 'required',
+            'titulo' => 'required|string',
+            'desc' => 'required|string',
+            'sup' => 'required|numeric|max:1',
+            'latitud' => 'required|numeric',
+            'longitud' => 'required|numeric',
+            'perro' => 'required',
+            'alojamiento' => 'required|numeric',
+            'paseo' => 'required|numeric',
+        ]);
+
+
         //
         $serv = $request['serv'];
         $titulo = $request['titulo'];
@@ -102,7 +115,10 @@ class CuidadorController extends Controller
                 $servicios->save();
             }
         }
-        else $servicios->save();
+        else {
+            $servicios->id = 3;
+            $servicios->save();
+        }
         $datosservicio->save();
         return redirect('/home');
     }
@@ -213,7 +229,13 @@ class CuidadorController extends Controller
         $usu = User::all();
 
         $messages = Chat::conversations()->for(auth()->user())->get();
+
         $a=0;
+        if($messages->count()==0) {
+            $mi = 0;
+            $users = 0;
+            $userfinal = 0;
+        }
         foreach ($messages as $messa) {
             if($messa->last_message==null || $messa==[]) {
                 $mi[] = 0;
@@ -249,13 +271,19 @@ class CuidadorController extends Controller
             ->to($conversation)
             ->send();
         $conversation2 = Chat::conversation($conversation)->for(auth()->user())->getMessages();
-        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2]);
+        foreach ($conversation2 as $conv2) {
+            $c2[] = $conv2->sender;
+        }
+        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2, 'c2'=>$c2]);
     }
 
     public function chatcr2(Request $request)
     {
         $conversation = Chat::conversations()->getById($request['id']);
         $conversation2 = Chat::conversation($conversation)->for(auth()->user())->getMessages();
-        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2]);
+        foreach ($conversation2 as $conv2) {
+            $c2[] = $conv2->sender;
+        }
+        return view('cuidador.chat', ['conv'=>$conversation, 'messw'=>$conversation2, 'c2'=>$c2]);
     }
 }
