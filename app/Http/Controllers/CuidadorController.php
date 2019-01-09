@@ -215,7 +215,7 @@ class CuidadorController extends Controller
         $messages = Chat::conversations()->for(auth()->user())->get();
         $a=0;
         foreach ($messages as $messa) {
-            if($messa->last_message==null) {
+            if($messa->last_message==null || $messa==[]) {
                 $mi[] = 0;
             }
             else $mi[] = $messa->last_message;
