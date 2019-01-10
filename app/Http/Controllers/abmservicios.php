@@ -127,4 +127,11 @@ class abmservicios extends Controller
         return view('Servicios_abm.confirmacion',compact('fechainicio','fechafin','servicios'));
     }
 
+    public function guardserv(Request $request)
+    {
+        $num = Servicio::count();
+        $cuid = Servicio::all();
+        return view('home', ['num'=>$num, 'cuid'=>$cuid]);
+    }
+
 }

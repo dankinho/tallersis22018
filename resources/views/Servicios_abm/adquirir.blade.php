@@ -16,14 +16,15 @@
                     <div class="panel-heading">Fecha
                     </div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/cuidador') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/guardserv') }}">
+                            {!! csrf_field() !!}
                             <table width="100%">
                                 <tr>
                                     <td width="10%"></td>
                                     <td width="35%">
                                         <div class="form-group">
                                             <label>Fecha inicio :</label>
-                                            <input type="date" class="form-control is-valid" name="precio_paseo" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                            <input type="date" class="form-control is-valid" name="precio_paseo" placeholder="Ingrese nombre de la vacuna" required>
                                             <div class="valid-feedback">
                                             </div>
                                         </div>
@@ -32,7 +33,7 @@
                                     <td width="35%">
                                         <div class="form-group">
                                             <label>Fecha fin : </label>
-                                            <input type="date" class="form-control is-valid" name="precio_alojamiento" placeholder="Ingrese nombre de la vacuna" value="" required>
+                                            <input type="date" class="form-control is-valid" name="precio_alojamiento" placeholder="Ingrese nombre de la vacuna" required>
                                             <div class="valid-feedback">
                                             </div>
                                         </div>
@@ -40,6 +41,11 @@
                                     <td width="10%"></td>
                                 </tr>
                             </table>
+
+                            <button type="submit" class="btn btn-success" onclick="">
+                                Comprar
+                            </button>
+
                         </form>
                     </div>
                 </div>

@@ -24,15 +24,14 @@
 
 
 
-    <table id="table_id" class="display" style="width:100%">
+    <table id="table_id" class="display" style="width:90%">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Titulo </th>
                 <th>Descripcion</th>
                 <th>Precio paseo</th>
-                <th>Precio  </th>
-                <th>Servicio</th>
+                <th>Precio</th>
 
             </tr>
         </thead>
