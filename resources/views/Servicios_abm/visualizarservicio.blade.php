@@ -19,6 +19,8 @@
                             {!! csrf_field() !!}
                             <label class="col-md-4 control-label">Titulo:</label>
 
+                            {{ $id[0] }}
+
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 
                                 <div class="col-md-4 control-label">
@@ -60,7 +62,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('reason') ? ' has-error' : '' }}">
-                                @if ( $servicios->existencia_perro_casa  == 1)
+                                @if ( $servicios->existencia_perro_casa  >= 1)
 
                                 <label class="col-md-4 control-label">Perros en casa: </label>
                                     <div class="col-md-1 control-label">
@@ -117,8 +119,17 @@
 
                 </div>
             </div>
-               <a class="btn btn-success" href="{{URL::action('abmservicios@adquirir')}}" type="submit">Adquirir</a>
-                <br>
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/fec') }}">
+                    {!! csrf_field() !!}
+
+                    <input type="hidden" name="id" value={{ $id[0] }}>
+                    <input type="hidden" name="precio" value={{ $servicios->precio_alojamiento }}>
+
+                    <button type="submit" class="btn btn-success" onclick="">
+                        Adquirir
+                    </button>
+
+                </form>
         </div>
         <center><a href="{{ url('/home') }}" class="btn btn-info" role="button">Regresar</a></center>
 

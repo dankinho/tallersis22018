@@ -24,7 +24,7 @@
                                     <td width="35%">
                                         <div class="form-group">
                                             <label>Fecha inicio :</label>
-                                            <input type="date" class="form-control is-valid" name="precio_paseo" placeholder="Ingrese nombre de la vacuna" required>
+                                            <input type="date" class="form-control is-valid" name=" fecha_inicio" required>
                                             <div class="valid-feedback">
                                             </div>
                                         </div>
@@ -33,7 +33,7 @@
                                     <td width="35%">
                                         <div class="form-group">
                                             <label>Fecha fin : </label>
-                                            <input type="date" class="form-control is-valid" name="precio_alojamiento" placeholder="Ingrese nombre de la vacuna" required>
+                                            <input type="date" class="form-control is-valid" name="fecha_final" required>
                                             <div class="valid-feedback">
                                             </div>
                                         </div>
@@ -41,6 +41,9 @@
                                     <td width="10%"></td>
                                 </tr>
                             </table>
+
+                            <input type="hidden" name="id" value={{ $id }}>
+                            <input type="hidden" name="precio" value={{ $precio }}>
 
                             <button type="submit" class="btn btn-success" onclick="">
                                 Comprar

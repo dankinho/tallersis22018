@@ -83,3 +83,4 @@ Route::post('confirmaralojamiento/{id}', 'abmservicios@confalojamiento');
 Route::get('events','EventsController@showEvents');
 
 Route::post('guardserv', 'abmservicios@guardserv');
+Route::post('fec', 'abmservicios@fec');
