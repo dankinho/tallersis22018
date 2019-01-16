@@ -10,44 +10,42 @@
 
 
 @section('content')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <style>
-        table.display {
-            table-layout: fixed;
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
 
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+    <style>
+        th {
+           height: 10px;
+           text-align: center;
+            padding: 2px 7px;
         }
 
     </style>
     <h1>SERVICIOS</h1>
 
+<br><br><br>
 
 
-
-    <table id="table_id" class="display" style="width:90%">
+    <table width="80%" class="display" id="table_id" border="0" cellspacing="0" cellpadding="0">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Titulo </th>
+                <th>Titulo</th>
                 <th>Descripcion</th>
                 <th>Precio paseo</th>
                 <th>Precio</th>
-
+                <th>Servicio</th>
             </tr>
         </thead>
         <tbody>
         @foreach($servicios as $servicio)
             <tr>
-                <td>{{ $servicio->id}}</td>
-                <td>{{ $servicio->titulo  }}</td>
+                <td>{{ $servicio->id }}</td>
+                <td>{{ $servicio->titulo }}</td>
                 <td> {{ $servicio->descripcion }}</td>
-
-                <td>{{ $servicio->precio_paseo  }} </td>
-                <td> {{ $servicio->precio_alojamiento  }} </td>
-
+                <td>{{ $servicio->precio_paseo }} </td>
+                <td> {{ $servicio->precio_alojamiento }} </td>
                 <td><a href="{{ url('/visualserv', $servicio->id) }}" type="button" class="btn btn-link">Ver</a></td>
-
-
             </tr>
 
         @endforeach
